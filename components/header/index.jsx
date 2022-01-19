@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Flex, Box,Link, Image  } from '@chakra-ui/react'
+import { Container, Flex, Box,Link, Image,Text  } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import { motion,AnimatePresence  } from "framer-motion"
 // import { useInView } from 'react-intersection-observer';
@@ -9,6 +9,7 @@ const MotionBox = motion(Box)
 const MotionImage = motion(Image)
 const MotionFlex = motion(Flex)
 const MotionLink = motion(Link)
+const MotionContainer = motion(Container)
 
 const variants = {
    initial: {y: -200},
@@ -16,13 +17,13 @@ const variants = {
       y:0,
       position:"sticky",
       top:0,
-      transition:{ delay: 0.5, type:"spring"}
+      transition:{ delay: 0.2, type:"spring"}
    },
   
 }
 
  
- const pathVariants = {
+ const imageVariants = {
    hidden: {
      opacity: 0,
      x: -100
@@ -34,7 +35,7 @@ const variants = {
        ease: "easeInOut",
        x: 0
      }
-   }
+   },
  };
 
  const list = {
@@ -60,13 +61,17 @@ const variants = {
       {
          duration: 1,
          ease: "easeInOut",
-         x: 0
+       
       } 
    },
    hidden: { 
       opacity: 0,
-      x: -100 
    },
+  //  whileHover:{
+  //   scale: 1.5, 
+  //   textShadow: "0px 0px 8px rgb(255,255,255)",
+  //   boxShadow: "0px 0px 8px rgb(255,255,255)"
+  //  }
  }
 
 
@@ -87,7 +92,8 @@ const Header = () => {
         }else return setShowNav(false)
      })
   }, [])
-   
+    
+//   console.log(router)
     return (
    <AnimatePresence>
          <MotionBox
@@ -100,51 +106,54 @@ const Header = () => {
                justifyContent={"center"}  
                bgColor={"white"}
          >
-            <MotionFlex 
-                 width={"80%"}  
-                 display={"flex"} 
-                 alignItems={'center'}  
-                 justifyContent={"center"} 
-                 padding={5} 
+            <MotionFlex
+              width={"80%"}
+              alignItems={'center'}
+              py={5}
             >
-                  <Container 
-                       width={"60%"}
-                       margin={0}
-                  >
-                           <NextLink href="/" >
-                                 <MotionImage 
-                                   variants={pathVariants} 
-                                   initial="hidden" 
-                                   animate={"visible" } 
-                                   src='../../logo.svg' 
-                                   alt='next' 
-                                   width={"250px"} 
-                                   height={"50px"}
-                                   cursor="pointer"
-                                 />
-                           </NextLink>
-                  </Container>
+               <MotionContainer
+                  width={"50%"}
+                  display={"flex"}
+                  justifyContent={"left"}
+                  mx={0}
+                  px={0}
+               >
+                  <MotionImage 
+                    variants={imageVariants} 
+                    initial="hidden" 
+                    animate={"visible" } 
+                    src='../../logo.svg' 
+                    alt='next' 
+                    width={"250px"} 
+                    height={"50px"}
+                    pl={20}
+                    cursor="pointer"
+                  />
+               </MotionContainer>
 
-                  <MotionFlex 
-                    width={"40%"} 
-                    justifyContent={"space-between"} 
-                    initial="hidden"
-                    animate="visible"
-                    variants={list}
-                  >
-                        <NextLink href="/">
-                              <MotionLink variants={item} fontSize={"14px"} fontWeight={"700"}>Home</MotionLink> 
+               <MotionContainer
+                  width={"50%"}
+                  display={"flex"}
+                  justifyContent={"space-between"}
+                  mr={0}
+                  pr={0}
+                  initial="hidden"
+                  animate="visible"
+                  variants={list}
+               >
+                        <NextLink href="/" onClick={()=>{console.log('Clicked HOME with nextlink')}}>
+                            <MotionLink onClick={()=>{console.log('Clicked HOME')}}  variants={item}  fontSize={router.asPath == "/" ? "17px" : "15px"} fontWeight={ router.asPath == "/" ? "bold" : "400"}>Home</MotionLink> 
                         </NextLink>
                         <NextLink href="/#about">
-                           <MotionLink variants={item} fontSize={"14px"} fontWeight={"700"}>About</MotionLink>
+                           <MotionLink onClick={()=>{console.log('Clicked about')}}  variants={item}  fontSize={router.asPath == "/#about" ? "17px" : "15px"} fontWeight={router.asPath == "/#about" ? "bold" : "400"}>About</MotionLink>
                         </NextLink> 
                         <NextLink href="/#projects"> 
-                           <MotionLink variants={item} fontSize={"14px"} fontWeight={"700"}>Projects</MotionLink>
+                           <MotionLink onClick={()=>{console.log('Clicked projects')}}  variants={item}  fontSize={router.asPath == "/#projects" ? "17px" : "15px"} fontWeight={router.asPath == "/#projects" ? "bold" : "400"}>Projects</MotionLink>
                         </NextLink>
                         <NextLink href="/#contact">
-                           <MotionLink variants={item} fontSize={"14px"} fontWeight={"700"}>Contact</MotionLink>
+                           <MotionLink onClick={()=>{console.log('Clicked contact')}}  variants={item}  fontSize={router.asPath == "/#contact" ? "17px" : "15px"} fontWeight={router.asPath == "/#contact" ? "bold" : "400"}>Contact</MotionLink>
                         </NextLink>
-                  </MotionFlex>
+               </MotionContainer>
             </MotionFlex>
          </MotionBox> 
      </AnimatePresence>

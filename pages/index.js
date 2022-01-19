@@ -11,7 +11,7 @@ import { Box, Spacer,Text } from '@chakra-ui/react'
 
 export default function Balay() {
   return (
-    <Box  width={["100vw"]}  mr="auto" ml="auto"   display="flex" flexDirection="column" justifyContent="center">
+    <Box  width={["100%"]}  mr="auto" ml="auto"   display="flex" flexDirection="column" justifyContent="center">
        
         <Home/>
         <About/>
