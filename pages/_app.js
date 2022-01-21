@@ -6,6 +6,7 @@ import theme from '../styles/theme';
 import Header from '../components/header';
 import { MyRouteProvider } from '../lib/routeprovider';
 
+
 const GlobalStyle = ({ children }) => {
   return (
     <>

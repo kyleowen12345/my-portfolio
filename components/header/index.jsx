@@ -1,26 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Flex, Box,Link, Image,Text  } from '@chakra-ui/react'
+import { Container, Flex, Box,Link, Image ,useDisclosure  } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import { motion,AnimatePresence  } from "framer-motion"
-// import { useInView } from 'react-intersection-observer';
+import { HamburgerIcon} from '@chakra-ui/icons'
 import NextLink from 'next/link'
+import ReusableDrawer from './ReusableDrawer'
 
 const MotionBox = motion(Box)
 const MotionImage = motion(Image)
-const MotionFlex = motion(Flex)
 const MotionLink = motion(Link)
 const MotionContainer = motion(Container)
+const MotionHamburgerIcon = motion(HamburgerIcon)
 
-const variants = {
-   initial: {y: -200},
-   animate: {
-      y:0,
-      position:"sticky",
-      top:0,
-      transition:{ delay: 0.2, type:"spring"}
-   },
-  
-}
+
+
 
  
  const imageVariants = {
@@ -31,11 +24,16 @@ const variants = {
    visible: {
      opacity: 1,
      transition: { 
-       duration: 3,
+       duration: 2,
        ease: "easeInOut",
        x: 0
      }
    },
+   hover:{
+      scale: 1.2, 
+      textShadow: "0px 0px 8px rgb(255,255,255)",
+      boxShadow: "0px 0px 8px rgb(255,255,255)"
+     }
  };
 
  const list = {
@@ -67,23 +65,33 @@ const variants = {
    hidden: { 
       opacity: 0,
    },
-  //  whileHover:{
-  //   scale: 1.5, 
-  //   textShadow: "0px 0px 8px rgb(255,255,255)",
-  //   boxShadow: "0px 0px 8px rgb(255,255,255)"
-  //  }
+   
  }
 
+ const menuVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: { 
+      duration: 2,
+      ease: "easeInOut",
+    }
+  },
+  hover:{
+     scale: 1.2, 
+     textShadow: "0px 0px 8px rgb(255,255,255)",
+     boxShadow: "0px 0px 8px rgb(255,255,255)"
+    }
+};
 
-const Header = () => {
+
+
+const BigHeader = () => {
     const router = useRouter()
     const [showNav, setShowNav]= useState(false)
-   //  const { ref, inView, entry } = useInView({
-   //    /* Optional options */
-   //    threshold: 0,
-   //  });
-
-  
+    const { isOpen, onOpen, onClose } = useDisclosure()
 
   useEffect(() => {
      window.addEventListener('scroll',() => {
@@ -91,49 +99,52 @@ const Header = () => {
          setShowNav(true)
         }else return setShowNav(false)
      })
-  }, [])
+  }, [showNav])
     
-//   console.log(router)
+
     return (
-   <AnimatePresence>
+   <AnimatePresence exitBeforeEnter >
          <MotionBox
-               variants={variants}
-               initial="initial"
-               animate={"animate" }
                boxShadow={showNav ? 'dark-lg' : 'md'}
+               position="sticky"
+               top={0}
                width={"100%"} 
                display={"flex"} 
                justifyContent={"center"}  
                bgColor={"white"}
+               zIndex={999}
          >
-            <MotionFlex
-              width={"80%"}
+            <Flex
+              width={["90%","90%","90%","90%","80%"]}
               alignItems={'center'}
-              py={5}
+              py={[1,1,1,1,3]}
             >
-               <MotionContainer
+               <Container
                   width={"50%"}
                   display={"flex"}
                   justifyContent={"left"}
                   mx={0}
                   px={0}
                >
-                  <MotionImage 
-                    variants={imageVariants} 
-                    initial="hidden" 
-                    animate={"visible" } 
-                    src='../../logo.svg' 
-                    alt='next' 
-                    width={"250px"} 
-                    height={"50px"}
-                    pl={20}
-                    cursor="pointer"
-                  />
-               </MotionContainer>
+                   
+                        <MotionImage 
+                           initial="hidden" 
+                           animate={"visible" } 
+                           variants={imageVariants}
+                           whileHover="hover"
+                           alt='next'
+                           minWidth={"200px"} 
+                           width={"250px"} 
+                           height={["40px","40px","40px","40px","50px"]}
+                           pl={20}
+                           ml={[5,5,5,5,3]}
+                           src='../../logo.svg'
+                        />
+               </Container>
 
                <MotionContainer
                   width={"50%"}
-                  display={"flex"}
+                  display={["none","none","none","none","flex"]}
                   justifyContent={"space-between"}
                   mr={0}
                   pr={0}
@@ -141,23 +152,35 @@ const Header = () => {
                   animate="visible"
                   variants={list}
                >
-                        <NextLink href="/" onClick={()=>{console.log('Clicked HOME with nextlink')}}>
-                            <MotionLink onClick={()=>{console.log('Clicked HOME')}}  variants={item}  fontSize={router.asPath == "/" ? "17px" : "15px"} fontWeight={ router.asPath == "/" ? "bold" : "400"}>Home</MotionLink> 
+                        <NextLink href={"/#home"} passHref>
+                            <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}} fontSize={router.asPath == "/" || "/#home" ? "17px" : "14px"} fontWeight={ router.asPath == "/" || "/#home" ? "bold" : "400"}>HOME</MotionLink> 
                         </NextLink>
-                        <NextLink href="/#about">
-                           <MotionLink onClick={()=>{console.log('Clicked about')}}  variants={item}  fontSize={router.asPath == "/#about" ? "17px" : "15px"} fontWeight={router.asPath == "/#about" ? "bold" : "400"}>About</MotionLink>
+                        <NextLink href="/#about" passHref>
+                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}} _hover={{ fontSize: "17px", fontWeight:"bold"}}  fontSize={router.asPath == "/#about" ? "17px" : "14px"} fontWeight={router.asPath == "/#about" ? "bold" : "400"}>ABOUT</MotionLink>
                         </NextLink> 
-                        <NextLink href="/#projects"> 
-                           <MotionLink onClick={()=>{console.log('Clicked projects')}}  variants={item}  fontSize={router.asPath == "/#projects" ? "17px" : "15px"} fontWeight={router.asPath == "/#projects" ? "bold" : "400"}>Projects</MotionLink>
+                        <NextLink href="/#projects" passHref> 
+                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}  _hover={{ fontSize: "17px", fontWeight:"bold"}} fontSize={router.asPath == "/#projects" ? "17px" : "14px"} fontWeight={router.asPath == "/#projects" ? "bold" : "400"}>PROJECTS</MotionLink>
                         </NextLink>
-                        <NextLink href="/#contact">
-                           <MotionLink onClick={()=>{console.log('Clicked contact')}}  variants={item}  fontSize={router.asPath == "/#contact" ? "17px" : "15px"} fontWeight={router.asPath == "/#contact" ? "bold" : "400"}>Contact</MotionLink>
+                        <NextLink href="/#contact" passHref>
+                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}} _hover={{ fontSize: "17px", fontWeight:"bold"}}  fontSize={router.asPath == "/#contact" ? "17px" : "14px"} fontWeight={router.asPath == "/#contact" ? "bold" : "400"}>CONTACT</MotionLink>
                         </NextLink>
                </MotionContainer>
-            </MotionFlex>
+
+               <Container 
+                   width={"50%"}
+                   display={["flex","flex","flex","flex","none"]}
+                   justifyContent={"right"}
+                   px={0}
+                   onClick={isOpen ? onClose : onOpen}
+               >
+                        <MotionHamburgerIcon variants={menuVariants} initial="hidden" animate="visible" whileHover="hover" w={6} h={6}/>
+               </Container>
+
+               <ReusableDrawer isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
+            </Flex>
          </MotionBox> 
      </AnimatePresence>
     )
 }
 
-export default Header
+export default BigHeader

@@ -38,7 +38,7 @@ const Home = () => {
             ref={ref} 
             minHeight={1000} 
             maxWidth={"80%"} 
-            id='' 
+            id='home' 
             px={0} 
             bgColor={"#F9F9FF"}
         >
