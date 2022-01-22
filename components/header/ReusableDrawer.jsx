@@ -13,6 +13,7 @@ import {
   import { useRouter } from 'next/router'
   import { motion  } from "framer-motion"
   import { CloseIcon, } from '@chakra-ui/icons'
+import { useMyRoute } from '../../lib/routeprovider'
   
 
 const MotionImage = motion(Image)
@@ -77,7 +78,7 @@ const item = {
      opacity: 1,
      transition:
      {
-        duration: 1,
+        duration: 0.6,
         ease: "easeInOut",
       
      } 
@@ -91,6 +92,7 @@ const item = {
 
 const ReusableDrawer = ({onClose,isOpen}) => {
   const router = useRouter()
+  const {section} = useMyRoute()
   return (
     <Drawer 
       onClose={onClose} 
@@ -113,8 +115,8 @@ const ReusableDrawer = ({onClose,isOpen}) => {
                     variants={imageVariants}
                     whileHover="hover"
                     alt='next' 
-                    minWidth={"200px"}
-                    height={"40px"}
+                    minWidth={"220px"}
+                    height={"45px"}
                     pr={20}
                     src='../../logo.svg'
                   />
@@ -131,16 +133,16 @@ const ReusableDrawer = ({onClose,isOpen}) => {
             pl={10}
           >
                         <NextLink href={"/"} passHref>
-                            <MotionLink onClick={onClose} my={5}   variants={item} whileHover={{scale: 1.2, originX:0}} display="flex" alignItems="center" fontSize={router.asPath == "/" ? "17px" : "14px"} fontWeight={ router.asPath == "/" ? "bold" : "400"}>HOME</MotionLink> 
+                            <MotionLink onClick={onClose} my={5}   variants={item} whileHover={{scale: 1.2, originX:0}} _hover={{ fontSize: "17px", fontWeight:"bold"}} fontSize={section == "/" || section == "/#home" ? "16px" : "13px"} fontWeight={ section == "/" || section == "/#home" ? "bold" : "400"}>HOME</MotionLink> 
                         </NextLink>
                         <NextLink href="/#about" passHref>
-                           <MotionLink onClick={onClose} my={5} variants={item} whileHover={{scale: 1.2,originX:0}} _hover={{ fontSize: "17px", fontWeight:"bold"}}  fontSize={router.asPath == "/#about" ? "17px" : "14px"} fontWeight={router.asPath == "/#about" ? "bold" : "400"}>ABOUT</MotionLink>
+                           <MotionLink onClick={onClose} my={5} variants={item} whileHover={{scale: 1.2,originX:0}} _hover={{ fontSize: "17px", fontWeight:"bold"}}  fontSize={section == "/#about" ? "16px" : "13px"} fontWeight={section == "/#about" ? "bold" : "400"}>ABOUT</MotionLink>
                         </NextLink> 
                         <NextLink href="/#projects" passHref> 
-                           <MotionLink onClick={onClose} my={5} variants={item} whileHover={{scale: 1.2,originX:0}}  _hover={{ fontSize: "17px", fontWeight:"bold"}} fontSize={router.asPath == "/#projects" ? "17px" : "14px"} fontWeight={router.asPath == "/#projects" ? "bold" : "400"}>PROJECTS</MotionLink>
+                           <MotionLink onClick={onClose} my={5} variants={item} whileHover={{scale: 1.2,originX:0}}  _hover={{ fontSize: "17px", fontWeight:"bold"}} fontSize={section == "/#projects" ? "16px" : "13px"} fontWeight={section == "/#projects" ? "bold" : "400"}>PROJECTS</MotionLink>
                         </NextLink>
                         <NextLink href="/#contact" passHref>
-                           <MotionLink onClick={onClose} my={5}  variants={item} whileHover={{scale: 1.2,originX:0}} _hover={{ fontSize: "17px", fontWeight:"bold"}}  fontSize={router.asPath == "/#contact" ? "17px" : "14px"} fontWeight={router.asPath == "/#contact" ? "bold" : "400"}>CONTACT</MotionLink>
+                           <MotionLink onClick={onClose} my={5}  variants={item} whileHover={{scale: 1.2,originX:0}} _hover={{ fontSize: "17px", fontWeight:"bold"}}  fontSize={section == "/#contact" ? "16px" : "13px"} fontWeight={ section == "/#contact" ? "bold" : "400"}>CONTACT</MotionLink>
                         </NextLink>
           </MotionBody>
         </DrawerContent>

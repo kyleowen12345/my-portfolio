@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Flex, Box,Link, Image ,useDisclosure  } from '@chakra-ui/react'
-import { useRouter } from 'next/router'
 import { motion,AnimatePresence  } from "framer-motion"
 import { HamburgerIcon} from '@chakra-ui/icons'
 import NextLink from 'next/link'
 import ReusableDrawer from './ReusableDrawer'
+import { useMyRoute } from '../../lib/routeprovider'
 
 const MotionBox = motion(Box)
 const MotionImage = motion(Image)
@@ -89,9 +89,9 @@ const MotionHamburgerIcon = motion(HamburgerIcon)
 
 
 const BigHeader = () => {
-    const router = useRouter()
     const [showNav, setShowNav]= useState(false)
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const {section} = useMyRoute()
 
   useEffect(() => {
      window.addEventListener('scroll',() => {
@@ -100,7 +100,6 @@ const BigHeader = () => {
         }else return setShowNav(false)
      })
   }, [showNav])
-    
 
     return (
    <AnimatePresence exitBeforeEnter >
@@ -117,7 +116,7 @@ const BigHeader = () => {
             <Flex
               width={["90%","90%","90%","90%","80%"]}
               alignItems={'center'}
-              py={[1,1,1,1,3]}
+              py={[2,2,2,2,3]}
             >
                <Container
                   width={"50%"}
@@ -134,10 +133,10 @@ const BigHeader = () => {
                            whileHover="hover"
                            alt='next'
                            minWidth={"200px"} 
-                           width={"250px"} 
-                           height={["40px","40px","40px","40px","50px"]}
-                           pl={20}
-                           ml={[5,5,5,5,3]}
+                           width={"270px"} 
+                           height={["40px","40px","40px","40px","60px"]}
+                           pl={[20,20,20,0]}
+                           ml={[4,4,4,4,3]}
                            src='../../logo.svg'
                         />
                </Container>
@@ -153,16 +152,16 @@ const BigHeader = () => {
                   variants={list}
                >
                         <NextLink href={"/#home"} passHref>
-                            <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}} fontSize={router.asPath == "/" || "/#home" ? "17px" : "14px"} fontWeight={ router.asPath == "/" || "/#home" ? "bold" : "400"}>HOME</MotionLink> 
+                            <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}} _hover={{ fontSize: "18px", fontWeight:"bold"}}  fontSize={section == "/" || section == "/#home" ? "17px" : "15px"} fontWeight={ section == "/" || section == "/#home"  ? "bold" : "400"}>HOME</MotionLink> 
                         </NextLink>
                         <NextLink href="/#about" passHref>
-                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}} _hover={{ fontSize: "17px", fontWeight:"bold"}}  fontSize={router.asPath == "/#about" ? "17px" : "14px"} fontWeight={router.asPath == "/#about" ? "bold" : "400"}>ABOUT</MotionLink>
+                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}} _hover={{ fontSize: "18px", fontWeight:"bold"}}  fontSize={section == "/#about" ? "17px" : "15px"} fontWeight={section == "/#about" ? "bold" : "400"}>ABOUT</MotionLink>
                         </NextLink> 
                         <NextLink href="/#projects" passHref> 
-                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}  _hover={{ fontSize: "17px", fontWeight:"bold"}} fontSize={router.asPath == "/#projects" ? "17px" : "14px"} fontWeight={router.asPath == "/#projects" ? "bold" : "400"}>PROJECTS</MotionLink>
+                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}  _hover={{ fontSize: "18px", fontWeight:"bold"}} fontSize={section == "/#projects" ? "17px" : "15px"} fontWeight={section == "/#projects" ? "bold" : "400"}>PROJECTS</MotionLink>
                         </NextLink>
                         <NextLink href="/#contact" passHref>
-                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}} _hover={{ fontSize: "17px", fontWeight:"bold"}}  fontSize={router.asPath == "/#contact" ? "17px" : "14px"} fontWeight={router.asPath == "/#contact" ? "bold" : "400"}>CONTACT</MotionLink>
+                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}} _hover={{ fontSize: "18px", fontWeight:"bold"}}  fontSize={section == "/#contact" ? "17px" : "15px"} fontWeight={section == "/#contact" ? "bold" : "400"}>CONTACT</MotionLink>
                         </NextLink>
                </MotionContainer>
 
