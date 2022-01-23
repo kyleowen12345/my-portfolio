@@ -139,6 +139,7 @@ const BigHeader = () => {
                            ml={[4,4,4,4,3]}
                            src='../../logo.svg'
                         />
+
                </Container>
 
                <MotionContainer
@@ -152,16 +153,16 @@ const BigHeader = () => {
                   variants={list}
                >
                         <NextLink href={"/#home"} passHref>
-                            <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}} _hover={{ fontSize: "18px", fontWeight:"bold"}}  fontSize={section == "/" || section == "/#home" ? "17px" : "15px"} fontWeight={ section == "/" || section == "/#home"  ? "bold" : "400"}>HOME</MotionLink> 
+                            <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}  fontSize={ "14px"} fontWeight={ section == "/" || section == "/#home"  ? "bold" : "semibold"}>HOME</MotionLink> 
                         </NextLink>
                         <NextLink href="/#about" passHref>
-                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}} _hover={{ fontSize: "18px", fontWeight:"bold"}}  fontSize={section == "/#about" ? "17px" : "15px"} fontWeight={section == "/#about" ? "bold" : "400"}>ABOUT</MotionLink>
+                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}   fontSize={"14px"} fontWeight={section == "/#about" ? "bold" : "semibold"}>ABOUT</MotionLink>
                         </NextLink> 
                         <NextLink href="/#projects" passHref> 
-                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}  _hover={{ fontSize: "18px", fontWeight:"bold"}} fontSize={section == "/#projects" ? "17px" : "15px"} fontWeight={section == "/#projects" ? "bold" : "400"}>PROJECTS</MotionLink>
+                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}} fontSize={"14px"} fontWeight={section == "/#projects" ? "bold" : "semibold"}>PROJECTS</MotionLink>
                         </NextLink>
                         <NextLink href="/#contact" passHref>
-                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}} _hover={{ fontSize: "18px", fontWeight:"bold"}}  fontSize={section == "/#contact" ? "17px" : "15px"} fontWeight={section == "/#contact" ? "bold" : "400"}>CONTACT</MotionLink>
+                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}   fontSize={"14px"}  fontWeight={section == "/#contact" ? "bold" : "semibold"}>CONTACT</MotionLink>
                         </NextLink>
                </MotionContainer>
 
