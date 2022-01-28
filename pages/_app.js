@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import "@fontsource/poppins/600.css"
+import "@fontsource/poppins/400.css"
 import { ChakraProvider } from "@chakra-ui/react"
 import {Global,css} from '@emotion/react'
 import theme from '../styles/theme';

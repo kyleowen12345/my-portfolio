@@ -7,7 +7,8 @@ import {
     DrawerHeader, 
     DrawerBody, 
     DrawerContent,
-    Image
+    Image,
+    Text
   } from '@chakra-ui/react'
   import NextLink from 'next/link'
   import { useRouter } from 'next/router'
@@ -16,12 +17,12 @@ import {
 import { useMyRoute } from '../../lib/routeprovider'
   
 
-const MotionImage = motion(Image)
+const MotionText = motion(Text)
 const MotionCloseIcon = motion(CloseIcon)
 const MotionLink = motion(Link)
 const MotionBody = motion(DrawerBody)
 
-const imageVariants = {
+const LogoVariants = {
   hidden: {
     opacity: 0,
   },
@@ -109,17 +110,7 @@ const ReusableDrawer = ({onClose,isOpen}) => {
           width={"100%"}
           >
               <DrawerHeader  px={0}>
-                  <MotionImage 
-                    initial="hidden" 
-                    animate={"visible" } 
-                    variants={imageVariants}
-                    whileHover="hover"
-                    alt='next' 
-                    minWidth={"220px"}
-                    height={"45px"}
-                    pr={20}
-                    src='../../logo.svg'
-                  />
+                   <MotionText textShadow={"2px 1px black"} initial="hidden" animate={"visible" } variants={LogoVariants}  minWidth={"220px"} fontSize={"20px"} fontWeight={"300"}>KNOW ME.</MotionText>
               </DrawerHeader>
               <MotionCloseIcon variants={menuVariants} initial="hidden" animate="visible" whileHover="hover" onClick={onClose} cursor="pointer"/>
           </Flex>
@@ -130,19 +121,19 @@ const ReusableDrawer = ({onClose,isOpen}) => {
             initial="hidden"
             animate="visible"
             variants={list}
-            pl={10}
+           
           >
                         <NextLink href={"/"} passHref>
-                            <MotionLink onClick={onClose} my={5}   variants={item} whileHover={{scale: 1.2, originX:0}} _hover={{ fontSize: "17px", fontWeight:"bold"}} fontSize={section == "/" || section == "/#home" ? "16px" : "13px"} fontWeight={ section == "/" || section == "/#home" ? "bold" : "400"}>HOME</MotionLink> 
+                            <MotionLink onClick={onClose} my={5}   variants={item} whileHover={{scale: 1.2, originX:0}} _hover={{ fontSize: "17px", fontWeight:"bold"}} fontSize={"14px"} fontWeight={ section == "/" || section == "/#home" ? "bold" : "400"}>HOME</MotionLink> 
                         </NextLink>
                         <NextLink href="/#about" passHref>
-                           <MotionLink onClick={onClose} my={5} variants={item} whileHover={{scale: 1.2,originX:0}} _hover={{ fontSize: "17px", fontWeight:"bold"}}  fontSize={section == "/#about" ? "16px" : "13px"} fontWeight={section == "/#about" ? "bold" : "400"}>ABOUT</MotionLink>
+                           <MotionLink onClick={onClose} my={5} variants={item} whileHover={{scale: 1.2,originX:0}} _hover={{ fontSize: "17px", fontWeight:"bold"}}  fontSize={"14px"} fontWeight={section == "/#about" ? "bold" : "400"}>ABOUT</MotionLink>
                         </NextLink> 
                         <NextLink href="/#projects" passHref> 
-                           <MotionLink onClick={onClose} my={5} variants={item} whileHover={{scale: 1.2,originX:0}}  _hover={{ fontSize: "17px", fontWeight:"bold"}} fontSize={section == "/#projects" ? "16px" : "13px"} fontWeight={section == "/#projects" ? "bold" : "400"}>PROJECTS</MotionLink>
+                           <MotionLink onClick={onClose} my={5} variants={item} whileHover={{scale: 1.2,originX:0}}  _hover={{ fontSize: "17px", fontWeight:"bold"}} fontSize={"14px"} fontWeight={section == "/#projects" ? "bold" : "400"}>PROJECTS</MotionLink>
                         </NextLink>
                         <NextLink href="/#contact" passHref>
-                           <MotionLink onClick={onClose} my={5}  variants={item} whileHover={{scale: 1.2,originX:0}} _hover={{ fontSize: "17px", fontWeight:"bold"}}  fontSize={section == "/#contact" ? "16px" : "13px"} fontWeight={ section == "/#contact" ? "bold" : "400"}>CONTACT</MotionLink>
+                           <MotionLink onClick={onClose} my={5}  variants={item} whileHover={{scale: 1.2,originX:0}} _hover={{ fontSize: "17px", fontWeight:"bold"}}  fontSize={"14px"} fontWeight={ section == "/#contact" ? "bold" : "400"}>CONTACT</MotionLink>
                         </NextLink>
           </MotionBody>
         </DrawerContent>

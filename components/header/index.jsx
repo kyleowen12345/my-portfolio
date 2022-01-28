@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Flex, Box,Link, Image ,useDisclosure  } from '@chakra-ui/react'
+import { Container, Flex, Box,Link, Image ,useDisclosure,Text  } from '@chakra-ui/react'
 import { motion,AnimatePresence  } from "framer-motion"
 import { HamburgerIcon} from '@chakra-ui/icons'
 import NextLink from 'next/link'
@@ -7,7 +7,7 @@ import ReusableDrawer from './ReusableDrawer'
 import { useMyRoute } from '../../lib/routeprovider'
 
 const MotionBox = motion(Box)
-const MotionImage = motion(Image)
+const MotionText = motion(Text)
 const MotionLink = motion(Link)
 const MotionContainer = motion(Container)
 const MotionHamburgerIcon = motion(HamburgerIcon)
@@ -16,17 +16,15 @@ const MotionHamburgerIcon = motion(HamburgerIcon)
 
 
  
- const imageVariants = {
+ const LogoVariants = {
    hidden: {
      opacity: 0,
-     x: -100
    },
    visible: {
      opacity: 1,
      transition: { 
        duration: 2,
        ease: "easeInOut",
-       x: 0
      }
    },
    hover:{
@@ -112,6 +110,7 @@ const BigHeader = () => {
                justifyContent={"center"}  
                bgColor={"white"}
                zIndex={999}
+               borderBottom="2px solid black"
          >
             <Flex
               width={["90%","90%","90%","90%","80%"]}
@@ -125,21 +124,7 @@ const BigHeader = () => {
                   mx={0}
                   px={0}
                >
-                   
-                        <MotionImage 
-                           initial="hidden" 
-                           animate={"visible" } 
-                           variants={imageVariants}
-                           whileHover="hover"
-                           alt='next'
-                           minWidth={"200px"} 
-                           width={"270px"} 
-                           height={["40px","40px","40px","40px","60px"]}
-                           pl={[20,20,20,0]}
-                           ml={[4,4,4,4,3]}
-                           src='../../logo.svg'
-                        />
-
+                        <MotionText textShadow={"2px 1px black"}  initial="hidden" animate={"visible" } variants={LogoVariants} fontSize={["30px","20px","23px","25px","30px"]} fontWeight={"bold"}>KNOW ME.</MotionText>
                </Container>
 
                <MotionContainer
@@ -153,16 +138,16 @@ const BigHeader = () => {
                   variants={list}
                >
                         <NextLink href={"/#home"} passHref>
-                            <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}  fontSize={ "14px"} fontWeight={ section == "/" || section == "/#home"  ? "bold" : "semibold"}>HOME</MotionLink> 
+                            <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}  fontSize={ "15px"} fontWeight={ section == "/" || section == "/#home"  ? "bold" : "300"}>HOME</MotionLink> 
                         </NextLink>
                         <NextLink href="/#about" passHref>
-                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}   fontSize={"14px"} fontWeight={section == "/#about" ? "bold" : "semibold"}>ABOUT</MotionLink>
+                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}   fontSize={"15px"} fontWeight={section == "/#about" ? "bold" : "300"}>ABOUT</MotionLink>
                         </NextLink> 
                         <NextLink href="/#projects" passHref> 
-                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}} fontSize={"14px"} fontWeight={section == "/#projects" ? "bold" : "semibold"}>PROJECTS</MotionLink>
+                           <MotionLink   variants={item} whileHover={{scale: 1.2,originX: 0}} fontSize={"15px"} fontWeight={section == "/#projects" ? "bold" : "300"}>PROJECTS</MotionLink>
                         </NextLink>
                         <NextLink href="/#contact" passHref>
-                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}   fontSize={"14px"}  fontWeight={section == "/#contact" ? "bold" : "semibold"}>CONTACT</MotionLink>
+                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}   fontSize={"15px"}  fontWeight={section == "/#contact" ? "bold" : "300"}>CONTACT</MotionLink>
                         </NextLink>
                </MotionContainer>
 
