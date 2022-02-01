@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
-import { Container,Text,Button,Image } from '@chakra-ui/react'
+import { Container,Text,Button,Image,Box } from '@chakra-ui/react'
 import { motion,AnimatePresence  } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 import { useMyRoute } from '../../lib/routeprovider';
 
 const MotionContainer = motion(Container)
+const MotionBox = motion(Box)
 const MotionButton = motion(Button)
 
 
@@ -15,8 +16,8 @@ const imageVariants = {
   visible: {
     opacity: 1,
     transition: {
-      delay:1.4, 
-      duration: 1,
+      delay:1.6, 
+      duration: 0.5,
       ease: "easeInOut",
     }
   },
@@ -33,7 +34,7 @@ const firstContainer={
     opacity: 1,
     transition: {
       delay:0.3, 
-      duration: 1,
+      duration: 0.5,
       ease: "easeInOut",
     }
    }
@@ -45,7 +46,7 @@ const secondContainer={
    opacity: 1,
    transition: {
      delay:0.8, 
-     duration: 1,
+     duration: 0.5,
      ease: "easeInOut",
    }
   }
@@ -57,7 +58,7 @@ const thirdContainer={
    opacity: 1,
    transition: {
      delay:1.1, 
-     duration: 1,
+     duration: 0.5,
      ease: "easeInOut",
    }
   }
@@ -68,7 +69,7 @@ const fourthContainer={
    opacity: 1,
    transition: {
      delay:1.4, 
-     duration: 1,
+     duration: 0.5,
      ease: "easeInOut",
    }
   }
@@ -88,31 +89,24 @@ const Home = () => {
 
 
     return (
-        
-       <Container
-          minWidth={"100%"}
-          height={[600,600,900,900,900,950]} 
-          bgColor={"white"}
-          px={0}
-       >
-                  <Container
-                      minWidth={["100%","100%","100%","100%","80%"]}
-                      bgColor={"white"}
-                      px={0}
-                      pt={[10,10,20,20,0]}
-                      minHeight={700} 
-                      display={"flex"}
-                      flexDirection={["column","column","column","column","row"]}
-                      alignItems={"center"}
-                      id='home' 
-                      ref={ref}
-                  >
-                        <MotionContainer
-                          mx={[5,10,5,0]}
-                          minWidth={"50%"}
-                          px={[5,5,5,0]}
-                        >
-                                <MotionContainer
+        <Box 
+          width={["90%","90%","90%","90%","80%"]}
+          height={["650px","650px","850px","800px","950px"]}
+          mx={"auto"}
+          maxWidth={"1600px"}
+          display={"flex"}
+          alignItems={"center"}
+          flexDirection={["column","column","column","column","row"]}
+          id="home"
+          ref={ref}
+        >
+            <MotionBox
+                mx={0}
+                width={["100%","100%","100%","100%","50%"]}
+                px={0}
+                pt={[10,10,10,20,0]}
+            >
+                                <MotionBox
                                     display={"flex"}
                                     alignItems={"center"}
                                     justifyContent={"flex-start"}
@@ -124,22 +118,22 @@ const Home = () => {
                                     variants={firstContainer}
                                     >
                                             <Text  
-                                               width={["20%","20%","20%","20%","20%","15%"]} 
+                                               width={["20%","20%","15%","15%","20%","15%"]} 
                                                fontSize={["1rem","1rem","1.1rem","1.3rem","1.3rem","1.563rem"]} 
                                                fontWeight={"bold"}
                                             >
                                               HELLO
                                             </Text>
-                                            <Container  
-                                                width={["80%","80%","80%","80%","80%","85%"]}  
+                                            <Box  
+                                                width={["80%","80%","85%","85%","80%","85%"]}  
                                                 border={["1px solid black","1px solid black","1px solid black","2px solid black"]} 
                                                 borderRadius={5} 
                                                 mx={0}
-                                            ></Container>
+                                            ></Box>
 
-                                    </MotionContainer>
+                                    </MotionBox>
 
-                                    <MotionContainer
+                                    <MotionBox
                                       px={0}
                                       mb={[5,5,10]}
                                       mx={0}
@@ -161,9 +155,9 @@ const Home = () => {
                                               FULL STACK WEB DEVELOPER
                                             </Text>
 
-                                    </MotionContainer>
+                                    </MotionBox>
 
-                                    <MotionContainer
+                                    <MotionBox
                                         px={0}
                                         display={"flex"}
                                         alignItems={"center"}
@@ -200,16 +194,16 @@ const Home = () => {
                                                 GET CV
                                             </MotionButton>
 
-                                    </MotionContainer>
-                        </MotionContainer>
+                                    </MotionBox>
+                        </MotionBox>
                             
-                        <MotionContainer
-                            minWidth={"50%"}
+                        <MotionBox
+                            mx={0}
+                            width={["100%","100%","100%","100%","50%"]}
+                            px={0}
                             display={"flex"}
                             alignItems={"center"}
                             justifyContent={"right"}
-                            mx={0}
-                            px={[5,5,5,0]}
                             initial="hidden" 
                             animate={inView ? "visible" : "hidden"} 
                             variants={imageVariants}
@@ -217,16 +211,14 @@ const Home = () => {
                                   <Image  
                                     src='../../home.png' 
                                     alt='next' 
-                                    width={"100%"} 
-                                    height={"100%"}
-                                    maxWidth="1000px"
-                                    maxHeight="1000px"
+                                    width={["100%","100%","100%","90%"]} 
+                                    height={["100%","100%","100%","90%"]}
+                                    maxWidth="800px"
+                                    maxHeight="800px"
+                                    objectFit={"contain"}
                                   />
-                        </MotionContainer>
-                            
-
-                  </Container>
-       </Container> 
+                        </MotionBox> 
+        </Box> 
     )
 }
 

@@ -19,17 +19,21 @@ const About = () => {
         }
       },[inView])
     return (
+      <Box
+         height={[3200,3200,2800,2500,2400]}
+         width={"100%"}
+      >
         <Box 
-            // height={[1500,1500,1500,1600]}
-            height={[2300,2300,2000,2200,2000]}
+            height={[3000,3000,2600,2200,2200]}
             width={["100%","100%","100%","100%","80%"]}
             mx="auto"
             ref={ref}
             id="about"
+            maxWidth={"1600px"}
         >   
                 <Box 
                   width={"100%"}
-                  height={[700,1100,950,1200,900]}
+                  height={["40%","40%","50%"]}
                   display={"flex"}
                   alignItems={"center"}
                   flexDirection={["column","column","column","column","row"]}
@@ -40,8 +44,11 @@ const About = () => {
                     <AboutImage />
                     <AboutDescription />
                 </Box>
+                <Box width={["100%"]} display={["block","block","block","block","none"]} height={100}></Box>
                 <Services/>  
         </Box>
+      </Box>
+       
     )
 }
 

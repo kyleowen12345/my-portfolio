@@ -11,10 +11,13 @@ import { Box, Spacer,Text } from '@chakra-ui/react'
 
 export default function Balay() {
   return (
-    <Box  width={"100%"}  mr="auto" ml="auto"   display="flex" flexDirection="column" justifyContent="center">
+    <Box width={"100%"}  mr="auto" ml="auto"   display="flex" flexDirection="column" justifyContent="center">
         <Home/>
+        <Box width={"100%"} height={50}></Box>
         <About/>
+        <Box width={"100%"} height={100}></Box>
         <Projects/>
+        <Box width={"100%"} height={100}></Box>
         <Contact/>
     </Box>
   )

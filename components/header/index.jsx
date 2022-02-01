@@ -23,7 +23,7 @@ const MotionHamburgerIcon = motion(HamburgerIcon)
    visible: {
      opacity: 1,
      transition: { 
-       duration: 2,
+       duration: 1,
        ease: "easeInOut",
      }
    },
@@ -73,7 +73,7 @@ const MotionHamburgerIcon = motion(HamburgerIcon)
   visible: {
     opacity: 1,
     transition: { 
-      duration: 2,
+      duration: 0.8,
       ease: "easeInOut",
     }
   },
@@ -90,6 +90,25 @@ const BigHeader = () => {
     const [showNav, setShowNav]= useState(false)
     const { isOpen, onOpen, onClose } = useDisclosure()
     const {section} = useMyRoute()
+
+    // const navRoutes = [
+    //   {
+    //     name:'HOME',
+    //     route:"/#home"
+    //   },
+    //   {
+    //     name:'ABOUT',
+    //     route:"/#about"
+    //   },
+    //   {
+    //     name:'PROJECTS',
+    //     route:"/#projects"
+    //   },
+    //   {
+    //     name:'CONTACT',
+    //     route:"/#contact"
+    //   }
+    //   ]
 
   useEffect(() => {
      window.addEventListener('scroll',() => {
@@ -112,12 +131,14 @@ const BigHeader = () => {
                zIndex={999}
                borderBottom="2px solid black"
          >
-            <Flex
+            <Box
               width={["90%","90%","90%","90%","80%"]}
+              maxWidth={"1600px"}
+              display={"flex"}
               alignItems={'center'}
               py={[2,2,2,2,3]}
             >
-               <Container
+               <Box
                   width={"50%"}
                   display={"flex"}
                   justifyContent={"left"}
@@ -125,9 +146,9 @@ const BigHeader = () => {
                   px={0}
                >
                         <MotionText textShadow={"2px 1px black"}  initial="hidden" animate={"visible" } variants={LogoVariants} fontSize={["30px","20px","23px","25px","30px"]} fontWeight={"bold"}>KNOW ME.</MotionText>
-               </Container>
+               </Box>
 
-               <MotionContainer
+               <MotionBox
                   width={"50%"}
                   display={["none","none","none","none","flex"]}
                   justifyContent={"space-between"}
@@ -138,20 +159,34 @@ const BigHeader = () => {
                   variants={list}
                >
                         <NextLink href={"/#home"} passHref>
-                            <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}  fontSize={ "15px"} fontWeight={ section == "/" || section == "/#home"  ? "bold" : "300"}>HOME</MotionLink> 
+                            <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}  fontSize={ "14px"} fontWeight={ section == "/" || section == "/#home"  ? "bold" : "300"}>HOME</MotionLink> 
                         </NextLink>
                         <NextLink href="/#about" passHref>
-                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}   fontSize={"15px"} fontWeight={section == "/#about" ? "bold" : "300"}>ABOUT</MotionLink>
+                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}   fontSize={"14px"} fontWeight={section == "/#about" ? "bold" : "300"}>ABOUT</MotionLink>
                         </NextLink> 
                         <NextLink href="/#projects" passHref> 
-                           <MotionLink   variants={item} whileHover={{scale: 1.2,originX: 0}} fontSize={"15px"} fontWeight={section == "/#projects" ? "bold" : "300"}>PROJECTS</MotionLink>
+                           <MotionLink   variants={item} whileHover={{scale: 1.2,originX: 0}} fontSize={"14px"} fontWeight={section == "/#projects" ? "bold" : "300"}>PROJECTS</MotionLink>
                         </NextLink>
                         <NextLink href="/#contact" passHref>
-                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}   fontSize={"15px"}  fontWeight={section == "/#contact" ? "bold" : "300"}>CONTACT</MotionLink>
+                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}   fontSize={"14px"}  fontWeight={section == "/#contact" ? "bold" : "300"}>CONTACT</MotionLink>
                         </NextLink>
-               </MotionContainer>
 
-               <Container 
+                        {/* {
+                          navRoutes?.map(i=>(
+                             <NextLink href={i.route} key={i.route} passHref>
+                                     <MotionLink
+                                         variants={item}
+                                         fontSize={"14px"}
+                                         fontWeight={section == i.route  ? "bold": "300"}
+                                     >
+                                          {i.name}
+                                     </MotionLink>
+                             </NextLink>
+                          ))
+                        } */}
+               </MotionBox>
+
+               <Box 
                    width={"50%"}
                    display={["flex","flex","flex","flex","none"]}
                    justifyContent={"right"}
@@ -159,10 +194,10 @@ const BigHeader = () => {
                    onClick={isOpen ? onClose : onOpen}
                >
                         <MotionHamburgerIcon variants={menuVariants} initial="hidden" animate="visible" whileHover="hover" w={6} h={6}/>
-               </Container>
+               </Box>
 
                <ReusableDrawer isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
-            </Flex>
+            </Box>
          </MotionBox> 
      </AnimatePresence>
     )

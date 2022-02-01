@@ -59,19 +59,18 @@ const AboutDescription = () => {
   return (
       <Box
          width={["90%","90%","90%","90%","50%"]}
-         height={["70%","70%","60%","70%","90%"]}
+         height={["90%","90%","60%","70%","90%"]}
          mx={["auto","auto","auto","auto",0]}
          
       >
             <MotionBox
-                width={["100%","100%","100%","100%","97%"]}
+                width={"100%"}
                 maxWidth={"800px"}
                 height="100%"
-                px={5}
-                ml={[0,0,0,0,5]}
                 display="flex"
                 flexDirection="column"
                 bgColor={"white"}
+                justifyContent={"center"}
                 ref={ref}
             >
                 <MotionBox
@@ -101,12 +100,14 @@ const AboutDescription = () => {
                   my={5}
                 >
                        <Text  
-                          fontSize={["14px","14px","14px","16px","18px"]}
+                          lineHeight={["8","8","8","10"]}
+                          fontSize={["15px","15px","15px","16px","16px","18px"]}
                        >
                           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro dolores eum tempora amet optio iste error eaque! Eum, libero, eos ipsum laudantium beatae sed soluta facilis, harum natus eaque provident!
                        </Text>
-                       <Text  
-                           fontSize={["14px","14px","14px","16px","18px"]}
+                       <Text 
+                           lineHeight={["8","8","8","10"]}
+                           fontSize={["15px","15px","15px","16px","16px","18px"]}
                        >
                           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime provident perferendis a excepturi, atque repellendus ipsum suscipit eligendi minima rerum voluptas voluptates adipisci explicabo tempora numquam soluta modi dignissimos sit!
                        </Text>
@@ -119,7 +120,8 @@ const AboutDescription = () => {
                 >
                        <Text 
                           mb={5}  
-                          fontSize={["14px","14px","14px","16px","18px"]}
+                          fontSize={["15px","15px","15px","16px","16px","18px"]}
+                          lineHeight={["8","8","8","10"]}
                        >
                           Here are a few technologies I’ve been working with recently:
                        </Text>
