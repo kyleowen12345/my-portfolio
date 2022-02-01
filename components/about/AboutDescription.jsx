@@ -4,6 +4,9 @@ import { motion,AnimatePresence  } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 
 const MotionBox = motion(Box)
+const MotionText = motion(Text)
+
+
 
 const firstContainer={
    hidden:{opacity:0},
@@ -74,24 +77,27 @@ const AboutDescription = () => {
                 ref={ref}
             >
                 <MotionBox
-                  initial={"hidden"}
-                  animate={inView ? "visible":"hidden"}
-                  variants={firstContainer}
+                  
                 >
-                       <Text  
+                       <MotionText  
                           textShadow={"1px 1px black"} 
                           fontSize={["14px","14px","14px","16px","18px"]} 
                           fontWeight={"normal"}
+                          initial={{opacity:1}}
+                          animate={{opacity:1}}
                           >
                              ABOUT ME
-                       </Text>
-                       <Text 
+                       </MotionText>
+                       <MotionText 
                           textShadow={"1px 2px black"}
                           fontSize={["23px","23px","25px","27px","30px"]} 
                           fontWeight={"semibold"}
+                          initial={"hidden"}
+                          animate={inView ? "visible":"hidden"}
+                          variants={firstContainer}
                           >
                              PERSONAL DETAILS
-                       </Text>
+                       </MotionText>
                 </MotionBox>
                 <MotionBox 
                   initial={"hidden"}

@@ -101,9 +101,9 @@ const Services = () => {
            flexDirection={"column"} 
            alignItems={"center"}
           //  px={5}
-           initial="hidden"
-           animate={inView ? "visible" : "hidden"}
-           variants={servicesVariants}
+          //  initial="hidden"
+          //  animate={inView ? "visible" : "hidden"}
+          //  variants={servicesVariants}
            
          >
            <Text  

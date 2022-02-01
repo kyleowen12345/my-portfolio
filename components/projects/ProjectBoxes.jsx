@@ -78,7 +78,7 @@ const firstContainer={
        opacity: 1,
        transition:
        {
-          duration: 2,
+          duration: 1.5,
           ease: "easeInOut",
         
        } 

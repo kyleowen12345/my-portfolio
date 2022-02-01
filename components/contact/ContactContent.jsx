@@ -38,7 +38,7 @@ const item = {
      opacity: 1,
      transition:
      {
-        duration: 2,
+        duration:0.5,
         ease: "easeInOut",
       
      } 

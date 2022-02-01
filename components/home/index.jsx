@@ -4,7 +4,6 @@ import { motion,AnimatePresence  } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 import { useMyRoute } from '../../lib/routeprovider';
 
-const MotionContainer = motion(Container)
 const MotionBox = motion(Box)
 const MotionButton = motion(Button)
 
@@ -17,7 +16,7 @@ const imageVariants = {
     opacity: 1,
     transition: {
       delay:1.6, 
-      duration: 0.5,
+      duration: 0.7,
       ease: "easeInOut",
     }
   },
@@ -34,7 +33,7 @@ const firstContainer={
     opacity: 1,
     transition: {
       delay:0.3, 
-      duration: 0.5,
+      duration: 0.7,
       ease: "easeInOut",
     }
    }
@@ -45,8 +44,8 @@ const secondContainer={
   visible:{
    opacity: 1,
    transition: {
-     delay:0.8, 
-     duration: 0.5,
+     delay:0.7, 
+     duration: 0.7,
      ease: "easeInOut",
    }
   }
@@ -57,8 +56,8 @@ const thirdContainer={
   visible:{
    opacity: 1,
    transition: {
-     delay:1.1, 
-     duration: 0.5,
+     delay:1, 
+     duration: 0.7,
      ease: "easeInOut",
    }
   }
@@ -68,8 +67,8 @@ const fourthContainer={
   visible:{
    opacity: 1,
    transition: {
-     delay:1.4, 
-     duration: 0.5,
+     delay:1.5, 
+     duration: 1,
      ease: "easeInOut",
    }
   }
@@ -164,11 +163,12 @@ const Home = () => {
                                         justifyContent={"space-between"}
                                         mx={0}
                                         flexDirection={["column","column","column","row"]}
+                                        initial={"hidden"} 
+                                        animate={inView ? "visible" : "hidden"} 
+                                        variants={thirdContainer}
                                     >
                                             <MotionButton 
-                                                initial={"hidden"} 
-                                                animate={inView ? "visible" : "hidden"} 
-                                                variants={thirdContainer} 
+                                                 
                                                 boxShadow={"0px 7px 5px 0px #2C2C2C"}  
                                                 width={["100%","100%","100%","45%"]} 
                                                 mb={[5,5,5,0]} 
@@ -180,9 +180,9 @@ const Home = () => {
                                               KNOW MORE
                                             </MotionButton>
                                             <MotionButton 
-                                                initial={"hidden"} 
-                                                animate={inView ? "visible" : "hidden"} 
-                                                variants={fourthContainer} 
+                                                // initial={"hidden"} 
+                                                // animate={inView ? "visible" : "hidden"} 
+                                                // variants={fourthContainer} 
                                                 boxShadow={"0px 7px 5px 0px #2C2C2C"}   
                                                 width={["100%","100%","100%","45%"]} 
                                                 fontSize={["0.8rem","0.8rem","1rem"]} 
