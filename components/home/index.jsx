@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
-import { Container,Text,Button,Image,Box } from '@chakra-ui/react'
+import { Container,Text,Button,Image,Box,Link } from '@chakra-ui/react'
 import { motion,AnimatePresence  } from "framer-motion"
+import { useRouter } from 'next/router'
 import { useInView } from 'react-intersection-observer';
 import { useMyRoute } from '../../lib/routeprovider';
 
@@ -75,6 +76,7 @@ const fourthContainer={
 }
 
 const Home = () => {
+     const router = useRouter()
      const { ref, inView, entry } = useInView({
       threshold: 0,
     });
@@ -86,7 +88,45 @@ const Home = () => {
       }
     },[inView])
 
+    const getCV = ()=>{
+      fetch('https://file-examples-com.github.io/uploads/2017/10/file-sample_150kB.pdf', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/pdf',
+        },
+  })
+  .then((response) => response.blob())
+  .then((blob) => {
+    // Create blob link to download
+    const url = window.URL.createObjectURL(
+      new Blob([blob]),
+    );
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute(
+      'download',
+      `FileName.pdf`,
+    );
 
+    // Append to html link element page
+    document.body.appendChild(link);
+
+    // Start download
+    link.click();
+
+    // Clean up and remove the link
+    link.parentNode.removeChild(link);
+  });
+//   .then((response) => {
+//     const url = window.URL
+//     .createObjectURL(new Blob([response.data]));
+//            const link = document.createElement('a');
+//            link.href = url;
+//            link.setAttribute('download', 'image.jpg');
+//            document.body.appendChild(link);
+//            link.click();
+// })
+}
     return (
         <Box 
           width={["90%","90%","90%","90%","80%"]}
@@ -167,8 +207,8 @@ const Home = () => {
                                         animate={inView ? "visible" : "hidden"} 
                                         variants={thirdContainer}
                                     >
+                                      
                                             <MotionButton 
-                                                 
                                                 boxShadow={"0px 7px 5px 0px #2C2C2C"}  
                                                 width={["100%","100%","100%","45%"]} 
                                                 mb={[5,5,5,0]} 
@@ -176,23 +216,30 @@ const Home = () => {
                                                 bgColor={"black"} 
                                                 color="white" 
                                                 _hover={{bgColor:"white", color:"black",border:"2px solid black"}}
+                                                onClick={()=> router.push('/#about')}
                                             >
                                               KNOW MORE
                                             </MotionButton>
-                                            <MotionButton 
-                                                // initial={"hidden"} 
-                                                // animate={inView ? "visible" : "hidden"} 
-                                                // variants={fourthContainer} 
-                                                boxShadow={"0px 7px 5px 0px #2C2C2C"}   
-                                                width={["100%","100%","100%","45%"]} 
-                                                fontSize={["0.8rem","0.8rem","1rem"]} 
-                                                bgColor={"white"} 
-                                                color={"black"} 
-                                                border={"2px solid black"} 
-                                                _hover={{bgColor:"black", color:"white"}}
+
+                                            <Link
+                                               width={["100%","100%","100%","45%"]}
+                                               href='../../Images.pdf'
+                                               download={"sample pdf"}
                                             >
-                                                GET CV
-                                            </MotionButton>
+                                                <MotionButton 
+                                                    boxShadow={"0px 7px 5px 0px #2C2C2C"}   
+                                                    width={"100%"} 
+                                                    fontSize={["0.8rem","0.8rem","1rem"]} 
+                                                    bgColor={"white"} 
+                                                    color={"black"} 
+                                                    border={"2px solid black"} 
+                                                    _hover={{bgColor:"black", color:"white"}}
+                                                >
+                                                    GET CV
+                                                </MotionButton>
+                                            </Link>
+                                            
+                                            
 
                                     </MotionBox>
                         </MotionBox>

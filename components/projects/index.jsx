@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react' 
-import { Container,Text,Box } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import { useInView } from 'react-intersection-observer';
 import { useMyRoute } from '../../lib/routeprovider'
 import ProjectIntro from './ProjectIntro';
@@ -26,7 +26,6 @@ const Projects = () => {
           ref={ref}
           id="projects"
           maxWidth={"1600px"}
-          // border="1px solid black"
        >
            <ProjectIntro/>
            <ProjectBoxes/>

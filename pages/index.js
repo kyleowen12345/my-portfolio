@@ -12,6 +12,11 @@ import { Box, Spacer,Text } from '@chakra-ui/react'
 export default function Balay() {
   return (
     <Box width={"100%"}  mr="auto" ml="auto"   display="flex" flexDirection="column" justifyContent="center">
+       <Head>
+        <title>KYLE OWEN GA</title>
+        <meta name="description" content="Get to know me" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
         <Home/>
         <Box width={"100%"} height={50}></Box>
         <About/>

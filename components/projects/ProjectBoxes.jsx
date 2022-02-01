@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box,Image,Text,Icon,Stack,Grid } from '@chakra-ui/react'
-import { motion,AnimatePresence  } from "framer-motion"
+import { motion  } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 import {FiExternalLink} from 'react-icons/fi'
 import {AiOutlineGithub} from 'react-icons/ai'
