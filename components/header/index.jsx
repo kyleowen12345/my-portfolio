@@ -72,11 +72,9 @@ const MotionIcon = motion(Icon)
  const menuVariants = {
   hidden: {
     scale: 0,
-    rotation: 0.02
   },
   visible: {
     scale: 1,
-    rotation: 0.02,
     transition: { 
       duration: 0.8,
       ease: "easeInOut",
