@@ -41,8 +41,9 @@ const About = () => {
                   mx="auto"
                  
                 >
-                    <AboutImage />
                     <AboutDescription />
+                    <AboutImage />
+                    
                 </Box>
                 <Box width={["100%"]} display={["block","block","block","block","none"]} height={100}></Box>
                 <Services/>  

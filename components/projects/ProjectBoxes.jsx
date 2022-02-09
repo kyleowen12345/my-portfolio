@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box,Image,Text,Icon,Stack,Grid } from '@chakra-ui/react'
+import { Box,Image,Text,Icon,Stack,Grid,Link } from '@chakra-ui/react'
 import { motion  } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
+import NextLink from 'next/link'
 import {FiExternalLink} from 'react-icons/fi'
 import {AiOutlineGithub} from 'react-icons/ai'
 
@@ -130,12 +131,11 @@ const ProjectBoxes = () => {
             //  1
              <MotionStack 
                 key={i.projectName}
-                border="2px solid black"
+                border="2px solid #64FED9"
                 width={"100%"}
                 height={["80%","80%","80%","100%","100%"]}
                 maxHeight={[800,800,800,400]}
                 borderRadius={10}
-                boxShadow={"0px 10px 5px 0px black"}
                 display={"flex"}
                 flexDirection={["column","column","column","row"]}
                 alignItems={"center"}
@@ -148,9 +148,8 @@ const ProjectBoxes = () => {
                         <MotionBox
                             width={["90%","90%","90%","40%","40%"]}
                             height={["60%","60%","60%","90%","90%"]}
-                            border="2px solid black"
+                            border="2px solid #64FED9"
                             borderRadius={10}
-                            boxShadow={"1px 7px 3px 0px black"}
                             initial="hidden"
                             animate={inView ? "visible":"hidden"}
                             variants={firstContainer}
@@ -163,6 +162,7 @@ const ProjectBoxes = () => {
                                 frameBorder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowFullScreen
+                                style={{borderRadius:10}}
                              >
 
                              </iframe>
@@ -171,7 +171,7 @@ const ProjectBoxes = () => {
                         <MotionStack
                             width={["90%","90%","90%","55%"]}
                             height={["80%","80%","80%","90%","90%"]}
-                            border="2px solid black"
+                            border="2px solid #64FED9"
                             borderRadius={10}
                             boxShadow={"1px 7px 3px 0px black"}
                             p={5}
@@ -195,6 +195,7 @@ const ProjectBoxes = () => {
                                     >
                                         <Text
                                           fontSize={["14px","14px","14px","16px","17px"]}
+                                          color="#CCD6F6"
                                         >
                                             Featured Project
                                         </Text> 
@@ -203,22 +204,29 @@ const ProjectBoxes = () => {
                                             display={"flex"}
                                             justifyContent={"space-between"}
                                         >
+                                          <Link href={i.repositoryLink} target="_blank" >
                                             <Icon 
-                                                as={AiOutlineGithub} 
-                                                h={[4,5,6]} 
-                                                w={[4,5,6]} 
-                                            />
+                                                  as={AiOutlineGithub} 
+                                                  h={[4,5,6]} 
+                                                  w={[4,5,6]}
+                                                  color="#8892B0" 
+                                              />
+                                          </Link>
+
+                                          <Link href={i.externalLink} target="_blank" >  
                                             <Icon 
                                                 as={FiExternalLink}  
                                                 h={[4,5,6]} 
                                                 w={[4,5,6]} 
+                                                color="#8892B0"
                                             />
+                                          </Link>  
                                         </Box>
                                     </Box>
                                     <Text 
                                         fontSize={["19px","19px","21px","23px","25px"]}
-                                        textShadow={"1px 1px black"}
-                                        fontWeight="semibold"
+                                        // fontWeight="semibold"
+                                        color={"#64FED9"}
                                     >
                                         {i.projectName}
                                     </Text>
@@ -229,7 +237,9 @@ const ProjectBoxes = () => {
                              initial="hidden"
                              animate={inView ? "visible":"hidden"}
                              variants={thirdContainer}
+                             color="#CCD6F6"
                              >
+                               
                                 {i.projectDescription}
                             </MotionText>
                             {/* 5 */}
@@ -239,6 +249,7 @@ const ProjectBoxes = () => {
                                initial="hidden"
                                animate={inView ? "visible":"hidden"}
                                variants={fourthContainer}
+                               color="#8892B0"
                             >
                                 {i.projectTools.map(e=>(
                                     <Text  fontSize={["12px","12px","14px","16px"]} fontWeight={"bold"} key={e}>

@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Flex, Box,Link, Image ,useDisclosure,Text  } from '@chakra-ui/react'
+import { Container, Flex, Box,Link, Image ,useDisclosure,Text,Icon,Button  } from '@chakra-ui/react'
 import { motion,AnimatePresence  } from "framer-motion"
 import { HamburgerIcon} from '@chakra-ui/icons'
 import NextLink from 'next/link'
 import ReusableDrawer from './ReusableDrawer'
 import { useMyRoute } from '../../lib/routeprovider'
+import {BiMenuAltRight} from 'react-icons/bi'
+
+
 
 const MotionBox = motion(Box)
 const MotionText = motion(Text)
 const MotionLink = motion(Link)
-const MotionContainer = motion(Container)
-const MotionHamburgerIcon = motion(HamburgerIcon)
+const MotionButton = motion(Button)
+const MotionIcon = motion(Icon)
 
 
 
@@ -39,11 +42,11 @@ const MotionHamburgerIcon = motion(HamburgerIcon)
      opacity: 1,
      transition: {
        when: "beforeChildren",
-       staggerChildren: 0.5,
+       staggerChildren: 0.3,
      },
    },
    hidden: {
-     opacity: 0,
+    opacity: 0,
      transition: {
        when: "afterChildren",
      },
@@ -52,26 +55,26 @@ const MotionHamburgerIcon = motion(HamburgerIcon)
 
  const item = {
    visible: { 
-      opacity: 1,
+      y: 0,
       transition:
       {
-         duration: 1,
+         duration: 0.4,
          ease: "easeInOut",
        
       } 
    },
    hidden: { 
-      opacity: 0,
+    y: -200,
    },
    
  }
 
  const menuVariants = {
   hidden: {
-    opacity: 0,
+    scale: 0,
   },
   visible: {
-    opacity: 1,
+    scale: 1,
     transition: { 
       duration: 0.8,
       ease: "easeInOut",
@@ -80,7 +83,7 @@ const MotionHamburgerIcon = motion(HamburgerIcon)
   hover:{
      scale: 1.2, 
      textShadow: "0px 0px 8px rgb(255,255,255)",
-     boxShadow: "0px 0px 8px rgb(255,255,255)"
+     boxShadow: "0px 0px 8px rgb(255,255,255)",
     }
 };
 
@@ -91,24 +94,6 @@ const BigHeader = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const {section} = useMyRoute()
 
-    // const navRoutes = [
-    //   {
-    //     name:'HOME',
-    //     route:"/#home"
-    //   },
-    //   {
-    //     name:'ABOUT',
-    //     route:"/#about"
-    //   },
-    //   {
-    //     name:'PROJECTS',
-    //     route:"/#projects"
-    //   },
-    //   {
-    //     name:'CONTACT',
-    //     route:"/#contact"
-    //   }
-    //   ]
 
   useEffect(() => {
      window.addEventListener('scroll',() => {
@@ -119,37 +104,41 @@ const BigHeader = () => {
   }, [showNav])
 
     return (
-   <AnimatePresence exitBeforeEnter >
+   <AnimatePresence exitBeforeEnter>
          <MotionBox
-               boxShadow={showNav ? 'dark-lg' : 'md'}
+               boxShadow={showNav ? '2xl' : 'lg'}
                position="sticky"
                top={0}
                width={"100%"} 
                display={"flex"} 
                justifyContent={"center"}  
-               bgColor={"white"}
+               bgColor={"#0A192F"}
                zIndex={999}
-               borderBottom="2px solid black"
          >
             <Box
               width={["90%","90%","90%","90%","80%"]}
               maxWidth={"1600px"}
               display={"flex"}
               alignItems={'center'}
-              py={[2,2,2,2,3]}
+              py={[2,3,3,4,5]}
             >
                <Box
-                  width={"50%"}
+                  width={"60%"}
                   display={"flex"}
                   justifyContent={"left"}
                   mx={0}
                   px={0}
                >
-                        <MotionText textShadow={"2px 1px black"}  initial="hidden" animate={"visible" } variants={LogoVariants} fontSize={["30px","20px","23px","25px","30px"]} fontWeight={"bold"}>KNOW ME.</MotionText>
+                        <Image
+                            src="../../my_logo.png"
+                            alt="portfolio_logo"
+                            height={["30px","40px","40px","50px"]}
+                            objectFit="contain"
+                        />
                </Box>
 
                <MotionBox
-                  width={"50%"}
+                  width={"40%"}
                   display={["none","none","none","none","flex"]}
                   justifyContent={"space-between"}
                   mr={0}
@@ -157,44 +146,87 @@ const BigHeader = () => {
                   initial="hidden"
                   animate="visible"
                   variants={list}
+                  color={"#CCD6F6" }
+                  fontSize={ "13px"} 
+                  alignItems="center"
+                  minWidth="520px"
                >
                         <NextLink href={"/#home"} passHref>
-                            <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}  fontSize={ "14px"} fontWeight={ section == "/" || section == "/#home"  ? "bold" : "300"}>HOME</MotionLink> 
-                        </NextLink>
-                        <NextLink href="/#about" passHref>
-                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}   fontSize={"14px"} fontWeight={section == "/#about" ? "bold" : "300"}>ABOUT</MotionLink>
-                        </NextLink> 
-                        <NextLink href="/#projects" passHref> 
-                           <MotionLink   variants={item} whileHover={{scale: 1.2,originX: 0}} fontSize={"14px"} fontWeight={section == "/#projects" ? "bold" : "300"}>PROJECTS</MotionLink>
-                        </NextLink>
-                        <NextLink href="/#contact" passHref>
-                           <MotionLink  variants={item} whileHover={{scale: 1.2,originX: 0}}   fontSize={"14px"}  fontWeight={section == "/#contact" ? "bold" : "300"}>CONTACT</MotionLink>
+                            <MotionLink  
+                              variants={item}
+                              whileHover={{color:"#64FED9"}}   
+                              fontWeight={ "bold"}
+                            >
+                              HOME
+                            </MotionLink> 
                         </NextLink>
 
-                        {/* {
-                          navRoutes?.map(i=>(
-                             <NextLink href={i.route} key={i.route} passHref>
-                                     <MotionLink
-                                         variants={item}
-                                         fontSize={"14px"}
-                                         fontWeight={section == i.route  ? "bold": "300"}
-                                     >
-                                          {i.name}
-                                     </MotionLink>
-                             </NextLink>
-                          ))
-                        } */}
+                        <NextLink href="/#about" passHref>
+                           <MotionLink  
+                             variants={item} 
+                             whileHover={{color:"#64FED9"}}    
+                             fontWeight={"bold"}
+                           >
+                             ABOUT
+                           </MotionLink>
+                        </NextLink> 
+
+                        <NextLink href="/#projects" passHref> 
+                           <MotionLink   
+                             variants={item} 
+                             whileHover={{color:"#64FED9"}}  
+                             fontWeight={"bold"}
+                           >
+                             PROJECTS
+                           </MotionLink>
+                        </NextLink>
+
+                        <NextLink href="/#contact" passHref>
+                           <MotionLink 
+                            variants={item}   
+                            whileHover={{color:"#64FED9"}}    
+                            fontWeight={"bold"}
+                            >
+                              CONTACT
+                            </MotionLink>
+                        </NextLink>
+                        <Link
+                            href='../../Images.pdf'
+                            download={"Resume pdf"}
+                            style={{ textDecoration: 'none' }}
+                        >
+                            <MotionButton
+                              bgColor={"#0A192F"}
+                              color={"#64FED9"}
+                              border="2px solid #64FED9"
+                              fontWeight={"300"}
+                              variants={item}
+                              _hover={{bgColor:"#64FED9",color:"#0A192F"}}
+                            >
+                              GET CV
+                            </MotionButton>
+                        </Link>
+
                </MotionBox>
 
-               <Box 
+               <MotionBox 
                    width={"50%"}
                    display={["flex","flex","flex","flex","none"]}
                    justifyContent={"right"}
                    px={0}
                    onClick={isOpen ? onClose : onOpen}
+                   variants={menuVariants} 
+                   initial="hidden" 
+                   animate="visible" 
+                  //  whileHover="hover" 
                >
-                        <MotionHamburgerIcon variants={menuVariants} initial="hidden" animate="visible" whileHover="hover" w={6} h={6}/>
-               </Box>
+                        <Icon
+                          color={"#64FED9"}
+                          as={BiMenuAltRight}
+                          w={10} 
+                          h={10}
+                        />
+               </MotionBox>
 
                <ReusableDrawer isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
             </Box>

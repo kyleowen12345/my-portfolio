@@ -7,76 +7,78 @@ import { useMyRoute } from '../../lib/routeprovider';
 
 const MotionBox = motion(Box)
 const MotionButton = motion(Button)
+const MotionText = motion(Text)
+const MotionImage = motion(Image)
 
 
 const imageVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
+  hidden:{opacity:0},
+  visible:{
     opacity: 1,
     transition: {
-      delay:1.6, 
+      delay:2.3, 
       duration: 0.7,
-      ease: "easeInOut",
     }
   },
-  hover:{
-     scale: 1.2, 
-     textShadow: "0px 0px 8px rgb(255,255,255)",
-     boxShadow: "0px 0px 8px rgb(255,255,255)"
-    }
 };
 
 const firstContainer={
-   hidden:{opacity:0},
+   hidden:{scale:0},
    visible:{
-    opacity: 1,
+    scale: 1,
     transition: {
-      delay:0.3, 
-      duration: 0.7,
-      ease: "easeInOut",
+      delay:0.2, 
+      duration: 0.4,
     }
    }
 }
 
 const secondContainer={
-  hidden:{opacity:0},
+  hidden:{scale:0},
   visible:{
-   opacity: 1,
-   transition: {
-     delay:0.7, 
-     duration: 0.7,
-     ease: "easeInOut",
+   scale: 1,
+    transition: {
+      delay:0.6, 
+      duration: 0.4,
+    }
    }
-  }
 }
 
 const thirdContainer={
-  hidden:{opacity:0},
+  hidden:{scale:0},
   visible:{
-   opacity: 1,
-   transition: {
-     delay:1, 
-     duration: 0.7,
-     ease: "easeInOut",
+   scale: 1,
+    transition: {
+      delay:1, 
+      duration: 0.4,
+    }
    }
-  }
 }
 const fourthContainer={
-  hidden:{opacity:0},
+  hidden:{scale:0},
   visible:{
-   opacity: 1,
+   scale: 1,
    transition: {
-     delay:1.5, 
-     duration: 1,
-     ease: "easeInOut",
+     delay:1.4, 
+     duration: 0.4,
    }
   }
 }
 
+const fifthContainer={
+  hidden:{scale:0},
+   visible:{
+    scale: 1,
+   transition: {
+     delay:1.8, 
+     duration: 0.4,
+   }
+  }
+}
+
+
+
 const Home = () => {
-     const router = useRouter()
      const { ref, inView, entry } = useInView({
       threshold: 0,
     });
@@ -88,49 +90,13 @@ const Home = () => {
       }
     },[inView])
 
-    const getCV = ()=>{
-      fetch('https://file-examples-com.github.io/uploads/2017/10/file-sample_150kB.pdf', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/pdf',
-        },
-  })
-  .then((response) => response.blob())
-  .then((blob) => {
-    // Create blob link to download
-    const url = window.URL.createObjectURL(
-      new Blob([blob]),
-    );
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute(
-      'download',
-      `FileName.pdf`,
-    );
+   
 
-    // Append to html link element page
-    document.body.appendChild(link);
-
-    // Start download
-    link.click();
-
-    // Clean up and remove the link
-    link.parentNode.removeChild(link);
-  });
-//   .then((response) => {
-//     const url = window.URL
-//     .createObjectURL(new Blob([response.data]));
-//            const link = document.createElement('a');
-//            link.href = url;
-//            link.setAttribute('download', 'image.jpg');
-//            document.body.appendChild(link);
-//            link.click();
-// })
-}
     return (
+      
         <Box 
           width={["90%","90%","90%","90%","80%"]}
-          height={["650px","650px","850px","800px","950px"]}
+          height={["650px","850px","1000px","1200px","900px","800px"]}
           mx={"auto"}
           maxWidth={"1600px"}
           display={"flex"}
@@ -138,13 +104,16 @@ const Home = () => {
           flexDirection={["column","column","column","column","row"]}
           id="home"
           ref={ref}
+          bgColor={"#0A192F"}
         >
+          
             <MotionBox
                 mx={0}
                 width={["100%","100%","100%","100%","50%"]}
                 px={0}
-                pt={[10,10,10,20,0]}
+                pt={[10,10,10,10,0]}
             >
+                              
                                 <MotionBox
                                     display={"flex"}
                                     alignItems={"center"}
@@ -152,50 +121,84 @@ const Home = () => {
                                     px={0}
                                     mb={[2,2,5]}
                                     mx={0}
-                                    initial={"hidden"}
-                                    animate={inView ? "visible" : "hidden"}
-                                    variants={firstContainer}
+                                   
                                     >
-                                            <Text  
-                                               width={["20%","20%","15%","15%","20%","15%"]} 
-                                               fontSize={["1rem","1rem","1.1rem","1.3rem","1.3rem","1.563rem"]} 
+                                       {/* 1 */}
+                                            <MotionText  
+                                               width={"100%"} 
+                                               fontSize={["1rem","1rem","1.1rem","1.3rem","1.3rem","1rem"]} 
                                                fontWeight={"bold"}
+                                               color={"#64FED9"} 
+                                               style={{
+                                                wordSpacing: "3px"
+                                               }}
+                                               initial={"hidden"}
+                                               animate={inView ? "visible" : "hidden"}
+                                               variants={firstContainer}
+                                               fontWeight="500"
                                             >
-                                              HELLO
-                                            </Text>
-                                            <Box  
-                                                width={["80%","80%","85%","85%","80%","85%"]}  
-                                                border={["1px solid black","1px solid black","1px solid black","2px solid black"]} 
-                                                borderRadius={5} 
-                                                mx={0}
-                                            ></Box>
+                                              Hi, my name is
+                                            </MotionText>
+                                        {/* 1 */}
 
                                     </MotionBox>
+                                    
 
                                     <MotionBox
                                       px={0}
                                       mb={[5,5,10]}
                                       mx={0}
-                                      initial={"hidden"}
-                                      animate={inView ? "visible" : "hidden"}
-                                      variants={secondContainer}
                                     >
-                                            <Text 
-                                                textShadow={"1px 2px black"} 
-                                                fontSize={["1.313rem","1.513rem","1.813rem","2.013rem","2.313rem","2.813rem"]} 
+                                      {/* 2 */}
+                                            <MotionText 
+                                                // textShadow={"1px 2px black"} 
+                                                fontSize={["1.513rem","2.313rem","2.813rem","3.013rem","3.313rem","3.813rem"]} 
                                                 fontWeight={"bold"}
+                                                color="#CCD6F6"
+                                                initial={"hidden"}
+                                                animate={inView ? "visible" : "hidden"}
+                                                variants={secondContainer}
+                                                
                                             >
-                                              I AM KYLE OWEN GA
-                                            </Text>
-                                            <Text  
-                                                fontSize={["0.538rem","0.638rem","0.738rem","0.838rem","0.938rem"]} 
-                                                fontWeight={"semibold"}
+                                             KYLE OWEN GA.
+                                            </MotionText>
+                                            {/* 2 */}
+
+                                            {/* 3 */}
+                                            <MotionText  
+                                               fontSize={["1.513rem","1.9rem","2.513rem","2.813rem","3rem","3.513rem"]} 
+                                               fontWeight={"bold"}
+                                               color="#8892B0"
+                                               initial={"hidden"}
+                                               animate={inView ? "visible" : "hidden"}
+                                               variants={thirdContainer}
                                             >
-                                              FULL STACK WEB DEVELOPER
-                                            </Text>
+                                            I create things for the web.
+                                            </MotionText>
+                                            {/* 3 */}
+
+                                            {/* 4 */}
+                                            <MotionBox  
+                                                 fontSize={"1rem"} 
+                                                 fontWeight={"bold"}
+                                                 color="#8892B0"
+                                                 maxWidth="650px"
+                                                 my={5}
+                                                 initial={"hidden"}
+                                                 animate={inView ? "visible" : "hidden"}
+                                                 variants={fourthContainer}
+                                                 fontWeight="300"
+                                            >
+                                          {/* I’m a software engineer specializing in building exceptional web applications. */}
+                                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime culpa officiis molestiae voluptatum iste id repellendus laudantium sunt ad atque ab, sequi, dolor aliquam,<span style={{color:"#64FED9"}}>nisi eum eaque delectus vero pariatur</span> 
+
+                                            </MotionBox>
+                                            {/* 4 */}
 
                                     </MotionBox>
 
+
+                                   {/* 5 */}
                                     <MotionBox
                                         px={0}
                                         display={"flex"}
@@ -205,45 +208,65 @@ const Home = () => {
                                         flexDirection={["column","column","column","row"]}
                                         initial={"hidden"} 
                                         animate={inView ? "visible" : "hidden"} 
-                                        variants={thirdContainer}
+                                        variants={fifthContainer}
                                     >
-                                      
-                                            <MotionButton 
-                                                boxShadow={"0px 7px 5px 0px #2C2C2C"}  
-                                                width={["100%","100%","100%","45%"]} 
-                                                mb={[5,5,5,0]} 
-                                                fontSize={["0.8rem","0.8rem","1rem"]} 
-                                                bgColor={"black"} 
-                                                color="white" 
-                                                _hover={{bgColor:"white", color:"black",border:"2px solid black"}}
-                                                onClick={()=> router.push('/#about')}
-                                            >
-                                              KNOW MORE
-                                            </MotionButton>
 
                                             <Link
                                                width={["100%","100%","100%","45%"]}
                                                href='../../Images.pdf'
-                                               download={"sample pdf"}
+                                               download={"Resume"}
+                                               style={{ textDecoration: 'none' }}
                                             >
                                                 <MotionButton 
-                                                    boxShadow={"0px 7px 5px 0px #2C2C2C"}   
-                                                    width={"100%"} 
-                                                    fontSize={["0.8rem","0.8rem","1rem"]} 
-                                                    bgColor={"white"} 
-                                                    color={"black"} 
-                                                    border={"2px solid black"} 
-                                                    _hover={{bgColor:"black", color:"white"}}
+                                                   width={"100%"} 
+                                                   mb={[5,5,5,0]} 
+                                                   bgColor={"#64FED9"}
+                                                   color={"#0A192F"}
+                                                   border="2px solid #64FED9"
+                                                   height="50px" 
+                                                   fontSize={["0.8rem","0.8rem","1rem"]} 
+                                                   _hover={{color:"#64FED9",bgColor:"#0A192F"}}
+                                                   style={{
+                                                    wordSpacing: "2px"
+                                                   }}
+                                                   fontWeight="300"
+                                                   minWidth={"200px"}
                                                 >
-                                                    GET CV
+                                                    About Me
+                                                </MotionButton>
+                                            </Link>
+                                            <Link
+                                               width={["100%","100%","100%","45%"]}
+                                               href='../../Images.pdf'
+                                               download={"Resume"}
+                                               style={{ textDecoration: 'none' }}
+                                            >
+                                                <MotionButton 
+                                                   width={"100%"} 
+                                                   mb={[5,5,5,0]} 
+                                                   bgColor={"#0A192F"}
+                                                   color={"#64FED9"}
+                                                   border="2px solid #64FED9"
+                                                   height="50px" 
+                                                   fontSize={["0.8rem","0.8rem","1rem"]} 
+                                                   _hover={{bgColor:"#64FED9",color:"#0A192F"}}
+                                                   style={{
+                                                    wordSpacing: "2px"
+                                                   }}
+                                                   fontWeight="300"
+                                                   minWidth={"200px"}
+                                                >
+                                                    Check out my Github!
                                                 </MotionButton>
                                             </Link>
                                             
                                             
 
                                     </MotionBox>
+                                    {/* 5 */}
                         </MotionBox>
                             
+                            {/* 6 */}
                         <MotionBox
                             mx={0}
                             width={["100%","100%","100%","100%","50%"]}
@@ -251,22 +274,26 @@ const Home = () => {
                             display={"flex"}
                             alignItems={"center"}
                             justifyContent={"right"}
-                            initial="hidden" 
-                            animate={inView ? "visible" : "hidden"} 
-                            variants={imageVariants}
+                           
                         >
-                                  <Image  
-                                    src='../../home.png' 
+                                  <MotionImage  
+                                    src='../../home_ill.png' 
                                     alt='next' 
                                     width={["100%","100%","100%","90%"]} 
                                     height={["100%","100%","100%","90%"]}
-                                    maxWidth="800px"
-                                    maxHeight="800px"
+                                    maxWidth="550px"
+                                    maxHeight="550px"
                                     objectFit={"contain"}
+                                    borderRadius={5}
+                                    initial="hidden" 
+                                    animate={inView ? "visible" : "hidden"} 
+                                    variants={imageVariants}
                                   />
-                        </MotionBox> 
+                        </MotionBox>
+                         {/* 6*/}
         </Box> 
     )
 }
 
 export default Home
+// rgb(98,237,209)

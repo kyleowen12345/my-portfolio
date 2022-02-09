@@ -27,14 +27,14 @@ const servicesVariants = {
 
 const list = {
     visible: {
-      opacity: 1,
+      scale: 1,
       transition: {
         when: "beforeChildren",
         staggerChildren: 0.5,
       },
     },
     hidden: {
-      opacity: 0,
+      scale: 0,
       transition: {
         when: "afterChildren",
       },
@@ -43,7 +43,7 @@ const list = {
  
   const item = {
     visible: { 
-       opacity: 1,
+      scale: 1,
        transition:
        {
           duration: 1,
@@ -52,7 +52,7 @@ const list = {
        } 
     },
     hidden: { 
-       opacity: 0,
+      scale: 0,
     },
     
   }
@@ -109,13 +109,15 @@ const Services = () => {
            <Text  
                fontSize={["16px","16px","18px","18px","20px" ]} 
                fontWeight={"semibold"} 
-               textShadow={"1px 2px gray"}
+              //  textShadow={"1px 2px gray"}
+               color={"#64FED9"}
            >
                MY OFFERED SERVICES
            </Text>
            <Text 
                fontSize={["11px","11px","13px","13px","14px"] } 
                textAlign={"center"}
+               color="#CCD6F6"
            >
                At about this time of year, some months after New Year’s resolutions have been made and kept, or made and neglected.
            </Text>
@@ -133,11 +135,11 @@ const Services = () => {
                          <MotionStack 
                                spacing={[3,3,4,6,8]} 
                                p={[3,3,3,5]} 
-                               boxShadow={"0px 10px 5px 0px #2C2C2C"} 
+                              //  boxShadow={"0px 10px 5px 0px #2C2C2C"} 
                                borderRadius={10} 
                                width={"100%"} 
                                height={"100%"} 
-                               border="4px solid black" 
+                               border="3px solid #64FED9" 
                                display={"flex"} 
                                flexDirection={"column"} 
                                alignItems={"center"}  
@@ -150,17 +152,19 @@ const Services = () => {
                                as={i.serviceImage}
                                h={10}
                                w={10}
+                               color={"#64FED9"}
                                />
                                <Text 
-                                  textShadow={"1px 2px gray"} 
                                   fontSize={["16px","16px","18px","20px","22px"]} 
                                   fontWeight={"semibold"}
+                                  color="#CCD6F6"
                                >
                                    {i.serviceName}
                                </Text>
                                <Text 
                                     lineHeight={["8","8","8","8","10"]} 
                                     fontSize={["14px","14px","15px","16px","18px"]}
+                                    color="#CCD6F6"
                                >
                                    {i.serviceDescription}
                                </Text>

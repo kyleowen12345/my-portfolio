@@ -12,8 +12,8 @@ const ProjectIntro = () => {
       >
         <Text
           fontSize={["18px","20px","20px","24px","27px"]}
-          fontWeight={"semibold"}
-          textShadow={"1px 2px black"}
+          fontWeight="semibold"
+          color={"#64FED9"}
         >
           Some Things I've Built.
         </Text>

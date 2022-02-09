@@ -9,47 +9,47 @@ const MotionText = motion(Text)
 
 
 const firstContainer={
-   hidden:{opacity:0},
+   hidden:{scale:0},
    visible:{
-    opacity: 1,
+      scale:1,
     transition: {
-      delay:0.5, 
-      duration: 0.7,
+      delay:0.1, 
+      duration: 0.4,
       ease: "easeInOut",
     }
    }
 }
 
 const secondContainer={
-  hidden:{opacity:0},
-  visible:{
-   opacity: 1,
+   hidden:{scale:0},
+   visible:{
+      scale:1,
    transition: {
-     delay:0.8, 
-     duration: 0.7,
+     delay:0.6, 
+     duration: 0.4,
      ease: "easeInOut",
    }
   }
 }
 
 const thirdContainer={
-  hidden:{opacity:0},
-  visible:{
-   opacity: 1,
+   hidden:{scale:0},
+   visible:{
+      scale:1,
    transition: {
-     delay:1.1, 
-     duration: 0.7,
+     delay:1, 
+     duration: 0.4,
      ease: "easeInOut",
    }
   }
 }
 const fourthContainer={
-  hidden:{opacity:0},
-  visible:{
-   opacity: 1,
+   hidden:{scale:0},
+   visible:{
+      scale:1,
    transition: {
      delay:1.4, 
-     duration: 0.7,
+     duration: 0.4,
      ease: "easeInOut",
    }
   }
@@ -72,7 +72,7 @@ const AboutDescription = () => {
                 height="100%"
                 display="flex"
                 flexDirection="column"
-                bgColor={"white"}
+               //  bgColor={"white"}
                 justifyContent={"center"}
                 ref={ref}
             >
@@ -80,21 +80,30 @@ const AboutDescription = () => {
                   
                 >
                        <MotionText  
-                          textShadow={"1px 1px black"} 
+                        //   textShadow={"1px 1px black"} 
                           fontSize={["14px","14px","14px","16px","18px"]} 
-                          fontWeight={"normal"}
+                          fontWeight={"bold"}
                           initial={{opacity:1}}
                           animate={{opacity:1}}
+                        //   bgGradient={'linear(315deg,  #4958DE 0%, #7F4FEC 74%)' }
+                        //   bgClip='text'
+                        initial={"hidden"}
+                        animate={inView ? "visible":"hidden"}
+                        variants={firstContainer}
+                        color={"#64FED9"}
                           >
                              ABOUT ME
                        </MotionText>
                        <MotionText 
-                          textShadow={"1px 2px black"}
+                        //   textShadow={"1px 2px black"}
                           fontSize={["23px","23px","25px","27px","30px"]} 
-                          fontWeight={"semibold"}
+                          fontWeight={"bold"}
                           initial={"hidden"}
                           animate={inView ? "visible":"hidden"}
-                          variants={firstContainer}
+                          variants={secondContainer}
+                        //   bgGradient={'linear(315deg,  #4958DE 0%, #7F4FEC 74%)' }
+                        //   bgClip='text'
+                        color="#CCD6F6"
                           >
                              PERSONAL DETAILS
                        </MotionText>
@@ -102,8 +111,9 @@ const AboutDescription = () => {
                 <MotionBox 
                   initial={"hidden"}
                   animate={inView ? "visible":"hidden"}
-                  variants={secondContainer}
+                  variants={thirdContainer}
                   my={5}
+                  color="#CCD6F6"
                 >
                        <Text  
                           lineHeight={["8","8","8","10"]}
@@ -121,19 +131,21 @@ const AboutDescription = () => {
                 <MotionBox 
                   initial={"hidden"}
                   animate={inView ? "visible":"hidden"}
-                  variants={thirdContainer}
+                  variants={fourthContainer}
                   mb={[5,5,5,5,10]}
                 >
                        <Text 
                           mb={5}  
                           fontSize={["15px","15px","15px","16px","16px","18px"]}
                           lineHeight={["8","8","8","10"]}
+                          color="#CCD6F6"
                        >
                           Here are a few technologies I’ve been working with recently:
                        </Text>
                        <Grid 
                           templateColumns={['repeat(2, 1fr)','repeat(2, 1fr)','repeat(2, 1fr)','repeat(3, 1fr)','repeat(3, 1fr)']} 
                           gap={3}
+                          color="#CCD6F6"
                        >
                            <Text 
                               fontSize={["10px","10px","11px","14px","14px"]} 
@@ -168,23 +180,27 @@ const AboutDescription = () => {
                        </Grid>
                 </MotionBox>
                
-                <MotionBox
+                {/* <MotionBox
                   initial={"hidden"}
                   animate={inView ? "visible":"hidden"}
                   variants={fourthContainer}
                 >
                 <Button  
-                     textShadow={"1px 1px gray"} 
-                     boxShadow={"0px 7px 5px 0px #2C2C2C"}   
+                     // textShadow={"1px 1px gray"} 
+                     // boxShadow={"0px 7px 5px 0px #2C2C2C"}   
                      width={["100%","100%","100%","100%"]} 
                      fontSize={["0.8rem","0.8rem","1rem"]} 
-                     bgColor={"white"} color={"black"} 
-                     border={"2px solid black"} 
-                     _hover={{bgColor:"black", color:"white"}}
+                     bgColor={"#0A192F"}
+                     color={"#64FED9"}
+                     border="2px solid #64FED9"
+                     height="50px" 
+                     fontSize={["0.8rem","0.8rem","1rem"]} 
+                     _hover={{bgColor:"#64FED9",color:"#0A192F"}}
+                     
                 >
                         VIEW FULL DETAILS
                 </Button>
-                </MotionBox>
+                </MotionBox> */}
             </MotionBox>
                   
       </Box>   

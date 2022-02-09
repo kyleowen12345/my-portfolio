@@ -14,7 +14,7 @@ const GlobalStyle = ({ children }) => {
       <Global
         styles={css`
           body{
-            background-color: white;  
+            background-color: #0A192F;
             scroll-behavior: smooth;
           }
         `}

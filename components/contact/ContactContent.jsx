@@ -93,6 +93,7 @@ const ContactContent = () => {
               borderRadius={10}
               border="2px solid black"
               boxShadow={"0px 7px 5px 0px black"}
+              zIndex={99}
             >
              <Map/>
             </Box>
@@ -124,7 +125,7 @@ const ContactContent = () => {
                               as={i.icon} 
                               w={10} 
                               h={10}
-                              
+                              color={"#64FED9"}
                            />
                            <Box
                               pl={5}
@@ -133,13 +134,13 @@ const ContactContent = () => {
                                 <Text
                                   fontSize={["16px","16px","18px","20px","22px"]}
                                   fontWeight={"semibold"}
-                                  textShadow={"1px 1px gray"}
+                                   color="#CCD6F6"
                                 >
                                   {i.name}
                                 </Text>
                                 <Text 
                                   fontSize={["14px","14px","15px","17px","18px"]}
-                                  color="#7A7A7A"
+                                  color="#8892B0"
                                 >
                                   {i.extraDetails}
                                 </Text>
@@ -150,14 +151,13 @@ const ContactContent = () => {
                 }
                 <Link href={`mailto:gakyleowen@gmail.com`} width={"100%"} _hover={{textDecoration:"none"}} >  
                 <MotionButton
-                    textShadow={"1px 1px gray"} 
-                    boxShadow={"0px 7px 5px 0px #2C2C2C"}   
                     width={["100%","100%","100%","100%","70%"]} 
-                    height={"60px"}
-                    fontSize={["0.8rem","0.8rem","1rem"]} 
-                    bgColor={"white"} color={"black"} 
-                    border={"2px solid black"} 
-                    _hover={{bgColor:"black", color:"white"}}
+                    bgColor={"#0A192F"}
+                    color={"#64FED9"}
+                    border="2px solid #64FED9"
+                    fontWeight={"300"}
+                    height="50px"
+                     _hover={{bgColor:"#64FED9",color:"#0A192F"}}
                     variants={item}
                 
                 >SAY HELLO</MotionButton>

@@ -16,6 +16,7 @@ const ContactIntro = () => {
             fontSize={["18px","20px","20px","24px","20px"]}
             fontWeight={"semibold"}
             // textShadow={"1px 2px black"}
+            color={"#64FED9"}
           >
             What's Next?
           </Text>
@@ -23,6 +24,7 @@ const ContactIntro = () => {
             fontSize={["18px","20px","20px","24px","30px"]}
             fontWeight={"bold"}
             textShadow={"2px 2px black"}
+            color="#CCD6F6"
           >
             GET IN TOUCH
           </Text>
