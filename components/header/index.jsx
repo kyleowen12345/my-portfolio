@@ -215,9 +215,9 @@ const BigHeader = () => {
                    justifyContent={"right"}
                    px={0}
                    onClick={isOpen ? onClose : onOpen}
-                   variants={menuVariants} 
-                   initial="hidden" 
-                   animate="visible" 
+                  //  variants={menuVariants} 
+                  //  initial="hidden" 
+                  //  animate="visible" 
                   //  whileHover="hover" 
                >
                         <Icon

@@ -96,7 +96,7 @@ const Home = () => {
       
         <Box 
           width={["90%","90%","90%","90%","80%"]}
-          height={["650px","850px","1000px","1200px","900px","800px"]}
+          height={["650px","850px","1000px","1200px","900px","900px"]}
           mx={"auto"}
           maxWidth={"1600px"}
           display={"flex"}
