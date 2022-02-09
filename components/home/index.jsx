@@ -12,9 +12,10 @@ const MotionImage = motion(Image)
 
 
 const imageVariants = {
-  hidden:{opacity:0},
+  hidden:{opacity:0,rotation: 0.02},
   visible:{
     opacity: 1,
+    rotation: 0.02,
     transition: {
       delay:2.3, 
       duration: 0.7,
@@ -23,9 +24,10 @@ const imageVariants = {
 };
 
 const firstContainer={
-   hidden:{scale:0},
+   hidden:{scale:0,rotation: 0.02},
    visible:{
     scale: 1,
+    rotation: 0.02,
     transition: {
       delay:0.2, 
       duration: 0.4,
@@ -34,9 +36,10 @@ const firstContainer={
 }
 
 const secondContainer={
-  hidden:{scale:0},
+  hidden:{scale:0,rotation: 0.02},
   visible:{
    scale: 1,
+   rotation: 0.02,
     transition: {
       delay:0.6, 
       duration: 0.4,
@@ -45,9 +48,10 @@ const secondContainer={
 }
 
 const thirdContainer={
-  hidden:{scale:0},
+  hidden:{scale:0,rotation: 0.02},
   visible:{
    scale: 1,
+   rotation: 0.02,
     transition: {
       delay:1, 
       duration: 0.4,
@@ -55,9 +59,10 @@ const thirdContainer={
    }
 }
 const fourthContainer={
-  hidden:{scale:0},
+  hidden:{scale:0,rotation: 0.02},
   visible:{
    scale: 1,
+   rotation: 0.02,
    transition: {
      delay:1.4, 
      duration: 0.4,
@@ -66,9 +71,10 @@ const fourthContainer={
 }
 
 const fifthContainer={
-  hidden:{scale:0},
+  hidden:{scale:0,rotation: 0.02},
    visible:{
     scale: 1,
+    rotation: 0.02,
    transition: {
      delay:1.8, 
      duration: 0.4,

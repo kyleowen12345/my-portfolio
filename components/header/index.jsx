@@ -72,9 +72,11 @@ const MotionIcon = motion(Icon)
  const menuVariants = {
   hidden: {
     scale: 0,
+    rotation: 0.02
   },
   visible: {
     scale: 1,
+    rotation: 0.02,
     transition: { 
       duration: 0.8,
       ease: "easeInOut",
@@ -215,10 +217,10 @@ const BigHeader = () => {
                    justifyContent={"right"}
                    px={0}
                    onClick={isOpen ? onClose : onOpen}
-                  //  variants={menuVariants} 
-                  //  initial="hidden" 
-                  //  animate="visible" 
-                  //  whileHover="hover" 
+                   variants={menuVariants} 
+                   initial="hidden" 
+                   animate="visible" 
+                   whileHover="hover" 
                >
                         <Icon
                           color={"#64FED9"}
