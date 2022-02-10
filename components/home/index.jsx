@@ -107,16 +107,16 @@ const Home = () => {
           bgColor={"#0A192F"}
         >
 
-          <AnimatePresence exitBeforeEnter>
+        
           
-            <MotionBox
+            <Box
                 mx={0}
                 width={["100%","100%","100%","100%","50%"]}
                 px={0}
                 pt={[10,10,10,10,0]}
             >
                               
-                                <MotionBox
+                                <Box
                                     display={"flex"}
                                     alignItems={"center"}
                                     justifyContent={"flex-start"}
@@ -126,7 +126,7 @@ const Home = () => {
                                    
                                     >
                                        {/* 1 */}
-                                            <MotionText  
+                                            <Text  
                                                width={"100%"} 
                                                fontSize={["1rem","1rem","1.1rem","1.3rem","1.3rem","1rem"]} 
                                                fontWeight={"bold"}
@@ -134,83 +134,87 @@ const Home = () => {
                                                style={{
                                                 wordSpacing: "3px"
                                                }}
-                                               initial={"hidden"}
-                                               animate={inView ? "visible" : "hidden"}
-                                               variants={firstContainer}
+                                              //  initial={"hidden"}
+                                              //  animate={inView ? "visible" : "hidden"}
+                                              //  variants={firstContainer}
                                                fontWeight="500"
+                                               className={ inView ? "firstContainerVisible" : "firstContainerHidden"}
                                             >
                                               Hi, my name is
-                                            </MotionText>
+                                            </Text>
                                         {/* 1 */}
 
-                                    </MotionBox>
+                                    </Box>
                                     
 
-                                    <MotionBox
+                                    <Box
                                       px={0}
                                       mb={[5,5,10]}
                                       mx={0}
                                     >
                                       {/* 2 */}
-                                            <MotionText 
+                                            <Text 
                                                 // textShadow={"1px 2px black"} 
                                                 fontSize={["1.513rem","2.313rem","2.813rem","3.013rem","3.313rem","3.813rem"]} 
                                                 fontWeight={"bold"}
                                                 color="#CCD6F6"
-                                                initial={"hidden"}
-                                                animate={inView ? "visible" : "hidden"}
-                                                variants={secondContainer}
+                                                // initial={"hidden"}
+                                                // animate={inView ? "visible" : "hidden"}
+                                                // variants={secondContainer}
+                                                className={ inView ? "secondContainerVisible" : "secondContainerHidden"}
                                                 
                                             >
                                              KYLE OWEN GA.
-                                            </MotionText>
+                                            </Text>
                                             {/* 2 */}
 
                                             {/* 3 */}
-                                            <MotionText  
+                                            <Text  
                                                fontSize={["1.513rem","1.9rem","2.513rem","2.813rem","3rem","3.513rem"]} 
                                                fontWeight={"bold"}
                                                color="#8892B0"
-                                               initial={"hidden"}
-                                               animate={inView ? "visible" : "hidden"}
-                                               variants={thirdContainer}
+                                              //  initial={"hidden"}
+                                              //  animate={inView ? "visible" : "hidden"}
+                                              //  variants={thirdContainer}
+                                              className={ inView ? "thirdContainerVisible" : "thirdContainerHidden"}
                                             >
                                             I create things for the web.
-                                            </MotionText>
+                                            </Text>
                                             {/* 3 */}
 
                                             {/* 4 */}
-                                            <MotionBox  
+                                            <Box  
                                                  fontSize={"1rem"} 
                                                  fontWeight={"bold"}
                                                  color="#8892B0"
                                                  maxWidth="650px"
                                                  my={5}
-                                                 initial={"hidden"}
-                                                 animate={inView ? "visible" : "hidden"}
-                                                 variants={fourthContainer}
+                                                //  initial={"hidden"}
+                                                //  animate={inView ? "visible" : "hidden"}
+                                                //  variants={fourthContainer}
                                                  fontWeight="300"
+                                                 className={ inView ? "fourthContainerVisible" : "fourthContainerHidden"}
                                             >
                                           {/* I’m a software engineer specializing in building exceptional web applications. */}
                                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime culpa officiis molestiae voluptatum iste id repellendus laudantium sunt ad atque ab, sequi, dolor aliquam,<span style={{color:"#64FED9"}}>nisi eum eaque delectus vero pariatur</span> 
 
-                                            </MotionBox>
+                                            </Box>
                                             {/* 4 */}
 
-                                    </MotionBox>
+                                    </Box>
 
 
                                    {/* 5 */}
-                                    <MotionBox
+                                    <Box
                                         px={0}
                                         display={"flex"}
                                         alignItems={"center"}
                                         justifyContent={"space-between"}
                                         mx={0}
                                         flexDirection={["column","column","column","row"]}
-                                        initial={"hidden"} 
-                                        animate={inView ? "visible" : "hidden"} 
-                                        variants={fifthContainer}
+                                        // initial={"hidden"} 
+                                        // animate={inView ? "visible" : "hidden"} 
+                                        // variants={fifthContainer}
                                     >
 
                                             <Link
@@ -219,7 +223,7 @@ const Home = () => {
                                                download={"Resume"}
                                                style={{ textDecoration: 'none' }}
                                             >
-                                                <MotionButton 
+                                                <Button 
                                                    width={"100%"} 
                                                    mb={[5,5,5,0]} 
                                                    bgColor={"#64FED9"}
@@ -233,9 +237,10 @@ const Home = () => {
                                                    }}
                                                    fontWeight="300"
                                                    minWidth={"200px"}
+                                                   className={ inView ? "fifthContainerVisible" : "fifthContainerHidden"}
                                                 >
                                                     About Me
-                                                </MotionButton>
+                                                </Button>
                                             </Link>
                                             <Link
                                                width={["100%","100%","100%","45%"]}
@@ -243,7 +248,7 @@ const Home = () => {
                                                download={"Resume"}
                                                style={{ textDecoration: 'none' }}
                                             >
-                                                <MotionButton 
+                                                <Button 
                                                    width={"100%"} 
                                                    mb={[5,5,5,0]} 
                                                    bgColor={"#0A192F"}
@@ -257,19 +262,20 @@ const Home = () => {
                                                    }}
                                                    fontWeight="300"
                                                    minWidth={"200px"}
+                                                   className={ inView ? "sixthContainerVisible" : "sixthContainerHidden"}
                                                 >
                                                     Check out my Github!
-                                                </MotionButton>
+                                                </Button>
                                             </Link>
                                             
                                             
 
-                                    </MotionBox>
+                                    </Box>
                                     {/* 5 */}
-                        </MotionBox>
+                        </Box>
                             
                             {/* 6 */}
-                        <MotionBox
+                        <Box
                             mx={0}
                             width={["100%","100%","100%","100%","50%"]}
                             px={0}
@@ -278,7 +284,7 @@ const Home = () => {
                             justifyContent={"right"}
                            
                         >
-                                  <MotionImage  
+                                  <Image  
                                     src='../../home_ill.png' 
                                     alt='next' 
                                     width={["100%","100%","100%","90%"]} 
@@ -287,14 +293,14 @@ const Home = () => {
                                     maxHeight="550px"
                                     objectFit={"contain"}
                                     borderRadius={5}
-                                    initial="hidden" 
-                                    animate={inView ? "visible" : "hidden"} 
-                                    variants={imageVariants}
+                                    // initial="hidden" 
+                                    // animate={inView ? "visible" : "hidden"} 
+                                    // variants={imageVariants}
+                                    className={ inView ? "seventhContainerVisible" : "seventhContainerHidden"}
                                   />
-                        </MotionBox>
+                        </Box>
                          {/* 6*/}
-
-            </AnimatePresence>               
+            
         </Box> 
     )
 }

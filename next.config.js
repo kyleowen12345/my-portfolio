@@ -18,9 +18,9 @@ module.exports = {
 
 const ContentSecurityPolicy = `
 default-src 'self' blob:;
-script-src 'self'  https://www.paypalobjects.com/api/checkout.js 'unsafe-eval' 'unsafe-inline' *.youtube.com *.paypal.com blob:;
-child-src *.youtube.com *.google.com *.paypal.com;
-style-src 'self' 'unsafe-inline' *.googleapis.com;
+script-src 'self' https://unpkg.com/leaflet@1.7.1/dist/leaflet.js 'unsafe-eval' 'unsafe-inline' *.youtube.com  *.unpkg.com  blob:;
+child-src *.youtube.com *.google.com  *.unpkg.com ;
+style-src 'self' 'unsafe-inline' *.googleapis.com *.unpkg.com;
 img-src * blob: data:;
 worker-src 'self' blob:;
 media-src 'none';
@@ -63,12 +63,12 @@ const securityHeaders = [
   key: 'Feature-Policy',
   value: "camera 'none'; microphone 'none'; geolocation 'none'"
 },
-{
-  key: 'cross-origin-opener-policy',
-  value: 'same-origin',
-},
-{
-  key: 'cross-origin-embedder-policy',
-  value: 'require-corp',
-},
+// {
+//   key: 'cross-origin-opener-policy',
+//   value: 'same-origin',
+// },
+// {
+//   key: 'cross-origin-embedder-policy',
+//   value: 'require-corp',
+// },
 ];
