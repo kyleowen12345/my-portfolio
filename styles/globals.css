@@ -16,15 +16,16 @@ a {
 }
 
 
-/* Home */
+/* Containers || Boxes */
 
 .firstContainerHidden{
-   transform: scale(0) !important; 
+  transform: scale(0) !important;
+
 }
 
 .firstContainerVisible{
-  transform: scale(1) !important; 
-  transition-delay: 200ms !important;
+  transform: scale(1)  !important; 
+  transition-delay: 50ms !important;
   transition-duration: 400ms !important;
   /* font-family: Arial, Helvetica, sans-serif !important; */
 }
@@ -98,3 +99,61 @@ a {
  transition-delay: 2.6s !important;
  transition-duration: 400ms !important;
 }
+
+/* Image */
+.imageContainerHidden{
+  transform: scale(0) !important; 
+}
+
+.imageContainerVisible{
+  transform: scale(1) !important; 
+  transition-delay: 0.2s !important;
+  transition-duration: 400ms !important;
+}
+
+
+/* Services */
+
+.firstServiceHidden{
+  transform: scale(0) !important;
+
+}
+
+.firstServiceVisible{
+  transform: scale(1)  !important; 
+  transition-delay: 50ms !important;
+  transition-duration: 300ms !important;
+  /* font-family: Arial, Helvetica, sans-serif !important; */
+}
+
+.secondServiceHidden{
+  transform: scale(0) !important; 
+}
+
+.secondServiceVisible{
+ transform: scale(1) !important; 
+ transition-delay: 300ms !important;
+ transition-duration: 300ms !important;
+}
+
+.thirdServiceHidden{
+  transform: scale(0) !important; 
+}
+
+.thirdServiceVisible{
+ transform: scale(1) !important; 
+ transition-delay: 600ms !important;
+ transition-duration: 300ms !important;
+}
+
+.fourthServiceHidden{
+  transform: scale(0) !important; 
+}
+
+.fourthServiceVisible{
+ transform: scale(1) !important; 
+ transition-delay: 900ms !important;
+ transition-duration: 300ms !important;
+}
+
+

@@ -21,7 +21,7 @@ const Contact = () => {
       },[inView])
     return (
         <Box
-          height={[2000,1200,1300,1200,800]}
+          height={[2000,900,1100,1100,800]}
           width={["100%","100%","100%","100%","80%"]}
           mx="auto"
           ref={ref}

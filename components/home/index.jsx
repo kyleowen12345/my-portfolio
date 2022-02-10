@@ -1,80 +1,10 @@
 import React, { useEffect } from 'react'
-import { Container,Text,Button,Image,Box,Link } from '@chakra-ui/react'
-import { motion,AnimatePresence  } from "framer-motion"
-import { useRouter } from 'next/router'
+import { Text,Button,Image,Box,Link } from '@chakra-ui/react'
+
 import { useInView } from 'react-intersection-observer';
 import { useMyRoute } from '../../lib/routeprovider';
 
-const MotionBox = motion(Box)
-const MotionButton = motion(Button)
-const MotionText = motion(Text)
-const MotionImage = motion(Image)
 
-
-const imageVariants = {
-  hidden:{opacity:0},
-  visible:{
-    opacity: 1,
-    transition: {
-      delay:2.3, 
-      duration: 0.7,
-    }
-  },
-};
-
-const firstContainer={
-   hidden:{scale:0},
-   visible:{
-    scale: 1,
-    transition: {
-      delay:0.2, 
-      duration: 0.4,
-    }
-   }
-}
-
-const secondContainer={
-  hidden:{scale:0},
-  visible:{
-   scale: 1,
-    transition: {
-      delay:0.6, 
-      duration: 0.4,
-    }
-   }
-}
-
-const thirdContainer={
-  hidden:{scale:0},
-  visible:{
-   scale: 1,
-    transition: {
-      delay:1, 
-      duration: 0.4,
-    }
-   }
-}
-const fourthContainer={
-  hidden:{scale:0},
-  visible:{
-   scale: 1,
-   transition: {
-     delay:1.4, 
-     duration: 0.4,
-   }
-  }
-}
-
-const fifthContainer={
-  hidden:{scale:0},
-   visible:{
-    scale: 1,
-   transition: {
-     delay:1.8, 
-     duration: 0.4,
-   }
-  }
-}
 
 
 
@@ -134,11 +64,9 @@ const Home = () => {
                                                style={{
                                                 wordSpacing: "3px"
                                                }}
-                                              //  initial={"hidden"}
-                                              //  animate={inView ? "visible" : "hidden"}
-                                              //  variants={firstContainer}
                                                fontWeight="500"
                                                className={ inView ? "firstContainerVisible" : "firstContainerHidden"}
+                                               fontFamily="Roboto Mono"
                                             >
                                               Hi, my name is
                                             </Text>
@@ -154,13 +82,9 @@ const Home = () => {
                                     >
                                       {/* 2 */}
                                             <Text 
-                                                // textShadow={"1px 2px black"} 
                                                 fontSize={["1.513rem","2.313rem","2.813rem","3.013rem","3.313rem","3.813rem"]} 
                                                 fontWeight={"bold"}
                                                 color="#CCD6F6"
-                                                // initial={"hidden"}
-                                                // animate={inView ? "visible" : "hidden"}
-                                                // variants={secondContainer}
                                                 className={ inView ? "secondContainerVisible" : "secondContainerHidden"}
                                                 
                                             >
@@ -173,10 +97,9 @@ const Home = () => {
                                                fontSize={["1.513rem","1.9rem","2.513rem","2.813rem","3rem","3.513rem"]} 
                                                fontWeight={"bold"}
                                                color="#8892B0"
-                                              //  initial={"hidden"}
-                                              //  animate={inView ? "visible" : "hidden"}
-                                              //  variants={thirdContainer}
+
                                               className={ inView ? "thirdContainerVisible" : "thirdContainerHidden"}
+                                              // fontFamily="Roboto Mono"
                                             >
                                             I create things for the web.
                                             </Text>
@@ -189,9 +112,7 @@ const Home = () => {
                                                  color="#8892B0"
                                                  maxWidth="650px"
                                                  my={5}
-                                                //  initial={"hidden"}
-                                                //  animate={inView ? "visible" : "hidden"}
-                                                //  variants={fourthContainer}
+                                              
                                                  fontWeight="300"
                                                  className={ inView ? "fourthContainerVisible" : "fourthContainerHidden"}
                                             >
@@ -212,15 +133,13 @@ const Home = () => {
                                         justifyContent={"space-between"}
                                         mx={0}
                                         flexDirection={["column","column","column","row"]}
-                                        // initial={"hidden"} 
-                                        // animate={inView ? "visible" : "hidden"} 
-                                        // variants={fifthContainer}
+                                      
                                     >
 
                                             <Link
                                                width={["100%","100%","100%","45%"]}
-                                               href='../../Images.pdf'
-                                               download={"Resume"}
+                                               href='/#about'
+                                             
                                                style={{ textDecoration: 'none' }}
                                             >
                                                 <Button 
@@ -244,9 +163,9 @@ const Home = () => {
                                             </Link>
                                             <Link
                                                width={["100%","100%","100%","45%"]}
-                                               href='../../Images.pdf'
-                                               download={"Resume"}
+                                               href='https://github.com/kyleowen12345'
                                                style={{ textDecoration: 'none' }}
+                                               target="_blank"
                                             >
                                                 <Button 
                                                    width={"100%"} 
@@ -293,9 +212,6 @@ const Home = () => {
                                     maxHeight="550px"
                                     objectFit={"contain"}
                                     borderRadius={5}
-                                    // initial="hidden" 
-                                    // animate={inView ? "visible" : "hidden"} 
-                                    // variants={imageVariants}
                                     className={ inView ? "seventhContainerVisible" : "seventhContainerHidden"}
                                   />
                         </Box>

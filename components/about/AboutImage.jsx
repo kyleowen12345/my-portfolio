@@ -48,7 +48,7 @@ const AboutImage = () => {
 
   <MotionBox
     width={["90%","90%","90%","90%","50%"]}
-    height={["30%","30%","40%","40%","90%"]}
+    height={["30%","40%","40%","40%","90%"]}
     mx={["auto","auto","auto","auto",0]}
     display="flex"
     justifyContent="center"
@@ -62,15 +62,16 @@ const AboutImage = () => {
    
   >
             <MotionImage 
-              initial={"hidden"}
-              animate={inView ? "visible" : "hidden"}
-              variants={imageVariants}
+              // initial={"hidden"}
+              // animate={inView ? "visible" : "hidden"}
+              // variants={imageVariants}
               src='../../about.png' 
               alt='next' 
-              width={"60%"} 
-              borderRadius={"20%"}
+              width={["90%","90%","90%","60%"]} 
+              
               height={"100%"}
               objectFit={["contain","contain","contain",""]} 
+              className={ inView ? "imageContainerVisible" : "imageContainerHidden"}
             />
   </MotionBox>
   )

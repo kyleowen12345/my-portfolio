@@ -8,52 +8,7 @@ const MotionText = motion(Text)
 
 
 
-const firstContainer={
-   hidden:{scale:0},
-   visible:{
-      scale:1,
-    transition: {
-      delay:0.1, 
-      duration: 0.4,
-      ease: "easeInOut",
-    }
-   }
-}
 
-const secondContainer={
-   hidden:{scale:0},
-   visible:{
-      scale:1,
-   transition: {
-     delay:0.6, 
-     duration: 0.4,
-     ease: "easeInOut",
-   }
-  }
-}
-
-const thirdContainer={
-   hidden:{scale:0},
-   visible:{
-      scale:1,
-   transition: {
-     delay:1, 
-     duration: 0.4,
-     ease: "easeInOut",
-   }
-  }
-}
-const fourthContainer={
-   hidden:{scale:0},
-   visible:{
-      scale:1,
-   transition: {
-     delay:1.4, 
-     duration: 0.4,
-     ease: "easeInOut",
-   }
-  }
-}
 
 const AboutDescription = () => {
    const { ref, inView, entry } = useInView({
@@ -87,10 +42,9 @@ const AboutDescription = () => {
                           animate={{opacity:1}}
                         //   bgGradient={'linear(315deg,  #4958DE 0%, #7F4FEC 74%)' }
                         //   bgClip='text'
-                        initial={"hidden"}
-                        animate={inView ? "visible":"hidden"}
-                        variants={firstContainer}
+                        className={ inView ? "firstContainerVisible" : "firstContainerHidden"}
                         color={"#64FED9"}
+                        fontFamily="Roboto Mono"
                           >
                              ABOUT ME
                        </MotionText>
@@ -98,9 +52,7 @@ const AboutDescription = () => {
                         //   textShadow={"1px 2px black"}
                           fontSize={["23px","23px","25px","27px","30px"]} 
                           fontWeight={"bold"}
-                          initial={"hidden"}
-                          animate={inView ? "visible":"hidden"}
-                          variants={secondContainer}
+                          className={ inView ? "secondContainerVisible" : "secondContainerHidden"}
                         //   bgGradient={'linear(315deg,  #4958DE 0%, #7F4FEC 74%)' }
                         //   bgClip='text'
                         color="#CCD6F6"
@@ -109,9 +61,7 @@ const AboutDescription = () => {
                        </MotionText>
                 </MotionBox>
                 <MotionBox 
-                  initial={"hidden"}
-                  animate={inView ? "visible":"hidden"}
-                  variants={thirdContainer}
+                 className={ inView ? "thirdContainerVisible" : "thirdContainerHidden"}
                   my={5}
                   color="#CCD6F6"
                 >
@@ -129,9 +79,7 @@ const AboutDescription = () => {
                        </Text>
                 </MotionBox>
                 <MotionBox 
-                  initial={"hidden"}
-                  animate={inView ? "visible":"hidden"}
-                  variants={fourthContainer}
+                 className={ inView ? "fourthContainerVisible" : "fourthContainerHidden"}
                   mb={[5,5,5,5,10]}
                 >
                        <Text 
@@ -146,6 +94,7 @@ const AboutDescription = () => {
                           templateColumns={['repeat(2, 1fr)','repeat(2, 1fr)','repeat(2, 1fr)','repeat(3, 1fr)','repeat(3, 1fr)']} 
                           gap={3}
                           color="#CCD6F6"
+                          fontFamily="Roboto Mono"
                        >
                            <Text 
                               fontSize={["10px","10px","11px","14px","14px"]} 

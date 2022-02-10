@@ -14,6 +14,7 @@ const ProjectIntro = () => {
           fontSize={["18px","20px","20px","24px","27px"]}
           fontWeight="semibold"
           color={"#64FED9"}
+          fontFamily="Roboto Mono"
         >
           Some Things I've Built.
         </Text>

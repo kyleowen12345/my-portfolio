@@ -12,7 +12,7 @@ const breakpoints = createBreakpoints({
 const theme = extendTheme({
   fonts: {
     heading: "Open Sans",
-    body: "Poppins",
+    body: "Poppins, Roboto Mono",
   },
   components: { 
     Link: { baseStyle: { _focus: { boxShadow: 'none' } } }, 

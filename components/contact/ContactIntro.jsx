@@ -17,6 +17,7 @@ const ContactIntro = () => {
             fontWeight={"semibold"}
             // textShadow={"1px 2px black"}
             color={"#64FED9"}
+            fontFamily="Roboto Mono"
           >
             What's Next?
           </Text>

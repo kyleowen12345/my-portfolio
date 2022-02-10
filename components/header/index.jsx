@@ -114,6 +114,7 @@ const BigHeader = () => {
                justifyContent={"center"}  
                bgColor={"#0A192F"}
                zIndex={999}
+               fontFamily="Roboto Mono"
          >
             <Box
               width={["90%","90%","90%","90%","80%"]}
