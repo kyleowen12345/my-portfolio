@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image,Box,Text,Grid,Button,Stack,Icon  } from '@chakra-ui/react'
-import { motion,AnimatePresence  } from "framer-motion"
+
 import { useInView } from 'react-intersection-observer';
 import {BsWordpress} from 'react-icons/bs'
 import {AiOutlineApi} from 'react-icons/ai'

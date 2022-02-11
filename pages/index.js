@@ -8,6 +8,7 @@ import Projects from '../components/projects'
 import Contact from '../components/contact'
 
 import { Box, Spacer,Text } from '@chakra-ui/react'
+import MyFooter from '../components/footer/MyFooter'
 
 export default function Balay() {
   return (
@@ -22,12 +23,13 @@ export default function Balay() {
           /> */}
       </Head>
         <Home/>
-        {/* <Box width={"100%"} height={50}></Box> */}
+        <Box width={"100%"} height={50}></Box>
         <About/>
         <Box width={"100%"} height={100}></Box>
         <Projects/>
         <Box width={"100%"} height={100}></Box>
         <Contact/>
+        <MyFooter/>
     </Box>
   )
 }

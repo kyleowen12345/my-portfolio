@@ -1,95 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Flex, Box,Link, Image ,useDisclosure,Text,Icon,Button  } from '@chakra-ui/react'
-import { motion,AnimatePresence  } from "framer-motion"
-import { HamburgerIcon} from '@chakra-ui/icons'
+import { Box,Link, Image ,useDisclosure,Icon,Button  } from '@chakra-ui/react'
+
 import NextLink from 'next/link'
+import { useInView } from 'react-intersection-observer';
 import ReusableDrawer from './ReusableDrawer'
 import { useMyRoute } from '../../lib/routeprovider'
 import {BiMenuAltRight} from 'react-icons/bi'
 
 
 
-const MotionBox = motion(Box)
-const MotionText = motion(Text)
-const MotionLink = motion(Link)
-const MotionButton = motion(Button)
-const MotionIcon = motion(Icon)
-
-
-
-
- 
- const LogoVariants = {
-   hidden: {
-     opacity: 0,
-   },
-   visible: {
-     opacity: 1,
-     transition: { 
-       duration: 1,
-       ease: "easeInOut",
-     }
-   },
-   hover:{
-      scale: 1.2, 
-      textShadow: "0px 0px 8px rgb(255,255,255)",
-      boxShadow: "0px 0px 8px rgb(255,255,255)"
-     }
- };
-
- const list = {
-   visible: {
-     opacity: 1,
-     transition: {
-       when: "beforeChildren",
-       staggerChildren: 0.3,
-     },
-   },
-   hidden: {
-    opacity: 0,
-     transition: {
-       when: "afterChildren",
-     },
-   },
- }
-
- const item = {
-   visible: { 
-      y: 0,
-      transition:
-      {
-         duration: 0.4,
-         ease: "easeInOut",
-       
-      } 
-   },
-   hidden: { 
-    y: -200,
-   },
-   
- }
-
- const menuVariants = {
-  hidden: {
-    scale: 0,
-  },
-  visible: {
-    scale: 1,
-    transition: { 
-      duration: 0.8,
-      ease: "easeInOut",
-    }
-  },
-  hover:{
-     scale: 1.2, 
-     textShadow: "0px 0px 8px rgb(255,255,255)",
-     boxShadow: "0px 0px 8px rgb(255,255,255)",
-    }
-};
-
-
-
 const BigHeader = () => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+  });
     const [showNav, setShowNav]= useState(false)
     const { isOpen, onOpen, onClose } = useDisclosure()
     const {section} = useMyRoute()
@@ -103,10 +26,37 @@ const BigHeader = () => {
      })
   }, [showNav])
 
+  const myRoutes = [
+    {
+      route:"/#home",
+      routeName:"HOME",
+      hidden:"first_Nav_Item_Hidden",
+      visible:"first_Nav_Item_Visible"
+    },
+    {
+      route:"/#about",
+      routeName:"ABOUT",
+      hidden:"second_Nav_Item_Hidden",
+      visible:"second_Nav_Item_Visible"
+    },
+    {
+      route:"/#projects",
+      routeName:"PROJECTS",
+      hidden:"third_Nav_Item_Hidden",
+      visible:"third_Nav_Item_Visible"
+    },
+    {
+      route:"/#contact",
+      routeName:"CONTACT",
+      hidden:"fourth_Nav_Item_Hidden",
+      visible:"fourth_Nav_Item_Visible"
+    }
+  ]
+
     return (
-   <AnimatePresence exitBeforeEnter>
-         <MotionBox
-               boxShadow={showNav ? '2xl' : 'lg'}
+         <Box
+               boxShadow={showNav && '2xl'}
+               borderBottom={showNav && "2px solid #64FED9"}
                position="sticky"
                top={0}
                width={"100%"} 
@@ -115,6 +65,7 @@ const BigHeader = () => {
                bgColor={"#0A192F"}
                zIndex={999}
                fontFamily="Roboto Mono"
+               ref={ref}
          >
             <Box
               width={["90%","90%","90%","90%","80%"]}
@@ -138,101 +89,76 @@ const BigHeader = () => {
                         />
                </Box>
 
-               <MotionBox
+               <Box
                   width={"40%"}
                   display={["none","none","none","none","flex"]}
                   justifyContent={"space-between"}
                   mr={0}
                   pr={0}
-                  initial="hidden"
-                  animate="visible"
-                  variants={list}
+                  
                   color={"#CCD6F6" }
                   fontSize={ "13px"} 
                   alignItems="center"
                   minWidth="520px"
                >
-                        <NextLink href={"/#home"} passHref>
-                            <MotionLink  
-                              variants={item}
-                              whileHover={{color:"#64FED9"}}   
+                      {
+                        myRoutes.map(i=>(
+                          <NextLink 
+                          href={i.route}
+                          key={i.routeName}
+                          passHref
+                          >
+                            <Link
                               fontWeight={ "bold"}
+                              className={inView ? i.visible : i.hidden}
+                              _hover={{color:"#64FED9"}}
                             >
-                              HOME
-                            </MotionLink> 
-                        </NextLink>
-
-                        <NextLink href="/#about" passHref>
-                           <MotionLink  
-                             variants={item} 
-                             whileHover={{color:"#64FED9"}}    
-                             fontWeight={"bold"}
-                           >
-                             ABOUT
-                           </MotionLink>
-                        </NextLink> 
-
-                        <NextLink href="/#projects" passHref> 
-                           <MotionLink   
-                             variants={item} 
-                             whileHover={{color:"#64FED9"}}  
-                             fontWeight={"bold"}
-                           >
-                             PROJECTS
-                           </MotionLink>
-                        </NextLink>
-
-                        <NextLink href="/#contact" passHref>
-                           <MotionLink 
-                            variants={item}   
-                            whileHover={{color:"#64FED9"}}    
-                            fontWeight={"bold"}
-                            >
-                              CONTACT
-                            </MotionLink>
-                        </NextLink>
+                              {i.routeName}
+                            </Link>
+                          </NextLink>
+                        ))
+                      }
                         <Link
                             href='../../Images.pdf'
                             download={"Resume pdf"}
                             style={{ textDecoration: 'none' }}
+                            className={inView ? "fifth_Nav_Item_Visible" : "fifth_Nav_Item_Hidden"}
                         >
-                            <MotionButton
+                            <Button
                               bgColor={"#0A192F"}
                               color={"#64FED9"}
                               border="2px solid #64FED9"
                               fontWeight={"300"}
-                              variants={item}
+                             
                               _hover={{bgColor:"#64FED9",color:"#0A192F"}}
                             >
                               GET CV
-                            </MotionButton>
+                            </Button>
                         </Link>
 
-               </MotionBox>
+               </Box>
 
-               <MotionBox 
+               <Box 
                    width={"50%"}
                    display={["flex","flex","flex","flex","none"]}
                    justifyContent={"right"}
                    px={0}
                    onClick={isOpen ? onClose : onOpen}
-                   variants={menuVariants} 
-                   initial="hidden" 
-                   animate="visible" 
-                   whileHover="hover" 
+                  //  variants={menuVariants} 
+                  className={inView ?  "first_Nav_Item_Visible" : "first_Nav_Item_Hidden"}
                >
                         <Icon
                           color={"#64FED9"}
                           as={BiMenuAltRight}
                           w={10} 
                           h={10}
+                         
                         />
-               </MotionBox>
+               </Box>
 
-               <ReusableDrawer isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
+               <ReusableDrawer isOpen={isOpen} onOpen={onOpen} onClose={onClose} myRoutes={myRoutes} />
             </Box>
-         </MotionBox> 
-     </AnimatePresence>
+         </Box> 
     )
 }
 

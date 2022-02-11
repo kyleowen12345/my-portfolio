@@ -157,3 +157,60 @@ a {
 }
 
 
+
+
+
+/* Header */
+
+.first_Nav_Item_Hidden{
+  transform: scale(0) !important;
+}
+
+.first_Nav_Item_Visible{
+  transform: scale(1) ease-in-out !important; 
+  transition-delay: 100ms !important;
+  transition-duration: 400ms !important;
+}
+
+
+.second_Nav_Item_Hidden{
+  transform: scale(0)  !important;
+}
+
+.second_Nav_Item_Visible{
+  transform: scale(1) ease-in-out !important; 
+  transition-delay: 500ms !important;
+  transition-duration: 400ms !important;
+}
+
+.third_Nav_Item_Hidden{
+  transform: scale(0) !important;
+}
+
+.third_Nav_Item_Visible{
+  transform: scale(1) ease-in-out !important; 
+  transition-delay: 900ms !important;
+  transition-duration: 400ms !important;
+}
+
+.fourth_Nav_Item_Hidden{
+  transform: scale(0)  !important;
+}
+
+.fourth_Nav_Item_Visible{
+  transform: scale(1) ease-in-out !important; 
+  transition-delay: 1.3s !important;
+  transition-duration: 400ms !important;
+}
+
+.fifth_Nav_Item_Hidden{
+  transform: scale(0)  !important;
+}
+
+.fifth_Nav_Item_Visible{
+  transform: scale(1) ease-in-out !important; 
+  transition-delay: 1.7s !important;
+  transition-duration: 400ms !important;
+}
+
+

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { Container,Text,Box } from '@chakra-ui/react'
-import { motion,AnimatePresence  } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 import { useMyRoute } from '../../lib/routeprovider';
 import AboutImage from './AboutImage';

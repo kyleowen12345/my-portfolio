@@ -1,10 +1,8 @@
 import React from 'react';
-import { Image,Box,Text,Grid,Button  } from '@chakra-ui/react'
-import { motion,AnimatePresence  } from "framer-motion"
+import { Box,Text,Grid  } from '@chakra-ui/react'
 import { useInView } from 'react-intersection-observer';
 
-const MotionBox = motion(Box)
-const MotionText = motion(Text)
+
 
 
 
@@ -21,20 +19,19 @@ const AboutDescription = () => {
          mx={["auto","auto","auto","auto",0]}
          
       >
-            <MotionBox
+            <Box
                 width={"100%"}
                 maxWidth={"800px"}
                 height="100%"
                 display="flex"
                 flexDirection="column"
-               //  bgColor={"white"}
                 justifyContent={"center"}
                 ref={ref}
             >
-                <MotionBox
+                <Box
                   
                 >
-                       <MotionText  
+                       <Text  
                         //   textShadow={"1px 1px black"} 
                           fontSize={["14px","14px","14px","16px","18px"]} 
                           fontWeight={"bold"}
@@ -47,8 +44,8 @@ const AboutDescription = () => {
                         fontFamily="Roboto Mono"
                           >
                              ABOUT ME
-                       </MotionText>
-                       <MotionText 
+                       </Text>
+                       <Text 
                         //   textShadow={"1px 2px black"}
                           fontSize={["23px","23px","25px","27px","30px"]} 
                           fontWeight={"bold"}
@@ -58,9 +55,9 @@ const AboutDescription = () => {
                         color="#CCD6F6"
                           >
                              PERSONAL DETAILS
-                       </MotionText>
-                </MotionBox>
-                <MotionBox 
+                       </Text>
+                </Box>
+                <Box 
                  className={ inView ? "thirdContainerVisible" : "thirdContainerHidden"}
                   my={5}
                   color="#CCD6F6"
@@ -77,8 +74,8 @@ const AboutDescription = () => {
                        >
                           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime provident perferendis a excepturi, atque repellendus ipsum suscipit eligendi minima rerum voluptas voluptates adipisci explicabo tempora numquam soluta modi dignissimos sit!
                        </Text>
-                </MotionBox>
-                <MotionBox 
+                </Box>
+                <Box 
                  className={ inView ? "fourthContainerVisible" : "fourthContainerHidden"}
                   mb={[5,5,5,5,10]}
                 >
@@ -127,30 +124,10 @@ const AboutDescription = () => {
                                {">"} PHP (Laravel)
                            </Text>
                        </Grid>
-                </MotionBox>
+                </Box>
                
-                {/* <MotionBox
-                  initial={"hidden"}
-                  animate={inView ? "visible":"hidden"}
-                  variants={fourthContainer}
-                >
-                <Button  
-                     // textShadow={"1px 1px gray"} 
-                     // boxShadow={"0px 7px 5px 0px #2C2C2C"}   
-                     width={["100%","100%","100%","100%"]} 
-                     fontSize={["0.8rem","0.8rem","1rem"]} 
-                     bgColor={"#0A192F"}
-                     color={"#64FED9"}
-                     border="2px solid #64FED9"
-                     height="50px" 
-                     fontSize={["0.8rem","0.8rem","1rem"]} 
-                     _hover={{bgColor:"#64FED9",color:"#0A192F"}}
-                     
-                >
-                        VIEW FULL DETAILS
-                </Button>
-                </MotionBox> */}
-            </MotionBox>
+                
+            </Box>
                   
       </Box>   
  

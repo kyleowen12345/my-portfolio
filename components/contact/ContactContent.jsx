@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box,Text,Icon,Stack, Button,Link } from '@chakra-ui/react'
-import { motion,AnimatePresence  } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 import {AiOutlineHome,AiOutlineMail} from 'react-icons/ai'
 import {BsTelephone} from 'react-icons/bs'
@@ -11,43 +10,9 @@ const Map = dynamic(() => import('./Map'), {
   ssr: false
 });
 
-const MotionBox = motion(Box)
-const MotionStack = motion(Stack)
-const MotionButton = motion(Button)
 
 
 
-const list = {
-  visible: {
-    opacity: 1,
-    transition: {
-      when: "beforeChildren",
-      staggerChildren: 0.2,
-    },
-  },
-  hidden: {
-    opacity: 0,
-    transition: {
-      when: "afterChildren",
-    },
-  },
-}
-
-const item = {
-  visible: { 
-     opacity: 1,
-     transition:
-     {
-        duration:0.5,
-        ease: "easeInOut",
-      
-     } 
-  },
-  hidden: { 
-     opacity: 0,
-  },
-  
-}
 
 
 const ContactContent = () => {
@@ -58,18 +23,25 @@ const ContactContent = () => {
     const contactDetails=[
         {
             icon:AiOutlineHome,
-            name:"Bislig City, Philippines",
-            extraDetails:"Purok 2, San Roque"
+            name:"Davao City, Philippines",
+            extraDetails:"Barangay Cabantian",
+            hidden:"first_Nav_Item_Hidden",
+            visible:"first_Nav_Item_Visible"
         },
         {
             icon:BsTelephone,
             name:"0939  119  2839",
-            extraDetails:"Everyday 9am to 6pm"
+            extraDetails:"Everyday 9am to 6pm",
+            hidden:"second_Nav_Item_Hidden",
+            visible:"second_Nav_Item_Visible"
+            
         },
         {
             icon:AiOutlineMail,
             name:"gakyleowen@gmail.com",
-            extraDetails:"Send me your query anytime!"
+            extraDetails:"Send me your query anytime!",
+            hidden:"third_Nav_Item_Hidden",
+            visible:"third_Nav_Item_Visible"
         }
     ]
 
@@ -86,18 +58,8 @@ const ContactContent = () => {
         mt={10}
         
       >
-            <Box
-              width={["100%","100%","100%","100%","50%"]}
-              height={["40%","40%","80%","80%","80%","80%"]}
-              id="map"
-              borderRadius={10}
-              border="2px solid black"
-              boxShadow={"0px 7px 5px 0px black"}
-              zIndex={99}
-            >
              <Map/>
-            </Box>
-            <MotionStack
+            <Stack
                width={["100%","100%","100%","100%","40%"]}
                height={"60%"}
                spacing={10} 
@@ -106,20 +68,18 @@ const ContactContent = () => {
                justifyContent={["start","start","start","start","center"]}
                mt={0}
                ref={ref}
-               initial="hidden"
-               animate={inView ? "visible":"hidden"}
-               variants={list}
+           
 
             >
                 {
                     contactDetails.map(i=>(
-                       <MotionBox 
+                       <Box 
                           key={i.name}
                           display={"flex"}
                           alignItems={"center"}
                           justifyContent={"left"}
                           width={"100%"}
-                          variants={item}
+                          className={inView ? i.visible : i.hidden}
                        >
                            <Icon 
                               as={i.icon} 
@@ -146,11 +106,15 @@ const ContactContent = () => {
                                 </Text>
                            </Box>
                           
-                       </MotionBox> 
+                       </Box> 
                     ))
                 }
-                <Link href={`mailto:gakyleowen@gmail.com`} width={"100%"} _hover={{textDecoration:"none"}} >  
-                <MotionButton
+                <Link 
+                   href={`mailto:gakyleowen@gmail.com`} 
+                   width={"100%"} 
+                   _hover={{textDecoration:"none"}} 
+                   >  
+                <Button
                     width={["100%","100%","100%","100%","70%"]} 
                     bgColor={"#0A192F"}
                     color={"#64FED9"}
@@ -158,11 +122,13 @@ const ContactContent = () => {
                     fontWeight={"300"}
                     height="50px"
                      _hover={{bgColor:"#64FED9",color:"#0A192F"}}
-                    variants={item}
+                    className={inView ? "fourth_Nav_Item_Visible" : "fourth_Nav_Item_Hidden"}
                 
-                >SAY HELLO</MotionButton>
+                >
+                  SAY HELLO
+                </Button>
                  </Link>
-            </MotionStack>
+            </Stack>
 
       </Stack>
   );

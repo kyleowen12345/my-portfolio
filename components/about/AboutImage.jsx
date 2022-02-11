@@ -1,44 +1,11 @@
 import React from 'react';
 import { Image,Box } from '@chakra-ui/react'
-import { motion,AnimatePresence  } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 import { useMyRoute } from '../../lib/routeprovider';
 
-const MotionBox = motion(Box)
-const MotionImage = motion(Image)
 
-const boxVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      delay:0.3, 
-      duration: 0.7,
-      ease: "easeInOut",
-    }
-  },
-  hover:{
-     scale: 1.2, 
-     textShadow: "0px 0px 8px rgb(255,255,255)",
-     boxShadow: "0px 0px 8px rgb(255,255,255)"
-    }
-};
 
-const imageVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      delay:0.4, 
-      duration: 0.4,
-      ease: "easeInOut",
-    }
-  },
-};
+
 
 const AboutImage = () => {
   const { ref, inView, entry } = useInView({
@@ -46,7 +13,9 @@ const AboutImage = () => {
   });
   return ( 
 
-  <MotionBox
+  <Box
+    position="relative"
+    overflow="hidden"
     width={["90%","90%","90%","90%","50%"]}
     height={["30%","40%","40%","40%","90%"]}
     mx={["auto","auto","auto","auto",0]}
@@ -58,22 +27,31 @@ const AboutImage = () => {
     maxWidth="1000px"
     maxHeight="1000px"
     ref={ref}
-    
+    className={ inView ? "imageContainerVisible" : "imageContainerHidden"}
    
   >
-            <MotionImage 
-              // initial={"hidden"}
-              // animate={inView ? "visible" : "hidden"}
-              // variants={imageVariants}
-              src='../../about.png' 
-              alt='next' 
-              width={["90%","90%","90%","60%"]} 
+            <Box  
+              borderRadius={5}
+              position="absolute" 
+              width={["90%","90%","90%","40%"]} 
+              backgroundImage={'../../about.png'} 
+              backgroundPosition="center" 
+              backgroundSize="cover" 
+              backgroundRepeat="no-repeat" 
+              height={["90%","90%","90%","40%"]}
+             
+            ></Box>
+            <Box 
+            borderRadius={5}
+            position="absolute" 
+            width={["90%","90%","90%","40%"]} 
+            height={["90%","90%","90%","40%"]} 
+            backgroundColor="#64FED9"
+            opacity={0.5}
+            >
               
-              height={"100%"}
-              objectFit={["contain","contain","contain",""]} 
-              className={ inView ? "imageContainerVisible" : "imageContainerHidden"}
-            />
-  </MotionBox>
+            </Box>
+  </Box>
   )
 };
 

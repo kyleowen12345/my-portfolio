@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box,Image,Text,Icon,Stack,Grid,Link } from '@chakra-ui/react'
-import { motion  } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 import NextLink from 'next/link'
 import {FiExternalLink} from 'react-icons/fi'

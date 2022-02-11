@@ -1,6 +1,5 @@
 import React from 'react';
 import { Image,Box,Text,Grid,Button,Stack,Icon  } from '@chakra-ui/react'
-import { motion,AnimatePresence  } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 import {BsWordpress} from 'react-icons/bs'
 import {AiOutlineApi} from 'react-icons/ai'
@@ -8,55 +7,9 @@ import {CgWebsite} from 'react-icons/cg'
 import {MdOutlineDesignServices} from 'react-icons/md'
 import ServiceContent from './ServiceContent';
 
-const MotionBox = motion(Box)
-const MotionGrid = motion(Grid)
-const MotionStack = motion(Stack)
 
-const servicesVariants = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: { 
-        delay:0.5,
-        duration: 1,
-        ease: "easeInOut",
-      }
-    }
-  };
 
-const list = {
-    visible: {
-      scale: 1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.5,
-      },
-    },
-    hidden: {
-      scale: 0,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-  }
- 
-  const item = {
-    visible: { 
-      scale: 1,
-       transition:
-       {
-          duration: 1,
-          ease: "easeInOut",
-        
-       } 
-    },
-    hidden: { 
-      scale: 0,
-    },
-    
-  }
+
 
 const Services = () => {
     const { ref, inView, entry } = useInView({
@@ -104,21 +57,18 @@ const Services = () => {
         ref={ref}
         mx={"auto"}
       >    
-         <MotionBox 
+         <Box 
            mb={10} 
            display={"flex"} 
            flexDirection={"column"} 
            alignItems={"center"}
-          //  px={5}
-          //  initial="hidden"
-          //  animate={inView ? "visible" : "hidden"}
-          //  variants={servicesVariants}
+          
            
          >
            <Text  
                fontSize={["16px","16px","18px","18px","20px" ]} 
                fontWeight={"semibold"} 
-              //  textShadow={"1px 2px gray"}
+              
                color={"#64FED9"}
                fontFamily="Roboto Mono"
            >
@@ -131,21 +81,19 @@ const Services = () => {
            >
                At about this time of year, some months after New Year’s resolutions have been made and kept, or made and neglected.
            </Text>
-         </MotionBox>
-         <MotionGrid 
+         </Box>
+         <Grid 
              width={"100%"} 
              templateColumns={['repeat(1, 1fr)','repeat(1, 1fr)','repeat(1, 1fr)','repeat(2, 1fr)']} 
              gap={[5,5,5,5,10]} 
              height={["100%","100%","100%","60%"]}
-            //  initial="hidden"
-            //  animate={inView ? "visible" : "hidden"}
-            //  variants={list}
+           
          >                
                       {services.map(i=>(
                         
                         <ServiceContent i={i} key={i.serviceName}/>
                       ))}
-         </MotionGrid>
+         </Grid>
       </Box>
   );
 };
@@ -154,4 +102,4 @@ export default Services;
 
 
 
-// MAKE A SEPARATOR FOR EVEERY SECTION
+

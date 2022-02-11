@@ -139,7 +139,6 @@ const Home = () => {
                                             <Link
                                                width={["100%","100%","100%","45%"]}
                                                href='/#about'
-                                             
                                                style={{ textDecoration: 'none' }}
                                             >
                                                 <Button 
