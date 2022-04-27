@@ -22,28 +22,28 @@ const Services = () => {
          visibleClass:"firstServiceVisible",
          serviceImage:MdOutlineDesignServices,
          serviceName:"UI/UX Design",
-         serviceDescription:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut tempore accusantium ipsum accusamus unde aspernatur dolor, blanditiis ducimus sapiente laborum commodi tempora aut asperiores maiores consequuntur voluptate reiciendis sit quas?"
+         serviceDescription:"Building a user-friendly interface, collaborating with managers and engineers to gather requirements from users before designing ideas. I also process flows or sitemaps then applying color palettes based on what best fits into a particular design conceptually."
        },
        {
         hiddenClass:"secondServiceHidden",
         visibleClass:"secondServiceVisible",
         serviceImage:CgWebsite,
         serviceName:"Web Development",
-        serviceDescription:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut tempore accusantium ipsum accusamus unde aspernatur dolor, blanditiis ducimus sapiente laborum commodi tempora aut asperiores maiores consequuntur voluptate reiciendis sit quas?"
+        serviceDescription:"I make sure websites look good and function properly. Collaborating with website and graphic designers, monitoring website traffic, troubleshooting website problems when they arise, and updating websites as necessary."
       },
       {
         hiddenClass:"thirdServiceHidden",
         visibleClass:"thirdServiceVisible",
         serviceImage:AiOutlineApi,
         serviceName:"API Development",
-        serviceDescription:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut tempore accusantium ipsum accusamus unde aspernatur dolor, blanditiis ducimus sapiente laborum commodi tempora aut asperiores maiores consequuntur voluptate reiciendis sit quas?"
+        serviceDescription:"I make sure API (REST / Graphql) is secure and performs properly. Collaborating with web developers and mobile developers, troubleshooting API accessibility problems when they arise, and updating API as necessary."
       },
       {
         hiddenClass:"fourthServiceHidden",
         visibleClass:"fourthServiceVisible",
         serviceImage:BsWordpress,
         serviceName:"WordPress",
-        serviceDescription:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut tempore accusantium ipsum accusamus unde aspernatur dolor, blanditiis ducimus sapiente laborum commodi tempora aut asperiores maiores consequuntur voluptate reiciendis sit quas?"
+        serviceDescription:"Designing and implementing websites for companies using the WordPress creation tool. My goal is to create attractive and user-friendly websites according to client specifications"
       }
 
      ] 
@@ -74,13 +74,13 @@ const Services = () => {
            >
                MY OFFERED SERVICES
            </Text>
-           <Text 
+           {/* <Text 
                fontSize={["11px","11px","13px","13px","14px"] } 
                textAlign={"center"}
                color="#CCD6F6"
            >
                At about this time of year, some months after New Year’s resolutions have been made and kept, or made and neglected.
-           </Text>
+           </Text> */}
          </Box>
          <Grid 
              width={"100%"} 

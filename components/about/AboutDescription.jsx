@@ -66,13 +66,14 @@ const AboutDescription = () => {
                           lineHeight={["8","8","8","10"]}
                           fontSize={["15px","15px","15px","16px","16px","18px"]}
                        >
-                          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro dolores eum tempora amet optio iste error eaque! Eum, libero, eos ipsum laudantium beatae sed soluta facilis, harum natus eaque provident!
+                          Hello! I am Kyle and I love building things for the web. I started learning web development in 2019 and since then I fell in love with it to the point where I would clone other websites' UI and try to analyze them and implement it on my own.
                        </Text>
                        <Text 
                            lineHeight={["8","8","8","10"]}
                            fontSize={["15px","15px","15px","16px","16px","18px"]}
+                           mt={5}
                        >
-                          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime provident perferendis a excepturi, atque repellendus ipsum suscipit eligendi minima rerum voluptas voluptates adipisci explicabo tempora numquam soluta modi dignissimos sit!
+                          Currently, I am trying to finish building a video conferencing app with <span style={{color:"#64FED9"}}>Zoom-like features</span> however I would love to do some work with a team or someone with more experience so that I could get better and gain more experience.
                        </Text>
                 </Box>
                 <Box 
