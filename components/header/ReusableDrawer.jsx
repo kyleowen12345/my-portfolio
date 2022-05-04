@@ -93,7 +93,7 @@ const ReusableDrawer = ({onClose,isOpen,myRoutes}) => {
                        }
                      <Link
                             width="40%"
-                            href='../../Images.pdf'
+                            href='../../Kyle Owen Ga (resume).pdf'
                             download={"Resume pdf"}
                             style={{ textDecoration: 'none' }}
                             className={inView ? "fifth_Nav_Item_Visible" : "fifth_Nav_Item_Hidden"}
