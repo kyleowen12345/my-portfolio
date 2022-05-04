@@ -31,7 +31,7 @@ const ContactContent = () => {
         {
             icon:BsTelephone,
             name:"0939  119  2839",
-            extraDetails:"Everyday 9am to 6pm",
+            extraDetails:"Everyday 7am to 6pm",
             hidden:"second_Nav_Item_Hidden",
             visible:"second_Nav_Item_Visible"
             

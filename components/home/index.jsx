@@ -96,8 +96,8 @@ const Home = () => {
                                             <Text  
                                                fontSize={["1.513rem","1.9rem","2.513rem","2.813rem","3rem","3.513rem"]} 
                                                fontWeight={"bold"}
-                                               color="#8892B0"
-
+                                               color="#CCD6F6"
+  
                                               className={ inView ? "thirdContainerVisible" : "thirdContainerHidden"}
                                               // fontFamily="Roboto Mono"
                                             >
@@ -109,14 +109,14 @@ const Home = () => {
                                             <Box  
                                                  fontSize={"1rem"} 
                                                  fontWeight={"bold"}
-                                                 color="#8892B0"
+                                                 color={"#8892B0"} 
                                                  maxWidth="650px"
                                                  my={5}
                                               
                                                 //  fontWeight="300"
                                                  className={ inView ? "fourthContainerVisible" : "fourthContainerHidden"}
                                             >
-                                          I’m a software engineer specializing in building responsive web applications. I'm focused on creating an <span style={{color:"#64FED9"}}>user-friendly web design for easy accessibility.</span>
+                                         I’m a software engineer specializing in building responsive web applications and creating user-friendly web designs for easy accessibility.
                                           {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime culpa officiis molestiae voluptatum iste id repellendus laudantium sunt ad atque ab, sequi, dolor aliquam,nisi eum eaque delectus vero pariatur</span>  */}
 
                                             </Box>

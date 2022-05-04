@@ -71,9 +71,10 @@ const AboutDescription = () => {
                        <Text 
                            lineHeight={["8","8","8","10"]}
                            fontSize={["15px","15px","15px","16px","16px","18px"]}
+                           color={"#64FED9"} 
                            mt={5}
                        >
-                          Currently, I am trying to finish building a video conferencing app with <span style={{color:"#64FED9"}}>Zoom-like features</span> however I would love to do some work with a team or someone with more experience so that I could get better and gain more experience.
+                          Currently, I am searching for my first job because I love to do some work with a team or with someone that has more experience to get a new perspective and get better.
                        </Text>
                 </Box>
                 <Box 
