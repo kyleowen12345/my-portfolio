@@ -16,7 +16,8 @@ const ProjectBoxes = () => {
           projectDescription:"It’s an e-commerce site where a buyer can also be a seller. It also shows statistical data on how much you are selling and which stores are more followed. The statistical chart on the dashboard also helps sellers on what product to restock or to get rid of.",
           projectTools:["React","Express","Graphql","Heroku","MongoDB"],
           externalLink:"https://blackedmarket.vercel.app/",
-          repositoryLink:"https://github.com/kyleowen12345/blackedmarket"
+          repositoryLink:"https://github.com/kyleowen12345/blackedmarket",
+          youtubelink:"https://www.youtube.com/embed/4U9JrjN_02U"
 
       },
       {
@@ -25,8 +26,8 @@ const ProjectBoxes = () => {
         projectDescription:"It's a video conferencing app in its development stage. You can create a meeting and join a meeting, it can cater to multiple participants also you chat, record video, screen share, and change layout view (pretty much like Zoom).",
         projectTools:["React","Express","Heroku","MongoDB"],
         externalLink:"https://ecs-frontend.vercel.app/",
-        repositoryLink:"https://github.com/kyleowen12345/ecs_frontend"
-
+        repositoryLink:"https://github.com/kyleowen12345/ecs_frontend",
+        youtubelink:"https://www.youtube.com/embed/rf75OMfxGMM"
     }
   ]
     

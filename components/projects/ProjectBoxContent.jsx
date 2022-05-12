@@ -39,7 +39,7 @@ const ProjectBoxContent = ({i}) => {
                              <iframe 
                                 width="100%" 
                                 height="100%" 
-                                src="https://www.youtube.com/embed/rf75OMfxGMM" 
+                                src={i.youtubelink}
                                 title="YouTube video player" 
                                 frameBorder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
