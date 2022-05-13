@@ -34,18 +34,18 @@ const AboutImage = () => {
               borderRadius={5}
               position="absolute" 
               width={["90%","90%","90%","40%"]} 
-              backgroundImage={'../../about.png'} 
+              backgroundImage={'../../profileimage.jpg'} 
               backgroundPosition="center" 
               backgroundSize="cover" 
               backgroundRepeat="no-repeat" 
-              height={["90%","90%","90%","40%"]}
+              height={["90%","90%","90%","50%"]}
              
             ></Box>
             <Box 
             borderRadius={5}
             position="absolute" 
             width={["90%","90%","90%","40%"]} 
-            height={["90%","90%","90%","40%"]} 
+            height={["90%","90%","90%","50%"]} 
             backgroundColor="#64FED9"
             opacity={0.5}
             >
