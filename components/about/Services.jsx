@@ -1,7 +1,8 @@
 import React from 'react';
 import { Image,Box,Text,Grid,Button,Stack,Icon  } from '@chakra-ui/react'
 import { useInView } from 'react-intersection-observer';
-import {BsWordpress} from 'react-icons/bs'
+
+import {MdVideoSettings} from 'react-icons/md'
 import {AiOutlineApi} from 'react-icons/ai'
 import {CgWebsite} from 'react-icons/cg'
 import {MdOutlineDesignServices} from 'react-icons/md'
@@ -41,9 +42,9 @@ const Services = () => {
       {
         hiddenClass:"fourthServiceHidden",
         visibleClass:"fourthServiceVisible",
-        serviceImage:BsWordpress,
-        serviceName:"WordPress",
-        serviceDescription:"Designing and implementing websites for companies using the WordPress creation tool. My goal is to create attractive and user-friendly websites according to client specifications"
+        serviceImage:MdVideoSettings,
+        serviceName:"Video Editing",
+        serviceDescription:"Manipulate film and video footage to create a coherent and complete project that accurately depicts the film director's envision. Using complex editing software to piece together stills, footage, sound effects, dialog, and animation effects"
       }
 
      ] 

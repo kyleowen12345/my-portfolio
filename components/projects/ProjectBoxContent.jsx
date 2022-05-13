@@ -92,6 +92,8 @@ const ProjectBoxContent = ({i}) => {
                                               />
                                           </Link>
 
+                                          {i.externalLink !== "disabled" &&
+                                           
                                           <Link href={i.externalLink} target="_blank" >  
                                             <Icon 
                                                 as={FiExternalLink}  
@@ -99,7 +101,7 @@ const ProjectBoxContent = ({i}) => {
                                                 w={[4,5,6]} 
                                                 color="#8892B0"
                                             />
-                                          </Link>  
+                                          </Link>  }
                                         </Box>
                                     </Box>
                                     <Text 
