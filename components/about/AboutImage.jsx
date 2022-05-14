@@ -34,7 +34,7 @@ const AboutImage = () => {
               borderRadius={5}
               position="absolute" 
               width={["90%","90%","90%","40%"]} 
-              backgroundImage={'../../profileimage.jpg'} 
+              backgroundImage={'../../googleimage.jpg'} 
               backgroundPosition="center" 
               backgroundSize="cover" 
               backgroundRepeat="no-repeat" 
