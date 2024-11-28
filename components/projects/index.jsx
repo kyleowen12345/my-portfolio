@@ -1,36 +1,43 @@
-import React, { useEffect } from 'react' 
-import { Box } from '@chakra-ui/react'
-import { useInView } from 'react-intersection-observer';
-import { useMyRoute } from '../../lib/routeprovider'
-import ProjectIntro from './ProjectIntro';
-import ProjectBoxes from './ProjectBoxes';
+import React, { useEffect } from "react";
+import { Stack } from "@chakra-ui/react";
+import { useInView } from "react-intersection-observer";
+import { useMyRoute } from "../../lib/routeprovider";
+import ProjectIntro from "./ProjectIntro";
+import ProjectBoxes from "./ProjectBoxes";
+import { PageStyles } from "../../constants/styles";
 
 const Projects = () => {
-    const { ref, inView, entry } = useInView({
-        /* Optional options */
-        threshold: 0,
-      });
-      const {setSection} = useMyRoute()
-  
-      useEffect(()=>{
-        if(inView){
-          setSection('/#projects')
-        }
-      },[inView])
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+  const { setSection } = useMyRoute();
 
-    return (
-       <Box
-          height={[2200,2200,2000,1800,1500]}
-          width={["100%","100%","100%","100%","80%"]}
-          mx="auto"
-          ref={ref}
-          id="projects"
-          maxWidth={"1600px"}
-       >
-           <ProjectIntro/>
-           <ProjectBoxes/>
-       </Box>
-    )
-}
+  useEffect(() => {
+    if (inView) {
+      setSection("/#projects");
+    }
+  }, [inView]);
 
-export default Projects
+  return (
+    <Stack
+      ref={ref}
+      id="projects"
+      maxWidth={PageStyles.maxWidth}
+      paddingX={[
+        PageStyles.paddingMobile,
+        PageStyles.paddingMobile,
+        PageStyles.paddingTablet,
+        PageStyles.paddingDesktop,
+      ]}
+      spacing={10}
+      margin={"auto"}
+      width={"100%"}
+    >
+      <ProjectIntro />
+      <ProjectBoxes />
+    </Stack>
+  );
+};
+
+export default Projects;

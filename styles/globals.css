@@ -2,9 +2,10 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, 'Playfair Display', serif, 'Roboto Mono', monospace, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    scroll-behavior: smooth;
+  font-family: -apple-system, "Playfair Display", serif, "Roboto Mono",
+    monospace, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
 }
 a {
   color: inherit;
@@ -15,202 +16,191 @@ a {
   box-sizing: border-box;
 }
 
-
 /* Containers || Boxes */
 
-.firstContainerHidden{
+.firstContainerHidden {
   transform: scale(0) !important;
-
 }
 
-.firstContainerVisible{
-  transform: scale(1)  !important; 
+.firstContainerVisible {
+  transform: scale(1) !important;
   transition-delay: 50ms !important;
   transition-duration: 400ms !important;
   /* font-family: Arial, Helvetica, sans-serif !important; */
 }
 
-.secondContainerHidden{
-  transform: scale(0) !important; 
+.secondContainerHidden {
+  transform: scale(0) !important;
 }
 
-.secondContainerVisible{
- transform: scale(1) !important; 
- transition-delay: 600ms !important;
- transition-duration: 400ms !important;
+.secondContainerVisible {
+  transform: scale(1) !important;
+  transition-delay: 600ms !important;
+  transition-duration: 400ms !important;
 }
 
-.thirdContainerHidden{
-  transform: scale(0) !important; 
+.thirdContainerHidden {
+  transform: scale(0) !important;
 }
 
-.thirdContainerVisible{
- transform: scale(1) !important; 
- transition-delay: 1s !important;
- transition-duration: 400ms !important;
+.thirdContainerVisible {
+  transform: scale(1) !important;
+  transition-delay: 1s !important;
+  transition-duration: 400ms !important;
 }
 
-.fourthContainerHidden{
-  transform: scale(0) !important; 
+.fourthContainerHidden {
+  transform: scale(0) !important;
 }
 
-.fourthContainerVisible{
- transform: scale(1) !important; 
- transition-delay: 1.4s !important;
- transition-duration: 400ms !important;
+.fourthContainerVisible {
+  transform: scale(1) !important;
+  transition-delay: 1.4s !important;
+  transition-duration: 400ms !important;
 }
 
-.fifthContainerHidden{
-  transform: scale(0) !important; 
+.fifthContainerHidden {
+  transform: scale(0) !important;
 }
 
-.fifthContainerVisible{
- transform: scale(1) !important; 
- transition-delay: 1.8s !important;
- transition-duration: 400ms !important;
+.fifthContainerVisible {
+  transform: scale(1) !important;
+  transition-delay: 1.8s !important;
+  transition-duration: 400ms !important;
 }
 
-.sixthContainerHidden{
-  transform: scale(0) !important; 
+.sixthContainerHidden {
+  transform: scale(0) !important;
 }
 
-.sixthContainerVisible{
- transform: scale(1) !important; 
- transition-delay: 2.2s !important;
- transition-duration: 400ms !important;
+.sixthContainerVisible {
+  transform: scale(1) !important;
+  transition-delay: 2.2s !important;
+  transition-duration: 400ms !important;
 }
 
-.sixthContainerHidden{
-  transform: scale(0) !important; 
+.sixthContainerHidden {
+  transform: scale(0) !important;
 }
 
-.sixthContainerVisible{
- transform: scale(1) !important; 
- transition-delay: 2.2s !important;
- transition-duration: 400ms !important;
+.sixthContainerVisible {
+  transform: scale(1) !important;
+  transition-delay: 2.2s !important;
+  transition-duration: 400ms !important;
 }
 
-.seventhContainerHidden{
-  transform: scale(0) !important; 
+.seventhContainerHidden {
+  transform: scale(0) !important;
 }
 
-.seventhContainerVisible{
- transform: scale(1) !important; 
- transition-delay: 2.6s !important;
- transition-duration: 400ms !important;
+.seventhContainerVisible {
+  transform: scale(1) !important;
+  transition-delay: 2.6s !important;
+  transition-duration: 400ms !important;
 }
 
 /* Image */
-.imageContainerHidden{
-  transform: scale(0) !important; 
+.imageContainerHidden {
+  transform: scale(0) !important;
 }
 
-.imageContainerVisible{
-  transform: scale(1) !important; 
+.imageContainerVisible {
+  transform: scale(1) !important;
   transition-delay: 0.2s !important;
   transition-duration: 400ms !important;
 }
 
-
 /* Services */
 
-.firstServiceHidden{
+.firstServiceHidden {
   transform: scale(0) !important;
-
 }
 
-.firstServiceVisible{
-  transform: scale(1)  !important; 
+.firstServiceVisible {
+  transform: scale(1) !important;
   transition-delay: 50ms !important;
   transition-duration: 300ms !important;
   /* font-family: Arial, Helvetica, sans-serif !important; */
 }
 
-.secondServiceHidden{
-  transform: scale(0) !important; 
-}
-
-.secondServiceVisible{
- transform: scale(1) !important; 
- transition-delay: 300ms !important;
- transition-duration: 300ms !important;
-}
-
-.thirdServiceHidden{
-  transform: scale(0) !important; 
-}
-
-.thirdServiceVisible{
- transform: scale(1) !important; 
- transition-delay: 600ms !important;
- transition-duration: 300ms !important;
-}
-
-.fourthServiceHidden{
-  transform: scale(0) !important; 
-}
-
-.fourthServiceVisible{
- transform: scale(1) !important; 
- transition-delay: 900ms !important;
- transition-duration: 300ms !important;
-}
-
-
-
-
-
-/* Header */
-
-.first_Nav_Item_Hidden{
+.secondServiceHidden {
   transform: scale(0) !important;
 }
 
-.first_Nav_Item_Visible{
-  transform: scale(1) ease-in-out !important; 
+.secondServiceVisible {
+  transform: scale(1) !important;
+  transition-delay: 300ms !important;
+  transition-duration: 300ms !important;
+}
+
+.thirdServiceHidden {
+  transform: scale(0) !important;
+}
+
+.thirdServiceVisible {
+  transform: scale(1) !important;
+  transition-delay: 600ms !important;
+  transition-duration: 300ms !important;
+}
+
+.fourthServiceHidden {
+  transform: scale(0) !important;
+}
+
+.fourthServiceVisible {
+  transform: scale(1) !important;
+  transition-delay: 900ms !important;
+  transition-duration: 300ms !important;
+}
+
+/* Header */
+
+.first_Nav_Item_Hidden {
+  transform: scale(0) !important;
+}
+
+.first_Nav_Item_Visible {
+  transform: scale(1) ease-in-out !important;
   transition-delay: 100ms !important;
   transition-duration: 400ms !important;
 }
 
-
-.second_Nav_Item_Hidden{
-  transform: scale(0)  !important;
+.second_Nav_Item_Hidden {
+  transform: scale(0) !important;
 }
 
-.second_Nav_Item_Visible{
-  transform: scale(1) ease-in-out !important; 
+.second_Nav_Item_Visible {
+  transform: scale(1) ease-in-out !important;
   transition-delay: 500ms !important;
   transition-duration: 400ms !important;
 }
 
-.third_Nav_Item_Hidden{
+.third_Nav_Item_Hidden {
   transform: scale(0) !important;
 }
 
-.third_Nav_Item_Visible{
-  transform: scale(1) ease-in-out !important; 
+.third_Nav_Item_Visible {
+  transform: scale(1) ease-in-out !important;
   transition-delay: 900ms !important;
   transition-duration: 400ms !important;
 }
 
-.fourth_Nav_Item_Hidden{
-  transform: scale(0)  !important;
+.fourth_Nav_Item_Hidden {
+  transform: scale(0) !important;
 }
 
-.fourth_Nav_Item_Visible{
-  transform: scale(1) ease-in-out !important; 
+.fourth_Nav_Item_Visible {
+  transform: scale(1) ease-in-out !important;
   transition-delay: 1.3s !important;
   transition-duration: 400ms !important;
 }
 
-.fifth_Nav_Item_Hidden{
-  transform: scale(0)  !important;
+.fifth_Nav_Item_Hidden {
+  transform: scale(0) !important;
 }
 
-.fifth_Nav_Item_Visible{
-  transform: scale(1) ease-in-out !important; 
+.fifth_Nav_Item_Visible {
+  transform: scale(1) ease-in-out !important;
   transition-delay: 1.7s !important;
   transition-duration: 400ms !important;
 }
-
-
