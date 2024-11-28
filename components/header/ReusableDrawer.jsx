@@ -71,7 +71,7 @@ const ReusableDrawer = ({ onClose, isOpen, myRoutes }) => {
           ))}
           <Link
             width="40%"
-            href="../../Kyle Owen Ga (resume).pdf"
+            href="../../Kyle Owen Ga CV.pdf"
             download={"Resume pdf"}
             style={{ textDecoration: "none" }}
             className={
