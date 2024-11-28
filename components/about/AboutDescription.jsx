@@ -65,7 +65,7 @@ const AboutDescription = () => {
               color={"#64FED9"}
               mt={5}
             >
-              From 2022 to 2024, I worked with{" "}
+              For 3 years, I worked with{" "}
               <Link href={"https://www.hillandfoster.com/"} target="_blank">
                 <span
                   style={{
