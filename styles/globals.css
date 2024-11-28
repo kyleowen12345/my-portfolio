@@ -5,7 +5,7 @@ body {
   font-family: -apple-system, "Playfair Display", serif, "Roboto Mono",
     monospace, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 a {
   color: inherit;
