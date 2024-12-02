@@ -19,6 +19,7 @@ const Home = () => {
 
   return (
     <Stack
+      className={inView ? "animated-box" : ""}
       direction={["column", "column", "column", "column", "row"]}
       maxWidth={PageStyles.maxWidth}
       paddingX={[

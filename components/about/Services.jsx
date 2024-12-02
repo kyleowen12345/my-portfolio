@@ -50,6 +50,7 @@ const Services = () => {
   ];
   return (
     <Stack
+      className={inView ? "animated-box" : ""}
       direction={["column"]}
       ref={ref}
       maxWidth={PageStyles.maxWidth}

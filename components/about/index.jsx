@@ -20,6 +20,7 @@ const About = () => {
   }, [inView]);
   return (
     <Stack
+      className={inView ? "animated-box" : ""}
       maxWidth={PageStyles.maxWidth}
       paddingX={[
         PageStyles.paddingMobile,

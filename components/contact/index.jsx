@@ -22,6 +22,7 @@ const Contact = () => {
   }, [inView]);
   return (
     <Stack
+      className={inView ? "animated-box" : ""}
       direction={["column"]}
       id="contact"
       maxWidth={PageStyles.maxWidth}

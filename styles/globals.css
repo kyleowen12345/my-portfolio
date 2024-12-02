@@ -204,3 +204,21 @@ a {
   transition-delay: 1.7s !important;
   transition-duration: 400ms !important;
 }
+
+.animated-box {
+  width: 100%;
+
+  animation: easeInExample 1s ease-in forwards !important;
+}
+
+/* Keyframes for the ease-in animation */
+@keyframes easeInExample {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
