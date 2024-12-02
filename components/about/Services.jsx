@@ -50,7 +50,7 @@ const Services = () => {
   ];
   return (
     <Stack
-      className={inView ? "animated-box" : ""}
+      className={inView ? "animated-box" : "animated-box-hidden"}
       direction={["column"]}
       ref={ref}
       maxWidth={PageStyles.maxWidth}

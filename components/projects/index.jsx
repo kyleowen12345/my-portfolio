@@ -21,7 +21,7 @@ const Projects = () => {
 
   return (
     <Stack
-      className={inView ? "animated-box" : ""}
+      className={inView ? "animated-box" : "animated-box-hidden"}
       ref={ref}
       id="projects"
       maxWidth={PageStyles.maxWidth}

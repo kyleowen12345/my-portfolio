@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <Stack
-      className={inView ? "animated-box" : ""}
+      className={inView ? "animated-box" : "animated-box-hidden"}
       direction={["column", "column", "column", "column", "row"]}
       maxWidth={PageStyles.maxWidth}
       paddingX={[
