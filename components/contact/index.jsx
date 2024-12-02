@@ -33,6 +33,7 @@ const Contact = () => {
         PageStyles.paddingDesktop,
       ]}
       spacing={10}
+      ref={ref}
       margin={"auto"}
       width={"100%"}
     >
