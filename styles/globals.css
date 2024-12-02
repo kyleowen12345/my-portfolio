@@ -207,7 +207,7 @@ a {
 
 .animated-box {
   width: 100%;
-
+  opacity: 0;
   animation: easeInExample 1s ease-in forwards !important;
 }
 
