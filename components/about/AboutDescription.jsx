@@ -6,6 +6,7 @@ import Link from "next/link";
 const AboutDescription = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0,
+    triggerOnce: true,
   });
 
   const customFontSize = ["10px", "10px", "11px", "14px", "14px"];

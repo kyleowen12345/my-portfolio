@@ -10,6 +10,7 @@ import { MdOutlineDesignServices } from "react-icons/md";
 const ServiceContent = ({ i }) => {
   const { ref, inView, entry } = useInView({
     threshold: 0,
+    triggerOnce: true,
   });
   return (
     <Stack
@@ -27,7 +28,7 @@ const ServiceContent = ({ i }) => {
       justifyContent={"center"}
       boxShadow={"3px 3px #64FED9"}
       ref={ref}
-      // className={inView  ? i.visibleClass : i.hiddenClass}
+      className={inView ? "animated-box" : "animated-box-hidden"}
     >
       <Icon as={i.serviceImage} h={10} w={10} color={"#64FED9"} />
       <Text

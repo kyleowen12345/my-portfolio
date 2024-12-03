@@ -17,6 +17,7 @@ import { AiOutlineGithub } from "react-icons/ai";
 const ProjectBoxContent = ({ i }) => {
   const { ref, inView, entry } = useInView({
     threshold: 0,
+    triggerOnce: true,
   });
   return (
     <Grid
@@ -29,7 +30,7 @@ const ProjectBoxContent = ({ i }) => {
       padding={"16px"}
       gap={"16px"}
       boxShadow={"3px 3px #64FED9"}
-      // className={inView ? "firstContainerVisible" : "firstContainerHidden"}
+      className={inView ? "animated-box" : "animated-box-hidden"}
     >
       {/* 2 */}
       <GridItem
@@ -37,6 +38,10 @@ const ProjectBoxContent = ({ i }) => {
         height={"100%"}
         border="2px solid #64FED9"
         borderRadius={10}
+        borderTopRightRadius={[10, 10, 10, 0]}
+        borderBottomRightRadius={0}
+        borderBottomLeftRadius={[0, 0, 0, 10]}
+        minHeight={"250px"}
 
         // className={inView ? "secondContainerVisible" : "secondContainerHidden"}
       >
@@ -49,7 +54,7 @@ const ProjectBoxContent = ({ i }) => {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            style={{ borderRadius: 10 }}
+            className={"iframe-style"}
           ></iframe>
         ) : (
           <Image
@@ -60,6 +65,9 @@ const ProjectBoxContent = ({ i }) => {
             backgroundPosition={"center"}
             backgroundRepeat={"no-repeat"}
             borderRadius={8}
+            borderTopRightRadius={[8, 8, 8, 0]}
+            borderBottomRightRadius={0}
+            borderBottomLeftRadius={[0, 0, 0, 8]}
           />
         )}
       </GridItem>
@@ -68,6 +76,9 @@ const ProjectBoxContent = ({ i }) => {
         colSpan={[12, 12, 12, 8]}
         border="2px solid #64FED9"
         borderRadius={10}
+        borderTopLeftRadius={0}
+        borderBottomLeftRadius={[10, 10, 10, 0]}
+        borderTopRightRadius={[0, 0, 0, 10]}
         p={5}
         justifyContent={"center"}
         // className={inView ? "thirdContainerVisible" : "thirdContainerHidden"}
@@ -129,30 +140,26 @@ const ProjectBoxContent = ({ i }) => {
             {i.projectDescription}
           </Text>
           {/* 5 */}
-          <Grid
-            templateColumns={[
-              "repeat(2, 1fr)",
-              "repeat(3, 1fr)",
-              "repeat(4, 1fr)",
-              "repeat(4, 1fr)",
-              "repeat(5, 1fr)",
-              "repeat(5, 1fr)",
-            ]}
-            height={"20%"}
-            color="#8892B0"
+          <Stack
+            direction={"row"}
+            gap={3}
             fontFamily="Roboto Mono"
+            wrap={"wrap"}
             //    className={ inView ? "sixthContainerVisible" : "sixthContainerHidden"}
           >
             {i.projectTools.map((e) => (
               <Text
-                fontSize={["12px", "12px", "14px", "16px"]}
+                fontSize={["12px"]}
                 fontWeight={"bold"}
                 key={e}
+                backgroundColor={"#64FED9"}
+                padding={"5px 10px"}
+                borderRadius={"8px"}
               >
                 {e}
               </Text>
             ))}
-          </Grid>
+          </Stack>
         </Stack>
       </GridItem>
     </Grid>

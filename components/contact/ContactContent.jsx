@@ -21,6 +21,7 @@ const Map = dynamic(() => import("./Map"), {
 const ContactContent = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0,
+    triggerOnce: true,
   });
 
   const contactDetails = [

@@ -6,6 +6,7 @@ import ProjectBoxContent from "./ProjectBoxContent";
 const ProjectBoxes = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0,
+    triggerOnce: true,
   });
   const projects = [
     {
@@ -18,6 +19,16 @@ const ProjectBoxes = () => {
       repositoryLink: "",
       youtubelink: "",
     },
+    // {
+    //   image: "../../Forage.png",
+    //   projectName: "Period",
+    //   projectDescription:
+    //     "Foragesoft is a Multi-Tenant Dealer Management System designed specifically for the agriculture industry, streamlining operations, inventory management, and dealer communications.",
+    //   projectTools: ["React", ".Net", "Quickbooks", "Zapier"],
+    //   externalLink: "https://foragesoft.com/",
+    //   repositoryLink: "",
+    //   youtubelink: "",
+    // },
     {
       image: "../../home.png",
       projectName: "Füm",

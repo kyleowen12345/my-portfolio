@@ -10,6 +10,7 @@ import { PageStyles } from "../../constants/styles";
 const About = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0,
+    triggerOnce: true,
   });
   const { setSection } = useMyRoute();
 

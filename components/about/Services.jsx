@@ -12,6 +12,7 @@ import { PageStyles } from "../../constants/styles";
 const Services = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0,
+    triggerOnce: true,
   });
 
   const services = [

@@ -19,6 +19,7 @@ import { PageStyles } from "../../constants/styles";
 const BigHeader = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0,
+    triggerOnce: true,
   });
   const [showNav, setShowNav] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();

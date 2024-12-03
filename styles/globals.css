@@ -226,3 +226,15 @@ a {
     transform: translateY(0);
   }
 }
+
+.iframe-style {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+@media only screen and (max-width: 767px) {
+  .iframe-style {
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 0px;
+  }
+}

@@ -8,6 +8,7 @@ import { useInView } from "react-intersection-observer";
 const Map = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0,
+    triggerOnce: true,
   });
   return (
     <Box

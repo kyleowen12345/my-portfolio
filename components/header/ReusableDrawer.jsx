@@ -20,6 +20,7 @@ const ReusableDrawer = ({ onClose, isOpen, myRoutes }) => {
   const { section } = useMyRoute();
   const { ref, inView, entry } = useInView({
     threshold: 0,
+    triggerOnce: true,
   });
   return (
     <Drawer onClose={onClose} isOpen={isOpen} placement="right" zIndex={9999}>
