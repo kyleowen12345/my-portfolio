@@ -4,6 +4,7 @@ import { Text, Button, Image, Box, Link, Stack } from "@chakra-ui/react";
 import { useInView } from "react-intersection-observer";
 import { useMyRoute } from "../../lib/routeprovider";
 import { PageStyles } from "../../constants/styles";
+import TypingText from "./TypingText";
 
 const Home = () => {
   const { ref, inView, entry } = useInView({
@@ -106,20 +107,7 @@ const Home = () => {
           {/* 3 */}
 
           {/* 4 */}
-          <Text
-            fontSize={"18px"}
-            fontWeight={"bold"}
-            color={"#8892B0"}
-            maxWidth="650px"
-            mt={5}
-            //  fontWeight="300"
-            //  className={ inView ? "fourthContainerVisible" : "fourthContainerHidden"}
-          >
-            I’m a software engineer with expertise in crafting responsive web
-            applications and designing user-friendly interfaces that prioritize
-            accessibility and seamless user experiences.
-            {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime culpa officiis molestiae voluptatum iste id repellendus laudantium sunt ad atque ab, sequi, dolor aliquam,nisi eum eaque delectus vero pariatur</span>  */}
-          </Text>
+          <TypingText />
           {/* 4 */}
         </Box>
 
