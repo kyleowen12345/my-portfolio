@@ -1,5 +1,14 @@
 import React from "react";
-import { Box, Grid, Text, Icon, Stack, Link, GridItem } from "@chakra-ui/react";
+import {
+  Box,
+  Grid,
+  Text,
+  Icon,
+  Stack,
+  Link,
+  GridItem,
+  Image,
+} from "@chakra-ui/react";
 import { useInView } from "react-intersection-observer";
 import NextLink from "next/link";
 import { FiExternalLink } from "react-icons/fi";
@@ -31,16 +40,28 @@ const ProjectBoxContent = ({ i }) => {
 
         // className={inView ? "secondContainerVisible" : "secondContainerHidden"}
       >
-        <iframe
-          width="100%"
-          height="100%"
-          src={i.youtubelink}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          style={{ borderRadius: 10 }}
-        ></iframe>
+        {i.youtubelink ? (
+          <iframe
+            width="100%"
+            height="100%"
+            src={i.youtubelink}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{ borderRadius: 10 }}
+          ></iframe>
+        ) : (
+          <Image
+            height={"100%"}
+            width={"100%"}
+            src={i.image}
+            objectFit={"cover"}
+            backgroundPosition={"center"}
+            backgroundRepeat={"no-repeat"}
+            borderRadius={8}
+          />
+        )}
       </GridItem>
       {/* 2 */}
       <GridItem

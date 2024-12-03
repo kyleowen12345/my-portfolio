@@ -9,6 +9,16 @@ const ProjectBoxes = () => {
   });
   const projects = [
     {
+      image: "../../Forage.png",
+      projectName: "Foragesoft",
+      projectDescription:
+        "Foragesoft is a Multi-Tenant Dealer Management System designed specifically for the agriculture industry, streamlining operations, inventory management, and dealer communications.",
+      projectTools: ["React", ".Net", "Quickbooks", "Zapier"],
+      externalLink: "https://foragesoft.com/",
+      repositoryLink: "",
+      youtubelink: "",
+    },
+    {
       image: "../../home.png",
       projectName: "Füm",
       projectDescription:
@@ -19,17 +29,7 @@ const ProjectBoxes = () => {
       youtubelink:
         "https://www.youtube.com/embed/eUuNcjsSBb8?si=rnjspCONVoSLlmKz",
     },
-    {
-      image: "../../home.png",
-      projectName: "YARD DAWGS",
-      projectDescription:
-        "Yard Dawgs is known for providing the best lawn care in Calgary, offering competitively priced, high-quality lawn care packages. We revamped their website using HubSpot, delivering a modern, professional design with high-quality visuals and intuitive layouts. The new site enhances user experience and effectively showcases their commitment to excellence in lawn care.",
-      projectTools: ["HubL", "HTML/CSS", "Javascript"],
-      externalLink: "https://www.yarddawgslawncare.ca/",
-      repositoryLink: "",
-      youtubelink:
-        "https://www.youtube.com/embed/uva59vn0IE8?si=zkMNBUOhty4_TRE0",
-    },
+
     {
       image: "../../home.png",
       projectName: "BHY (mobile application)",
