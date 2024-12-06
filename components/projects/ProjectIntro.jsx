@@ -7,7 +7,6 @@ const ProjectIntro = () => {
       width={["100%"]}
       mx={["auto", "auto", "auto", "auto", 0]}
       display={"flex"}
-      alignItems={"center"}
       height={["3%", "3%", "5%", "5%", "10%"]}
     >
       <Text

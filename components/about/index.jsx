@@ -23,12 +23,6 @@ const About = () => {
     <Stack
       className={inView ? "animated-box" : "animated-box-hidden"}
       maxWidth={PageStyles.maxWidth}
-      paddingX={[
-        PageStyles.paddingMobile,
-        PageStyles.paddingMobile,
-        PageStyles.paddingTablet,
-        PageStyles.paddingDesktop,
-      ]}
       margin={"auto"}
       width={"100%"}
       ref={ref}

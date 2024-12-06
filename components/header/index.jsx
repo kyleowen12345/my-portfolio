@@ -89,7 +89,7 @@ const BigHeader = () => {
         py={[2, 3, 3, 4, 5]}
       >
         <Box
-          width={"60%"}
+          width={"50%"}
           display={"flex"}
           justifyContent={"left"}
           mx={0}
@@ -104,7 +104,7 @@ const BigHeader = () => {
         </Box>
 
         <Box
-          width={"40%"}
+          width={"50%"}
           display={["none", "none", "none", "none", "flex"]}
           justifyContent={"space-between"}
           mr={0}
@@ -112,7 +112,6 @@ const BigHeader = () => {
           color={"#CCD6F6"}
           fontSize={"13px"}
           alignItems="center"
-          minWidth="520px"
         >
           {myRoutes.map((i) => (
             <NextLink href={i.route} key={i.routeName} passHref>

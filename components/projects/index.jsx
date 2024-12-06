@@ -25,15 +25,7 @@ const Projects = () => {
       className={inView ? "animated-box" : "animated-box-hidden"}
       ref={ref}
       id="projects"
-      maxWidth={PageStyles.maxWidth}
-      paddingX={[
-        PageStyles.paddingMobile,
-        PageStyles.paddingMobile,
-        PageStyles.paddingTablet,
-        PageStyles.paddingDesktop,
-      ]}
       spacing={10}
-      margin={"auto"}
       width={"100%"}
     >
       <ProjectIntro />

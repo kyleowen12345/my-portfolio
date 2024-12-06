@@ -7,7 +7,7 @@ import About from "../components/about";
 import Projects from "../components/projects";
 import Contact from "../components/contact";
 
-import { Box, Spacer, Text } from "@chakra-ui/react";
+import { Box, Spacer, Stack, Text } from "@chakra-ui/react";
 import MyFooter from "../components/footer/MyFooter";
 import Services from "../components/about/Services";
 
@@ -30,17 +30,22 @@ export default function Balay() {
             rel="stylesheet"
           /> */}
       </Head>
-      <Home />
-      <Box width={"100%"} height={50}></Box>
-      <About />
-      <Box width={"100%"} height={100}></Box>
-      <Services />
-      <Box width={"100%"} height={100}></Box>
-      <Projects />
-      <Box width={"100%"} height={100}></Box>
-      <Contact />
-      <Box width={"100%"} height={100}></Box>
-      <MyFooter />
+      <Box width={"100%"} height={["0px", "0px", "0px", "0px", "50px"]} />
+      <Home>
+        <Stack
+          width={["100%", "100%", "100%", "100%", "50%"]}
+          spacing={"100px"}
+        >
+          <About />
+
+          <Services />
+
+          <Projects />
+
+          <Contact />
+          <MyFooter />
+        </Stack>
+      </Home>
     </Box>
   );
 }

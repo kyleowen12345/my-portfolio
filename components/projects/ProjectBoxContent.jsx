@@ -34,13 +34,13 @@ const ProjectBoxContent = ({ i }) => {
     >
       {/* 2 */}
       <GridItem
-        colSpan={[12, 12, 12, 4]}
+        colSpan={[12]}
         height={"100%"}
         border="2px solid #64FED9"
         borderRadius={10}
-        borderTopRightRadius={[10, 10, 10, 0]}
+        borderTopRightRadius={[10]}
         borderBottomRightRadius={0}
-        borderBottomLeftRadius={[0, 0, 0, 10]}
+        borderBottomLeftRadius={[0]}
         minHeight={"250px"}
 
         // className={inView ? "secondContainerVisible" : "secondContainerHidden"}
@@ -65,20 +65,20 @@ const ProjectBoxContent = ({ i }) => {
             backgroundPosition={"center"}
             backgroundRepeat={"no-repeat"}
             borderRadius={8}
-            borderTopRightRadius={[8, 8, 8, 0]}
+            borderTopRightRadius={[8]}
             borderBottomRightRadius={0}
-            borderBottomLeftRadius={[0, 0, 0, 8]}
+            borderBottomLeftRadius={[0]}
           />
         )}
       </GridItem>
       {/* 2 */}
       <GridItem
-        colSpan={[12, 12, 12, 8]}
+        colSpan={[12]}
         border="2px solid #64FED9"
         borderRadius={10}
         borderTopLeftRadius={0}
-        borderBottomLeftRadius={[10, 10, 10, 0]}
-        borderTopRightRadius={[0, 0, 0, 10]}
+        borderBottomLeftRadius={[10]}
+        borderTopRightRadius={[0]}
         p={5}
         justifyContent={"center"}
         // className={inView ? "thirdContainerVisible" : "thirdContainerHidden"}

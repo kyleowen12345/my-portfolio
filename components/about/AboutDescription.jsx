@@ -108,8 +108,6 @@ const AboutDescription = () => {
               "repeat(2, 1fr)",
               "repeat(2, 1fr)",
               "repeat(2, 1fr)",
-              "repeat(3, 1fr)",
-              "repeat(3, 1fr)",
             ]}
             gap={3}
             color="#CCD6F6"
@@ -123,7 +121,7 @@ const AboutDescription = () => {
             <Text fontSize={customFontSize}>{">"} Shopify</Text>
             <Text fontSize={customFontSize}>{">"} Hubspot</Text>
             <Text fontSize={customFontSize}>{">"} Dotnet C#</Text>
-            <Text fontSize={customFontSize}>{">"} Laravel</Text>
+
             <Text fontSize={customFontSize}>{">"} Node js (Express)</Text>
           </Grid>
         </Box>

@@ -50,11 +50,10 @@ const ContactContent = () => {
 
   return (
     <Grid templateColumns={"repeat(12, 1fr)"} width={"100%"} gap={5}>
-      <GridItem colSpan={[12, 12, 12, 6]}>
+      <GridItem colSpan={[12]}>
         <Map />
       </GridItem>
-      <GridItem colSpan={[0, 0, 0, 1]}></GridItem>
-      <GridItem colSpan={[12, 12, 12, 5]}>
+      <GridItem colSpan={[12]}>
         <Stack
           // height={"60%"}
 
@@ -92,7 +91,6 @@ const ContactContent = () => {
           >
             <Button
               width={["100%"]}
-              maxW={["100%", "100%", "100%", "300px"]}
               bgColor={"#0A192F"}
               color={"#64FED9"}
               border="2px solid #64FED9"

@@ -54,18 +54,10 @@ const Services = () => {
       className={inView ? "animated-box" : "animated-box-hidden"}
       direction={["column"]}
       ref={ref}
-      maxWidth={PageStyles.maxWidth}
-      paddingX={[
-        PageStyles.paddingMobile,
-        PageStyles.paddingMobile,
-        PageStyles.paddingTablet,
-        PageStyles.paddingDesktop,
-      ]}
       spacing={10}
-      margin={"auto"}
       width={"100%"}
     >
-      <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
+      <Box display={"flex"} flexDirection={"column"}>
         <Text
           fontSize={["16px", "16px", "18px", "18px", "20px"]}
           fontWeight={"semibold"}
@@ -84,12 +76,7 @@ const Services = () => {
       </Box>
       <Grid
         width={"100%"}
-        templateColumns={[
-          "repeat(1, 1fr)",
-          "repeat(1, 1fr)",
-          "repeat(1, 1fr)",
-          "repeat(2, 1fr)",
-        ]}
+        templateColumns={["repeat(1, 1fr)"]}
         gap={[5, 5, 5, 5, 10]}
         height={["100%"]}
       >

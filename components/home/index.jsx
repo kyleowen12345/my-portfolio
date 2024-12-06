@@ -6,7 +6,7 @@ import { useMyRoute } from "../../lib/routeprovider";
 import { PageStyles } from "../../constants/styles";
 import TypingText from "./TypingText";
 
-const Home = () => {
+const Home = ({ children }) => {
   const { ref, inView, entry } = useInView({
     threshold: 0,
     triggerOnce: true,
@@ -30,19 +30,24 @@ const Home = () => {
         PageStyles.paddingTablet,
         PageStyles.paddingDesktop,
       ]}
-      spacing={10}
+      spacing={0}
       width={"100%"}
       margin={"auto"}
       id="home"
       ref={ref}
       bgColor={"#0A192F"}
-      alignItems={"center"}
+      alignItems={"start"}
+      position={"relative"}
     >
       <Box
         mx={0}
         width={["100%", "100%", "100%", "100%", "50%"]}
         px={0}
         pt={[10, 10, 10, 10, 0]}
+        position={["inherit", "inherit", "inherit", "inherit", "sticky"]}
+        top={["0px", "0px", "0px", "0px", "142px"]}
+        paddingRight={"50px"}
+        marginBottom={"100px"}
       >
         <Box
           display={"flex"}
@@ -88,14 +93,7 @@ const Home = () => {
           </Text>
           {/* 2 */}
           <Text
-            fontSize={[
-              "0.513rem",
-              "1.313rem",
-              "1.813rem",
-              "2.013rem",
-              "2.313rem",
-              "2.813rem",
-            ]}
+            fontSize={["0.513rem", "1.313rem", "1.813rem"]}
             fontWeight={"bold"}
             color="#CCD6F6"
             // className={ inView ? "secondContainerVisible" : "secondContainerHidden"}
@@ -123,7 +121,7 @@ const Home = () => {
         >
           <Link
             width={["100%"]}
-            href="/#about"
+            href={"https://www.linkedin.com/in/kyle-owen-ga-80a822189"}
             style={{ textDecoration: "none" }}
           >
             <Button
@@ -147,7 +145,7 @@ const Home = () => {
               minWidth={"200px"}
               //  className={ inView ? "fifthContainerVisible" : "fifthContainerHidden"}
             >
-              About Me
+              Linkedin
             </Button>
           </Link>
           <Link
@@ -185,7 +183,7 @@ const Home = () => {
       </Box>
 
       {/* 6 */}
-      <Box
+      {/* <Box
         mx={0}
         width={["100%", "100%", "100%", "100%", "50%"]}
         px={0}
@@ -204,7 +202,8 @@ const Home = () => {
           borderRadius={5}
           // className={ inView ? "seventhContainerVisible" : "seventhContainerHidden"}
         />
-      </Box>
+      </Box> */}
+      {children}
       {/* 6*/}
     </Stack>
   );

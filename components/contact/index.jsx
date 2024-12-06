@@ -26,16 +26,8 @@ const Contact = () => {
       className={inView ? "animated-box" : "animated-box-hidden"}
       direction={["column"]}
       id="contact"
-      maxWidth={PageStyles.maxWidth}
-      paddingX={[
-        PageStyles.paddingMobile,
-        PageStyles.paddingMobile,
-        PageStyles.paddingTablet,
-        PageStyles.paddingDesktop,
-      ]}
       spacing={10}
       ref={ref}
-      margin={"auto"}
       width={"100%"}
     >
       <ContactIntro />
