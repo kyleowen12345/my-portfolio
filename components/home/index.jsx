@@ -46,7 +46,7 @@ const Home = ({ children }) => {
         pt={[10, 10, 10, 10, 0]}
         position={["inherit", "inherit", "inherit", "inherit", "sticky"]}
         top={["0px", "0px", "0px", "0px", "142px"]}
-        paddingRight={"50px"}
+        paddingRight={["0px", "0px", "0px", "0px", "50px"]}
         marginBottom={"100px"}
       >
         <Box
