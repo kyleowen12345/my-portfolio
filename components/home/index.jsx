@@ -52,7 +52,10 @@ const Home = ({ children }) => {
         justifyContent={"center"}
         spacing={5}
       >
-        <Box width={"100%"} height={["100px"]} />
+        <Box
+          width={"100%"}
+          height={["30px", "30px", "30px", "30px", "100px"]}
+        />
         <Box px={0} mx={0}>
           <Box
             display={"flex"}
