@@ -25,60 +25,6 @@ const MyFooter = () => {
       >
         (Design inspired by Brittany Chiang)
       </Link>
-
-      <Box
-        mt={3}
-        display={"flex"}
-        maxWidth={200}
-        minWidth={100}
-        justifyContent="space-between"
-      >
-        <Link
-          color={"#CCD6F6"}
-          fontSize="14px"
-          _hover={{ color: "#64FED9" }}
-          href={"https://www.linkedin.com/in/kyle-owen-ga-80a822189/"}
-          target="_blank"
-        >
-          <Icon
-            w={6}
-            h={6}
-            color={"#CCD6F6"}
-            _hover={{ color: "#64FED9" }}
-            as={AiOutlineLinkedin}
-          />
-        </Link>
-        <Link
-          color={"#CCD6F6"}
-          fontSize="14px"
-          _hover={{ color: "#64FED9" }}
-          href={"https://twitter.com/DevWorst"}
-          target="_blank"
-        >
-          <Icon
-            w={6}
-            h={6}
-            color={"#CCD6F6"}
-            _hover={{ color: "#64FED9" }}
-            as={FiTwitter}
-          />
-        </Link>
-        <Link
-          color={"#CCD6F6"}
-          fontSize="14px"
-          _hover={{ color: "#64FED9" }}
-          href={"https://github.com/kyleowen12345"}
-          target="_blank"
-        >
-          <Icon
-            w={6}
-            h={6}
-            color={"#CCD6F6"}
-            _hover={{ color: "#64FED9" }}
-            as={FiGithub}
-          />
-        </Link>
-      </Box>
     </Box>
   );
 };

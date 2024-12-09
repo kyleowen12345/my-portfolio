@@ -6,6 +6,8 @@ import { useMyRoute } from "../../lib/routeprovider";
 import { PageStyles } from "../../constants/styles";
 import TypingText from "./TypingText";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { AiOutlineLinkedin } from "react-icons/ai";
+import { FiGithub, FiTwitter } from "react-icons/fi";
 
 const Home = ({ children }) => {
   const { ref, inView, entry } = useInView({
@@ -121,26 +123,84 @@ const Home = ({ children }) => {
           <TypingText />
           {/* 4 */}
         </Box>
-        <Link
-          href="../../Kyle Owen Ga CV.pdf"
-          download={"Resume pdf"}
-          style={{ textDecoration: "none" }}
-        >
-          <Button
-            bgColor={"#0A192F"}
-            color={"#64FED9"}
-            border="2px solid #64FED9"
-            fontWeight={"800"}
-            _hover={{
-              bgColor: "#64FED9",
-              color: "#0A192F",
-              boxShadow: "3px 3px #64FED9",
-            }}
-            boxShadow={"3px 3px #64FED9"}
+        <Stack spacing={5} direction={"row"} alignItems={"center"}>
+          <Link
+            href="../../Kyle Owen Ga CV.pdf"
+            download={"Resume pdf"}
+            style={{ textDecoration: "none" }}
           >
-            GET CV
-          </Button>
-        </Link>
+            <Button
+              bgColor={"#0A192F"}
+              color={"#64FED9"}
+              border="2px solid #64FED9"
+              fontWeight={"800"}
+              _hover={{
+                bgColor: "#64FED9",
+                color: "#0A192F",
+                boxShadow: "3px 3px #64FED9",
+              }}
+              boxShadow={"3px 3px #64FED9"}
+            >
+              GET CV
+            </Button>
+          </Link>
+          <Stack
+            direction={"row"}
+            justifyContent="space-between"
+            alignItems={"center"}
+            spacing={5}
+          >
+            <Stack
+              as={Link}
+              color={"#CCD6F6"}
+              fontSize="14px"
+              _hover={{ color: "#64FED9" }}
+              href={"https://www.linkedin.com/in/kyle-owen-ga-80a822189/"}
+              target="_blank"
+            >
+              <Icon
+                w={8}
+                h={8}
+                color={"#CCD6F6"}
+                _hover={{ color: "#64FED9" }}
+                as={AiOutlineLinkedin}
+              />
+            </Stack>
+            <Stack
+              as={Link}
+              color={"#CCD6F6"}
+              fontSize="14px"
+              _hover={{ color: "#64FED9" }}
+              href={"https://twitter.com/DevWorst"}
+              target="_blank"
+            >
+              <Icon
+                w={8}
+                h={8}
+                color={"#CCD6F6"}
+                _hover={{ color: "#64FED9" }}
+                as={FiTwitter}
+              />
+            </Stack>
+            <Stack
+              as={Link}
+              color={"#CCD6F6"}
+              fontSize="14px"
+              _hover={{ color: "#64FED9" }}
+              href={"https://github.com/kyleowen12345"}
+              target="_blank"
+            >
+              <Icon
+                w={8}
+                h={8}
+                color={"#CCD6F6"}
+                _hover={{ color: "#64FED9" }}
+                as={FiGithub}
+              />
+            </Stack>
+          </Stack>
+        </Stack>
+
         {/* 5 */}
       </Stack>
 
