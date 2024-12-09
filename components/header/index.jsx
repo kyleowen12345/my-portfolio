@@ -64,7 +64,7 @@ const BigHeader = () => {
     <Box
       boxShadow={showNav && "2xl"}
       borderBottom={showNav && "2px solid #64FED9"}
-      position="sticky"
+      // position="sticky"
       top={0}
       width={"100%"}
       display={"flex"}

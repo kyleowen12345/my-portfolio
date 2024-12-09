@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
     <ChakraProvider theme={theme} resetCSS>
       <MyRouteProvider>
         <GlobalStyle />
-        <Header />
+        {/* <Header /> */}
         <Component {...pageProps} />
       </MyRouteProvider>
     </ChakraProvider>

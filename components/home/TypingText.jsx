@@ -30,7 +30,7 @@ const TypingText = () => {
       maxWidth="650px"
       mt={5}
       fontFamily="Roboto Mono"
-      minHeight={["200px", "200px", "100px"]}
+      minHeight={["200px", "200px", "120px"]}
     >
       {displayedText}
     </Text>
