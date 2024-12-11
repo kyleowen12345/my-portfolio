@@ -109,12 +109,10 @@ const Home = ({ children }) => {
               fontSize={["0.513rem", "1.313rem", "1.813rem"]}
               fontWeight={"bold"}
               color="#CCD6F6"
-              alignItems={"center"}
-              display={"flex"}
-              gap="10px"
+
               // className={ inView ? "secondContainerVisible" : "secondContainerHidden"}
             >
-              I create things for the web. <ExternalLinkIcon w={6} h={6} />
+              I create things for the web.
             </Text>
           </Link>
           {/* 3 */}
@@ -159,8 +157,8 @@ const Home = ({ children }) => {
               target="_blank"
             >
               <Icon
-                w={8}
-                h={8}
+                w={10}
+                h={10}
                 color={"#CCD6F6"}
                 _hover={{ color: "#64FED9" }}
                 as={AiOutlineLinkedin}
@@ -175,8 +173,8 @@ const Home = ({ children }) => {
               target="_blank"
             >
               <Icon
-                w={8}
-                h={8}
+                w={10}
+                h={10}
                 color={"#CCD6F6"}
                 _hover={{ color: "#64FED9" }}
                 as={FiTwitter}
@@ -191,8 +189,8 @@ const Home = ({ children }) => {
               target="_blank"
             >
               <Icon
-                w={8}
-                h={8}
+                w={10}
+                h={10}
                 color={"#CCD6F6"}
                 _hover={{ color: "#64FED9" }}
                 as={FiGithub}
