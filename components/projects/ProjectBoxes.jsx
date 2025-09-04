@@ -10,6 +10,16 @@ const ProjectBoxes = () => {
   });
   const projects = [
     {
+      image: "../../Cardonomics.png",
+      projectName: "Cardonomics",
+      projectDescription:
+        "Cardonomics is a comprehensive credit card rewards optimization platform that helps users calculate and maximize points, miles, and cash back from their credit cards. During my 8-month contract, I contributed to building interactive calculators, rewards tracking dashboards, and user interfaces that help users optimize their credit card spending strategies and compare reward programs across different cards. I played a key role in launching their v2 platform with enhanced features and improved user experience.",
+      projectTools: ["React", "Remix Run", "Strapi", "TypeScript", "Chart.js"],
+      externalLink: "https://www.cardonomics.com/",
+      repositoryLink: "",
+      youtubelink: "",
+    },
+    {
       image: "../../Forage.png",
       projectName: "Foragesoft",
       projectDescription:
@@ -19,21 +29,11 @@ const ProjectBoxes = () => {
       repositoryLink: "",
       youtubelink: "",
     },
-    // {
-    //   image: "../../Forage.png",
-    //   projectName: "Period",
-    //   projectDescription:
-    //     "Foragesoft is a Multi-Tenant Dealer Management System designed specifically for the agriculture industry, streamlining operations, inventory management, and dealer communications.",
-    //   projectTools: ["React", ".Net", "Quickbooks", "Zapier"],
-    //   externalLink: "https://foragesoft.com/",
-    //   repositoryLink: "",
-    //   youtubelink: "",
-    // },
     {
       image: "../../home.png",
       projectName: "Füm",
       projectDescription:
-        "Füm is a passive device that looks like a vaping pen but contains no nicotine or tobacco, designed for natural inhalation. We rebranded their e-commerce site using Shopify, creating a sleek, modern design with high-quality visuals and intuitive layouts to enhance the user experience and reflect the brand’s clean, natural ethos.",
+        "Füm is a passive device that looks like a vaping pen but contains no nicotine or tobacco, designed for natural inhalation. We rebranded their e-commerce site using Shopify, creating a sleek, modern design with high-quality visuals and intuitive layouts to enhance the user experience and reflect the brand's clean, natural ethos.",
       projectTools: ["Liquid", "Shopify", "React", "HTML/CSS", "Javascript"],
       externalLink: "https://tryfum.com",
       repositoryLink: "",

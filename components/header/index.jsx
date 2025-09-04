@@ -125,7 +125,7 @@ const BigHeader = () => {
             </NextLink>
           ))}
           <Link
-            href="../../Kyle Owen Ga CV.pdf"
+            href="../../Kyle Owen Ga Latest Resume Updated.pdf"
             download={"Resume pdf"}
             style={{ textDecoration: "none" }}
             className={

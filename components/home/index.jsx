@@ -109,10 +109,8 @@ const Home = ({ children }) => {
               fontSize={["0.513rem", "1.313rem", "1.813rem"]}
               fontWeight={"bold"}
               color="#CCD6F6"
-
-              // className={ inView ? "secondContainerVisible" : "secondContainerHidden"}
             >
-              I create things for the web.
+              I build scalable web applications that drive business results.
             </Text>
           </Link>
           {/* 3 */}
@@ -123,7 +121,7 @@ const Home = ({ children }) => {
         </Box>
         <Stack spacing={5} direction={"row"} alignItems={"center"}>
           <Link
-            href="../../Kyle Owen Ga CV.pdf"
+            href="../../Kyle Owen Ga Latest Resume Updated.pdf"
             download={"Resume pdf"}
             style={{ textDecoration: "none" }}
           >
@@ -139,7 +137,7 @@ const Home = ({ children }) => {
               }}
               boxShadow={"3px 3px #64FED9"}
             >
-              GET CV
+              HIRE ME
             </Button>
           </Link>
           <Stack
@@ -198,33 +196,9 @@ const Home = ({ children }) => {
             </Stack>
           </Stack>
         </Stack>
-
-        {/* 5 */}
       </Stack>
 
-      {/* 6 */}
-      {/* <Box
-        mx={0}
-        width={["100%", "100%", "100%", "100%", "50%"]}
-        px={0}
-        display={"flex"}
-        alignItems={"center"}
-        justifyContent={"right"}
-      >
-        <Image
-          src="../../home_ill.png"
-          alt="next"
-          width={["100%"]}
-          height={["100%"]}
-          maxWidth="550px"
-          maxHeight="550px"
-          objectFit={"contain"}
-          borderRadius={5}
-          // className={ inView ? "seventhContainerVisible" : "seventhContainerHidden"}
-        />
-      </Box> */}
       {children}
-      {/* 6*/}
     </Stack>
   );
 };

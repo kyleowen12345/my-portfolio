@@ -13,12 +13,9 @@ const AboutDescription = () => {
     "JavaScript (ES6+)",
     "React (Next.js)",
     "Vue.js",
-    "WordPress",
+    "Remix Run",
     "Strapi",
     "React Native",
-    "Webflow",
-    "Shopify",
-    "HubSpot",
     ".NET C#",
     "Node.js (Express)",
   ];
@@ -52,10 +49,10 @@ const AboutDescription = () => {
               lineHeight={["8", "8", "8", "10"]}
               fontSize={["15px", "15px", "15px", "16px", "16px", "18px"]}
             >
-              Hi, I'm Kyle! I've been passionate about web development since
-              2019, spending years refining my skills by analyzing and
-              recreating website UIs. I love crafting intuitive, visually
-              appealing designs that enhance user experiences.
+              Hi, I'm Kyle! I'm a full-stack developer with 3 years of
+              experience building React and Node.js applications for e-commerce
+              and social platforms. I specialize in creating scalable web
+              applications with secure payment systems and real-time features.
             </Text>
 
             <Text
@@ -64,7 +61,7 @@ const AboutDescription = () => {
               color="#64FED9"
               mt={5}
             >
-              For 3 years, I worked with{" "}
+              During my time at{" "}
               <Link href="https://www.hillandfoster.com/" target="_blank">
                 <Text
                   as="span"
@@ -78,10 +75,13 @@ const AboutDescription = () => {
                   Hill&Foster
                 </Text>
               </Link>
-              , a top Web Design and Branding agency, where I specialized in
-              implementing and creating impactful designs. I'm now seeking a
-              part-time or full-time role to collaborate with talented teams and
-              continue growing as a designer and developer.
+              , I developed expertise in building high-performance web
+              applications.{" "}
+              <Text as="span" color="#64FED9" fontWeight="bold">
+                Currently seeking full-time opportunities
+              </Text>{" "}
+              to build innovative products and solve complex technical
+              challenges.
             </Text>
           </Box>
         </Stack>
