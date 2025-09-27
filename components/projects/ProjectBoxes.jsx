@@ -9,16 +9,16 @@ const ProjectBoxes = () => {
     triggerOnce: true,
   });
   const projects = [
-    // {
-    //   image: "../../Cardonomics.png",
-    //   projectName: "Cardonomics",
-    //   projectDescription:
-    //     "Cardonomics is a comprehensive credit card rewards optimization platform that helps users calculate and maximize points, miles, and cash back from their credit cards. During my 8-month contract, I contributed to building interactive calculators, rewards tracking dashboards, and user interfaces that help users optimize their credit card spending strategies and compare reward programs across different cards. I played a key role in launching their v2 platform with enhanced features and improved user experience.",
-    //   projectTools: ["React", "Remix Run", "Strapi", "TypeScript", "Chart.js"],
-    //   externalLink: "https://www.cardonomics.com/",
-    //   repositoryLink: "",
-    //   youtubelink: "",
-    // },
+    {
+      image: "../../Cardonomics.png",
+      projectName: "Cardonomics",
+      projectDescription:
+        "Cardonomics is a comprehensive credit card rewards optimization platform that helps users calculate and maximize points, miles, and cash back from their credit cards. During my 8-month contract, I contributed to building interactive calculators, rewards tracking dashboards, and user interfaces that help users optimize their credit card spending strategies and compare reward programs across different cards. I played a key role in launching their v2 platform with enhanced features and improved user experience.",
+      projectTools: ["React", "Remix Run", "Strapi", "TypeScript", "Chart.js"],
+      externalLink: "https://www.cardonomics.com/",
+      repositoryLink: "",
+      youtubelink: "",
+    },
     {
       image: "../../Forage.png",
       projectName: "Foragesoft",
