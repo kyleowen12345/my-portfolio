@@ -1,31 +1,29 @@
-import React from "react";
-import { Box, Image, Text, Icon, Stack, Grid, Link } from "@chakra-ui/react";
-import { useInView } from "react-intersection-observer";
-import ProjectBoxContent from "./ProjectBoxContent";
+import React from "react"
+import { Box, Image, Text, Icon, Stack, Grid, Link } from "@chakra-ui/react"
+import { useInView } from "react-intersection-observer"
+import ProjectBoxContent from "./ProjectBoxContent"
 
 const ProjectBoxes = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0,
     triggerOnce: true,
-  });
+  })
   const projects = [
     {
-      image: "../../Cardonomics.png",
-      projectName: "Cardonomics",
+      image: "../../kpi.png",
+      projectName: "KPI (Canadian job board platform)",
       projectDescription:
-        "Cardonomics is a comprehensive credit card rewards optimization platform that helps users calculate and maximize points, miles, and cash back from their credit cards. During my 8-month contract, I contributed to building interactive calculators, rewards tracking dashboards, and user interfaces that help users optimize their credit card spending strategies and compare reward programs across different cards. I played a key role in launching their v2 platform with enhanced features and improved user experience.",
-      projectTools: ["React", "Remix Run", "Strapi", "TypeScript", "Chart.js"],
-      externalLink: "https://www.cardonomics.com/",
-      repositoryLink: "",
-      youtubelink: "",
-    },
-    {
-      image: "../../Forage.png",
-      projectName: "Foragesoft",
-      projectDescription:
-        "Foragesoft is a Multi-Tenant Dealer Management System designed specifically for the agriculture industry, streamlining operations, inventory management, and dealer communications.",
-      projectTools: ["React", ".Net", "Quickbooks", "Zapier"],
-      externalLink: "https://foragesoft.com/",
+        "KPI is a Canadian job board platform that connects job seekers with employers, featuring AI-powered resume building, application tracking, and job matching. It includes trust-building features like identity verification and background checks to help candidates stand out and employers hire with confidence.",
+      projectTools: [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "Fastify",
+        "PostgreSQL",
+        "Supabase",
+        "Stripe",
+      ],
+      externalLink: "https://www.kpi.ca",
       repositoryLink: "",
       youtubelink: "",
     },
@@ -37,22 +35,39 @@ const ProjectBoxes = () => {
       projectTools: ["Liquid", "Shopify", "React", "HTML/CSS", "Javascript"],
       externalLink: "https://tryfum.com",
       repositoryLink: "",
-      youtubelink:
-        "https://www.youtube.com/embed/eUuNcjsSBb8?si=rnjspCONVoSLlmKz",
+      youtubelink: "https://www.youtube.com/embed/eUuNcjsSBb8?si=rnjspCONVoSLlmKz",
     },
-
     {
-      image: "../../home.png",
-      projectName: "BHY (mobile application)",
+      image: "../../organic-traditions.png",
+      projectName: "Organic Traditions",
       projectDescription:
-        "A social media platform with fitness assistance tracker. It also has a marketplace where they can purchase insurance plans offered by FWD and gives statistical data to show the status of insurance in different countries.",
-      projectTools: ["React-Native", "Express", "MongoDB"],
-      externalLink: "disabled",
-      repositoryLink:
-        "https://github.com/kyleowen12345/FwdApp/tree/Kaking's_branch",
-      youtubelink: "https://www.youtube.com/embed/p6qAlL1JMmk",
+        "Organic Traditions is a company that creates organic, traditional food products. We developed their e-commerce website using Shopify, implementing a clean, modern design that highlights their premium products and enhances the user experience.",
+      projectTools: ["Liquid", "Shopify", "React", "HTML/CSS", "Javascript"],
+      externalLink: "https://organictraditions.com",
+      repositoryLink: "",
+      youtubelink: "",
     },
-  ];
+    {
+      image: "../../yard-dawgs.png",
+      projectName: "YardDawgs",
+      projectDescription:
+        "YardDawgs is a mobile application that allows users to create and manage their own yard sale events. It features a user-friendly interface for organizing items, setting up sale locations, and connecting with potential buyers.",
+      projectTools: ["React ", ".Net", "Hubspot"],
+      externalLink: "https://www.yarddawgslawncare.ca",
+      repositoryLink: "",
+      youtubelink: "",
+    },
+    {
+      image: "../../brooklyn-biltong.png",
+      projectName: "Brooklyn Biltong",
+      projectDescription:
+        "Brooklyn Biltong is a premium meat snack brand that creates high-quality, artisanal beef jerky. We developed their e-commerce website using Shopify, implementing a clean, modern design that highlights their premium products and enhances the user experience.",
+      projectTools: ["Liquid", "Shopify", "React", "HTML/CSS", "Javascript"],
+      externalLink: "https://www.brooklynbiltong.com",
+      repositoryLink: "",
+      youtubelink: "",
+    },
+  ]
 
   return (
     <Stack width={["100%"]} spacing={10} ref={ref}>
@@ -61,7 +76,7 @@ const ProjectBoxes = () => {
         <ProjectBoxContent i={i} key={i.projectName} />
       ))}
     </Stack>
-  );
-};
+  )
+}
 
-export default ProjectBoxes;
+export default ProjectBoxes

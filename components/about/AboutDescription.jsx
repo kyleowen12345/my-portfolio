@@ -1,24 +1,25 @@
-import React from "react";
-import { Box, Text, Grid, Stack, GridItem } from "@chakra-ui/react";
-import { useInView } from "react-intersection-observer";
-import Link from "next/link";
+import React from "react"
+import { Box, Text, Grid, Stack, GridItem } from "@chakra-ui/react"
+import { useInView } from "react-intersection-observer"
+import Link from "next/link"
 
 const AboutDescription = () => {
   const { ref, inView } = useInView({
     threshold: 0,
     triggerOnce: true,
-  });
+  })
 
   const technologies = [
-    "JavaScript (ES6+)",
-    "React (Next.js)",
+    "TypeScript",
+    "React (Next.js, Remix)",
     "Vue.js",
-    "Remix Run",
-    "Strapi",
+    "Node.js (Express, Fastify, NestJS)",
     "React Native",
+    "Shopify (Liquid, APIs)",
+    "HubSpot (CMS, APIs)",
     ".NET C#",
-    "Node.js (Express)",
-  ];
+    "PostgreSQL / MongoDB",
+  ]
 
   return (
     <Grid templateColumns="repeat(12, 1fr)" width="100%" ref={ref}>
@@ -49,10 +50,9 @@ const AboutDescription = () => {
               lineHeight={["8", "8", "8", "10"]}
               fontSize={["15px", "15px", "15px", "16px", "16px", "18px"]}
             >
-              Hi, I'm Kyle! I'm a full-stack developer with 3 years of
-              experience building React and Node.js applications for e-commerce
-              and social platforms. I specialize in creating scalable web
-              applications with secure payment systems and real-time features.
+              Hi, I'm Kyle! A full-stack developer with 4 years of experience crafting React,
+              Node.js, and Shopify solutions for e-commerce and job platforms—specializing in
+              scalable apps, payment integrations, and real-time features.
             </Text>
 
             <Text
@@ -75,13 +75,11 @@ const AboutDescription = () => {
                   Hill&Foster
                 </Text>
               </Link>
-              , I developed expertise in building high-performance web
-              applications.{" "}
+              , I developed expertise in building high-performance web applications.{" "}
               <Text as="span" color="#64FED9" fontWeight="bold">
                 Currently seeking full-time opportunities
               </Text>{" "}
-              to build innovative products and solve complex technical
-              challenges.
+              to build innovative products and solve complex technical challenges.
             </Text>
           </Box>
         </Stack>
@@ -99,17 +97,9 @@ const AboutDescription = () => {
             Here are a few technologies I've been working with recently:
           </Text>
 
-          <Grid
-            templateColumns="repeat(2, 1fr)"
-            gap={3}
-            color="#CCD6F6"
-            fontFamily="Roboto Mono"
-          >
+          <Grid templateColumns="repeat(2, 1fr)" gap={3} color="#CCD6F6" fontFamily="Roboto Mono">
             {technologies.map((tech, index) => (
-              <Text
-                key={index}
-                fontSize={["10px", "10px", "11px", "14px", "14px"]}
-              >
+              <Text key={index} fontSize={["10px", "10px", "11px", "14px", "14px"]}>
                 &gt; {tech}
               </Text>
             ))}
@@ -117,7 +107,7 @@ const AboutDescription = () => {
         </Box>
       </GridItem>
     </Grid>
-  );
-};
+  )
+}
 
-export default AboutDescription;
+export default AboutDescription
