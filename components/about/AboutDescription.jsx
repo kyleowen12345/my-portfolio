@@ -11,11 +11,15 @@ const AboutDescription = () => {
 
   const technologies = [
     "TypeScript",
-    "React (Next.js, Remix)",
+    "React (Next.js, React Router)",
     "Vue.js",
     "Node.js (Express, Fastify, NestJS)",
-    "React Native",
+    "TanStack Query",
+    "Redux / Context API",
+    "Tailwind CSS",
     "Shopify (Liquid, APIs)",
+    "Strapi / Payload CMS",
+    "React Native",
     "HubSpot (CMS, APIs)",
     ".NET C#",
     "PostgreSQL / MongoDB",
@@ -50,9 +54,11 @@ const AboutDescription = () => {
               lineHeight={["8", "8", "8", "10"]}
               fontSize={["15px", "15px", "15px", "16px", "16px", "18px"]}
             >
-              Hi, I'm Kyle! A full-stack developer with 4 years of experience crafting React,
-              Node.js, and Shopify solutions for e-commerce and job platforms—specializing in
-              scalable apps, payment integrations, and real-time features.
+              Hi, I'm Kyle! A full-stack developer with nearly 4 years of experience building
+              scalable web applications across e-commerce, SaaS, and service industries. I
+              specialize in React, TypeScript, Node.js, and modern frontend tooling — from complex
+              admin dashboards and real-time features to Shopify storefronts that have tripled
+              client sales.
             </Text>
 
             <Text
@@ -61,7 +67,11 @@ const AboutDescription = () => {
               color="#64FED9"
               mt={5}
             >
-              During my time at{" "}
+              Currently serving as{" "}
+              <Text as="span" fontWeight="bold">
+                Developer Lead
+              </Text>{" "}
+              at{" "}
               <Link href="https://www.hillandfoster.com/" target="_blank">
                 <Text
                   as="span"
@@ -75,11 +85,9 @@ const AboutDescription = () => {
                   Hill&Foster
                 </Text>
               </Link>
-              , I developed expertise in building high-performance web applications.{" "}
-              <Text as="span" color="#64FED9" fontWeight="bold">
-                Currently seeking full-time opportunities
-              </Text>{" "}
-              to build innovative products and solve complex technical challenges.
+              , leading full-stack development for multiple client projects. Experienced with
+              headless CMS platforms (Strapi, Payload CMS), AI-assisted development workflows using
+              the Claude API, and third-party integrations including Stripe, Algolia, and HubSpot.
             </Text>
           </Box>
         </Stack>
